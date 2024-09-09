@@ -6,15 +6,13 @@ from OSMPythonTools.overpass import Overpass
 from scipy.spatial import ConvexHull, Delaunay
 from streamlit_folium import folium_static
 
-from boundaries import get_osm_data
+from utils.boundaries import get_osm_data
+from utils.sidebar import sidebar_components
 
 overpass = Overpass()
 
-# Streamlit app configuration
 st.set_page_config(layout="wide", page_title="Tree Inventory of India")
 
-
-# Map type configuration
 map_types = {
     "OpenStreetMap": {
         "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -33,7 +31,6 @@ map_types = {
     },
 }
 
-# Tree coordinates
 coordinates = [
     (20.5937, 78.9629),
     (19.0760, 72.8777),
@@ -55,43 +52,12 @@ def load_data():
     return states, cities
 
 
-def sidebar_components(states_df, cities_df):
-    st.sidebar.title("Map Options")
-
-    selected_state = st.sidebar.selectbox(
-        "Select State",
-        [""] + list(states_df[states_df["country_name"] == "India"]["name"].unique()),
-    )
-
-    selected_city = ""
-    if selected_state:
-        selected_city = st.sidebar.selectbox(
-            "Select City",
-            [""]
-            + list(
-                cities_df[cities_df["state_name"] == selected_state]["name"].unique()
-            ),
-        )
-
-    selected_map_type = st.sidebar.selectbox("Select Map Type", list(map_types.keys()))
-
-    return selected_state, selected_city, selected_map_type
-
-
-def add_boundary_to_map(result, map_object):
-    boundary_coords = [
-        (element["lat"], element["lon"])
-        for element in result
-        if "lat" in element and "lon" in element
-    ]
-    if len(boundary_coords) < 3:
-        return coordinates
-
+def add_boundary_to_map(boundary_coords, map_object):
     points_array = np.array(boundary_coords)
     hull = ConvexHull(points_array)
     boundary_points = points_array[hull.vertices]
     folium.Polygon(
-        locations=boundary_points, color="blue", weight=1, fill=True, fill_opacity=0.1
+        locations=boundary_points, color="blue", weight=1, fill=True, fill_opacity=0.05
     ).add_to(map_object)
 
     delaunay = Delaunay(boundary_coords)
@@ -102,11 +68,10 @@ def add_boundary_to_map(result, map_object):
     return filtered_coords
 
 
-# Build the folium map
 def create_map(center_lat, center_lon, zoom, selected_map_type):
     m = folium.Map(location=[center_lat, center_lon], zoom_start=zoom, tiles=None)
 
-    for layer_name, layer_data in map_types.items():
+    for _, layer_data in map_types.items():
         folium.TileLayer(
             tiles=layer_data["url"],
             attr=layer_data["attribution"],
@@ -122,7 +87,6 @@ def create_map(center_lat, center_lon, zoom, selected_map_type):
     return m
 
 
-# Add markers for each location
 def add_tree_markers(map_object, coordinates):
     for lat, lon in coordinates:
         popup_content = f"""
@@ -147,34 +111,17 @@ def main():
     )
 
     states_df, cities_df = load_data()
+    filtered_coordinates = coordinates
 
-    selected_state, selected_city, selected_map_type = sidebar_components(
-        states_df, cities_df
+    center_lat, center_lon, zoom, location, selected_map_type = sidebar_components(
+        states_df, cities_df, st, map_types
     )
-
-    center_lat, center_lon, zoom = 20.5937, 78.9629, 4
-    location = ""
-
-    if selected_city:
-        city_data = cities_df[cities_df["name"] == selected_city].iloc[0]
-        center_lat, center_lon, zoom = city_data["latitude"], city_data["longitude"], 11
-        location = selected_city
-    elif selected_state:
-        state_data = states_df[states_df["name"] == selected_state].iloc[0]
-        center_lat, center_lon, zoom = (
-            state_data["latitude"],
-            state_data["longitude"],
-            7,
-        )
-        location = selected_state
 
     m = create_map(center_lat, center_lon, zoom, selected_map_type)
 
     if location:
         boundary_data = get_osm_data(location)
         filtered_coordinates = add_boundary_to_map(boundary_data, m)
-    else:
-        filtered_coordinates = coordinates
 
     st.sidebar.markdown(
         f"""

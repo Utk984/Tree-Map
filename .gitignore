@@ -2,13 +2,18 @@
 
 # our own ignore files
 .DS_Store
+__pycache__/
 ./locations/.DS_Store
 ./locations/__pycache__/
-./cache/
+./src/.DS_Store
+./src/__pycache__/
+./src/utils/.DS_Store
+./src/utils/__pycache__/
+./cache
+cache/
 
 # From python gitignore template
 # Byte-compiled / optimized / DLL files
-__pycache__/
 *.py[cod]
 *$py.class
 
