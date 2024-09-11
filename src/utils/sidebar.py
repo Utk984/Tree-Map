@@ -4,6 +4,10 @@ def sidebar_components(states_df, cities_df, st, map_types):
 
     st.sidebar.title("Map Options")
 
+    maps = list(map_types.keys())
+    maps.remove("Esri Satellite")
+    selected_map_type = st.sidebar.selectbox("Select Map Type", maps)
+
     selected_state = st.sidebar.selectbox(
         "Select State",
         [""] + list(states_df[states_df["country_name"] == "India"]["name"].unique()),
@@ -18,8 +22,6 @@ def sidebar_components(states_df, cities_df, st, map_types):
                 cities_df[cities_df["state_name"] == selected_state]["name"].unique()
             ),
         )
-
-    selected_map_type = st.sidebar.selectbox("Select Map Type", list(map_types.keys()))
 
     if selected_city:
         city_data = cities_df[cities_df["name"] == selected_city].iloc[0]
