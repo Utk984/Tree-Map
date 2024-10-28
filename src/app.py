@@ -1,3 +1,5 @@
+import os
+
 import folium
 import folium.plugins
 import numpy as np
@@ -11,8 +13,7 @@ from streamlit_folium import folium_static
 from utils.boundaries import get_osm_data
 from utils.sidebar import sidebar_components
 
-DB_URL = "postgresql://Utkarsh:geovision123@localhost:5432/treeinv"
-
+DB_URL = os.getenv("DATABASE_URL")
 overpass = Overpass()
 
 st.set_page_config(layout="wide", page_title="Tree Inventory of India")
