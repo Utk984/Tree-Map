@@ -30,7 +30,9 @@ def load_data():
     try:
         conn = psycopg2.connect(DB_URL)
         cursor = conn.cursor()
-        cursor.execute("SELECT tree_id, lat, lng FROM tree_details;")
+        cursor.execute(
+            "SELECT tree_id, lat, lng, lat_offset, lng_offset FROM tree_details;"
+        )
         coordinates = cursor.fetchall()
         cursor.close()
         conn.close()
@@ -59,8 +61,9 @@ def add_boundary_to_map(boundary_coords, map_object, coordinates):
 
 
 def add_tree_markers(map_object, coordinates):
-    for tree_id, lat, lon in coordinates:
-        # HTML content with reduced vertical gaps
+    for tree_id, lat, lon, lat_offset, lng_offset in coordinates:
+        lat += lat_offset / 1113200
+        lon += lng_offset / 1113200
         popup_content = f"""
         <div style="width: 200px; line-height: 1.2; margin: 0;">
             <h4 style="margin: 0; padding-bottom: 4px;">Tree {tree_id}</h4>
@@ -69,14 +72,13 @@ def add_tree_markers(map_object, coordinates):
         </div>
         """
 
-        # Create marker with popup
+        # Initialize the marker with a default icon size
         marker = folium.Marker(
             location=[lat, lon],
-            popup=folium.Popup(popup_content, max_width=300),
-            icon=folium.Icon(icon="leaf", color="green"),
+            popup=folium.Popup(popup_content, max_width=200),
+            icon=folium.Icon(icon="leaf", color="green", size=(5, 5)),
         )
 
-        # Add marker to the map
         marker.add_to(map_object)
 
     return map_object
@@ -95,7 +97,9 @@ def main():
         states_df, cities_df, st
     )
 
-    m = folium.Map(location=[center_lat, center_lon], zoom_start=zoom, tiles=None)
+    m = folium.Map(
+        location=[center_lat, center_lon], zoom_start=zoom, max_zoom=23, tiles=None
+    )
 
     folium.TileLayer(
         tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
