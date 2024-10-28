@@ -1,6 +1,8 @@
 import folium
+import folium.plugins
 import numpy as np
 import pandas as pd
+import psycopg2
 import streamlit as st
 from OSMPythonTools.overpass import Overpass
 from scipy.spatial import ConvexHull, Delaunay
@@ -8,6 +10,8 @@ from streamlit_folium import folium_static
 
 from utils.boundaries import get_osm_data
 from utils.sidebar import sidebar_components
+
+DB_URL = "postgresql://Utkarsh:geovision123@localhost:5432/treeinv"
 
 overpass = Overpass()
 
@@ -31,28 +35,29 @@ map_types = {
     },
 }
 
-coordinates = [
-    (20.5937, 78.9629),
-    (19.0760, 72.8777),
-    (28.6139, 77.2090),
-    (22.5726, 88.3639),
-    (13.0827, 80.2707),
-    (12.9716, 77.5946),
-    (17.3850, 78.4867),
-    (25.2950, 82.9876),
-    (23.8103, 90.4125),
-    (21.1702, 72.8311),
-]
-
 
 @st.cache_data
 def load_data():
+    # Load state and city data
     states = pd.read_csv("./locations/states.csv")
     cities = pd.read_csv("./locations/cities.csv")
-    return states, cities
+
+    # Load coordinates from the database
+    coordinates = []
+    try:
+        conn = psycopg2.connect(DB_URL)
+        cursor = conn.cursor()
+        cursor.execute("SELECT tree_id, lat, lng FROM tree_details;")
+        coordinates = cursor.fetchall()
+        cursor.close()
+        conn.close()
+    except Exception as e:
+        st.error(f"Error loading data from database: {e}")
+
+    return states, cities, coordinates
 
 
-def add_boundary_to_map(boundary_coords, map_object):
+def add_boundary_to_map(boundary_coords, map_object, coordinates):
     points_array = np.array(boundary_coords)
     hull = ConvexHull(points_array)
     boundary_points = points_array[hull.vertices]
@@ -62,7 +67,9 @@ def add_boundary_to_map(boundary_coords, map_object):
 
     delaunay = Delaunay(boundary_coords)
     filtered_coords = [
-        (lat, lon) for lat, lon in coordinates if delaunay.find_simplex([lat, lon]) >= 0
+        (tree_id, lat, lon)
+        for tree_id, lat, lon in coordinates
+        if delaunay.find_simplex([lat, lon]) >= 0
     ]
 
     return filtered_coords
@@ -88,20 +95,27 @@ def create_map(center_lat, center_lon, zoom, selected_map_type):
 
 
 def add_tree_markers(map_object, coordinates):
-    for lat, lon in coordinates:
+    for tree_id, lat, lon in coordinates:
+        # HTML content with reduced vertical gaps
         popup_content = f"""
-        <div style="width: 200px">
-            <h4>Location Information</h4>
-            <p><strong>Latitude:</strong> {lat:.8f}</p>
-            <p><strong>Longitude:</strong> {lon:.8f}</p>
-            <p>Add any additional information here.</p>
+        <div style="width: 200px; line-height: 1.2; margin: 0;">
+            <h4 style="margin: 0; padding-bottom: 4px;">Tree {tree_id}</h4>
+            <p style="margin: 2px 0;"><strong>Latitude:</strong> {lat:.8f}</p>
+            <p style="margin: 2px 0;"><strong>Longitude:</strong> {lon:.8f}</p>
         </div>
         """
-        folium.Marker(
+
+        # Create marker with popup
+        marker = folium.Marker(
             location=[lat, lon],
             popup=folium.Popup(popup_content, max_width=300),
             icon=folium.Icon(icon="leaf", color="green"),
-        ).add_to(map_object)
+        )
+
+        # Add marker to the map
+        marker.add_to(map_object)
+
+    return map_object
 
 
 def main():
@@ -110,7 +124,7 @@ def main():
         "### Explore tree data and boundaries within India using interactive maps."
     )
 
-    states_df, cities_df = load_data()
+    states_df, cities_df, coordinates = load_data()
     filtered_coordinates = coordinates
 
     center_lat, center_lon, zoom, location, selected_map_type = sidebar_components(
@@ -121,7 +135,7 @@ def main():
 
     if location:
         boundary_data = get_osm_data(location)
-        filtered_coordinates = add_boundary_to_map(boundary_data, m)
+        filtered_coordinates = add_boundary_to_map(boundary_data, m, coordinates)
 
     st.sidebar.markdown(
         f"""
