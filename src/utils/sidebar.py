@@ -1,12 +1,8 @@
-def sidebar_components(states_df, cities_df, st, map_types):
+def sidebar_components(states_df, cities_df, st):
     center_lat, center_lon, zoom = 20.5937, 78.9629, 4
     location = ""
 
     st.sidebar.title("Map Options")
-
-    maps = list(map_types.keys())
-    maps.remove("Esri Satellite")
-    selected_map_type = st.sidebar.selectbox("Select Map Type", maps)
 
     selected_state = st.sidebar.selectbox(
         "Select State",
@@ -36,4 +32,4 @@ def sidebar_components(states_df, cities_df, st, map_types):
         )
         location = selected_state
 
-    return center_lat, center_lon, zoom, location, selected_map_type
+    return center_lat, center_lon, zoom, location

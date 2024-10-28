@@ -18,24 +18,6 @@ overpass = Overpass()
 
 st.set_page_config(layout="wide", page_title="Tree Inventory of India")
 
-map_types = {
-    "OpenStreetMap": {
-        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-        "attribution": '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        "name": "OpenStreetMap",
-    },
-    "Esri Satellite": {
-        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        "attribution": "Esri",
-        "name": "Esri Satellite",
-    },
-    "Esri Labels": {
-        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
-        "attribution": "Esri",
-        "name": "Esri Labels",
-    },
-}
-
 
 @st.cache_data
 def load_data():
@@ -76,25 +58,6 @@ def add_boundary_to_map(boundary_coords, map_object, coordinates):
     return filtered_coords
 
 
-def create_map(center_lat, center_lon, zoom, selected_map_type):
-    m = folium.Map(location=[center_lat, center_lon], zoom_start=zoom, tiles=None)
-
-    for _, layer_data in map_types.items():
-        folium.TileLayer(
-            tiles=layer_data["url"],
-            attr=layer_data["attribution"],
-            name=layer_data["name"],
-            overlay=False,
-        ).add_to(m)
-
-    folium.TileLayer(
-        tiles=map_types[selected_map_type]["url"],
-        attr=map_types[selected_map_type]["attribution"],
-    ).add_to(m)
-
-    return m
-
-
 def add_tree_markers(map_object, coordinates):
     for tree_id, lat, lon in coordinates:
         # HTML content with reduced vertical gaps
@@ -128,11 +91,20 @@ def main():
     states_df, cities_df, coordinates = load_data()
     filtered_coordinates = coordinates
 
-    center_lat, center_lon, zoom, location, selected_map_type = sidebar_components(
-        states_df, cities_df, st, map_types
+    center_lat, center_lon, zoom, location = sidebar_components(
+        states_df, cities_df, st
     )
 
-    m = create_map(center_lat, center_lon, zoom, selected_map_type)
+    m = folium.Map(location=[center_lat, center_lon], zoom_start=zoom, tiles=None)
+
+    folium.TileLayer(
+        tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        attr="Esri",
+    ).add_to(m)
+    folium.TileLayer(
+        tiles="https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
+        attr="Esri",
+    ).add_to(m)
 
     if location:
         boundary_data = get_osm_data(location)
