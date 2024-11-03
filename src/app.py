@@ -1,3 +1,4 @@
+import base64
 import os
 
 import folium
@@ -7,19 +8,26 @@ import pandas as pd
 import psycopg2
 import streamlit as st
 from OSMPythonTools.overpass import Overpass
+from pandas.core.series import base
 from scipy.spatial import ConvexHull, Delaunay
 from streamlit_folium import folium_static
+from streetlevel import streetview
 
 from utils.boundaries import get_osm_data
 from utils.sidebar import sidebar_components
 
-DB_URL = os.getenv("DB_URL")
+# DB_URL = os.getenv("DB_URL")
+DB_URL = "postgresql://utkarsh:uOphh5OzXd7N1aDrLWGtvD9gmN8DFWxN@dpg-csfl7aogph6c73f4h5m0-a.oregon-postgres.render.com/treeinv"
+# Directory to store fetched images
+IMAGE_DIR = "streetview_images"
+os.makedirs(IMAGE_DIR, exist_ok=True)  # Ensure the directory exists
+
 overpass = Overpass()
 
 st.set_page_config(layout="wide", page_title="Tree Inventory of India")
 
 
-@st.cache_data
+@st.cache_data(ttl=60)
 def load_data():
     # Load state and city data
     states = pd.read_csv("./locations/states.csv")
@@ -42,6 +50,27 @@ def load_data():
     return states, cities, coordinates
 
 
+def download_and_compress_images(coordinates, target_size=(300, 150)):
+    for tree_id, lat, lon, lat_offset, lng_offset in coordinates:
+        lat += lat_offset / 1113200
+        lon += lng_offset / 1113200
+
+        # File path for each image by tree_id
+        image_path = f"{IMAGE_DIR}/tree_{tree_id}.jpg"
+
+        # Only download if the image does not already exist
+        if not os.path.exists(image_path):
+            pano = streetview.find_panorama(lat, lon, radius=500)
+            if pano:
+                # Get and compress the panorama image
+                panorama = streetview.get_panorama(pano, zoom=5)
+                panorama = panorama.resize(
+                    target_size,
+                    # Image.ANTIALIAS
+                )  # Resize to target size
+                panorama.save(image_path, "JPEG", quality=85)
+
+
 def add_boundary_to_map(boundary_coords, map_object, coordinates):
     points_array = np.array(boundary_coords)
     hull = ConvexHull(points_array)
@@ -52,8 +81,8 @@ def add_boundary_to_map(boundary_coords, map_object, coordinates):
 
     delaunay = Delaunay(boundary_coords)
     filtered_coords = [
-        (tree_id, lat, lon)
-        for tree_id, lat, lon in coordinates
+        (tree_id, lat, lon, lat_offset, lng_offset)
+        for tree_id, lat, lon, lat_offset, lng_offset in coordinates
         if delaunay.find_simplex([lat, lon]) >= 0
     ]
 
@@ -64,11 +93,28 @@ def add_tree_markers(map_object, coordinates):
     for tree_id, lat, lon, lat_offset, lng_offset in coordinates:
         lat += lat_offset / 1113200
         lon += lng_offset / 1113200
+
+        # Check for existing compressed image
+        image_path = f"{IMAGE_DIR}/tree_{tree_id}.jpg"
+        if os.path.exists(image_path):
+            # Encode the image in base64 for embedding in HTML
+            with open(image_path, "rb") as img_file:
+                img_data = img_file.read()
+                img_base64 = base64.b64encode(img_data).decode("utf-8")
+                image_html = (
+                    f'<img src="data:image/jpg;base64,{img_base64}" width="100%">'
+                )
+        else:
+            image_html = "<p>Street View not available</p>"
+
         popup_content = f"""
         <div style="width: 200px; line-height: 1.2; margin: 0;">
             <h4 style="margin: 0; padding-bottom: 4px;">Tree {tree_id}</h4>
             <p style="margin: 2px 0;"><strong>Latitude:</strong> {lat:.8f}</p>
             <p style="margin: 2px 0;"><strong>Longitude:</strong> {lon:.8f}</p>
+            <p style="margin: 2px 0;"><strong>Species:</strong> A</p>
+            <p style="margin: 2px 0;"><strong>Age:</strong> xxx</p>
+            {image_html}
         </div>
         """
 
@@ -85,13 +131,16 @@ def add_tree_markers(map_object, coordinates):
 
 
 def main():
-    st.title("🌳 Tree Inventory of India")
+    st.title("🌳 Tree Inventory 🌳")
     st.markdown(
         "### Explore tree data and boundaries within India using interactive maps."
     )
 
     states_df, cities_df, coordinates = load_data()
     filtered_coordinates = coordinates
+
+    # Pre-download and compress images
+    download_and_compress_images(filtered_coordinates)
 
     center_lat, center_lon, zoom, location = sidebar_components(
         states_df, cities_df, st
