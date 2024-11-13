@@ -8,7 +8,6 @@ import pandas as pd
 import psycopg2
 import streamlit as st
 from OSMPythonTools.overpass import Overpass
-from pandas.core.series import base
 from scipy.spatial import ConvexHull, Delaunay
 from streamlit_folium import folium_static
 from streetlevel import streetview
@@ -39,7 +38,7 @@ def load_data():
         conn = psycopg2.connect(DB_URL)
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT tree_id, lat, lng, lat_offset, lng_offset FROM tree_details;"
+            "SELECT tree_id, lat, lng, lat_offset, lng_offset, annotator_name FROM tree_details;"
         )
         coordinates = cursor.fetchall()
         cursor.close()
@@ -51,7 +50,7 @@ def load_data():
 
 
 def download_and_compress_images(coordinates, target_size=(300, 150)):
-    for tree_id, lat, lon, lat_offset, lng_offset in coordinates:
+    for tree_id, lat, lon, lat_offset, lng_offset, _ in coordinates:
         lat += lat_offset / 1113200
         lon += lng_offset / 1113200
 
@@ -81,8 +80,8 @@ def add_boundary_to_map(boundary_coords, map_object, coordinates):
 
     delaunay = Delaunay(boundary_coords)
     filtered_coords = [
-        (tree_id, lat, lon, lat_offset, lng_offset)
-        for tree_id, lat, lon, lat_offset, lng_offset in coordinates
+        (tree_id, lat, lon, lat_offset, lng_offset, annotator_name)
+        for tree_id, lat, lon, lat_offset, lng_offset, annotator_name in coordinates
         if delaunay.find_simplex([lat, lon]) >= 0
     ]
 
@@ -90,7 +89,7 @@ def add_boundary_to_map(boundary_coords, map_object, coordinates):
 
 
 def add_tree_markers(map_object, coordinates):
-    for tree_id, lat, lon, lat_offset, lng_offset in coordinates:
+    for tree_id, lat, lon, lat_offset, lng_offset, annotator_name in coordinates:
         lat += lat_offset / 1113200
         lon += lng_offset / 1113200
 
@@ -119,10 +118,11 @@ def add_tree_markers(map_object, coordinates):
         """
 
         # Initialize the marker with a default icon size
+        colour = "blue" if annotator_name == "Model" else "green"
         marker = folium.Marker(
             location=[lat, lon],
             popup=folium.Popup(popup_content, max_width=200),
-            icon=folium.Icon(icon="leaf", color="green", size=(5, 5)),
+            icon=folium.Icon(icon="leaf", color=colour, size=(5, 5)),
         )
 
         marker.add_to(map_object)
