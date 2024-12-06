@@ -15,11 +15,10 @@ from streetlevel import streetview
 from utils.boundaries import get_osm_data
 from utils.sidebar import sidebar_components
 
-# DB_URL = os.getenv("DB_URL")
-DB_URL = "postgresql://utkarsh:uOphh5OzXd7N1aDrLWGtvD9gmN8DFWxN@dpg-csfl7aogph6c73f4h5m0-a.oregon-postgres.render.com/treeinv"
+DB_URL = os.getenv("DB_URL")
 # Directory to store fetched images
 IMAGE_DIR = "streetview_images"
-os.makedirs(IMAGE_DIR, exist_ok=True)  # Ensure the directory exists
+os.makedirs(IMAGE_DIR, exist_ok=True)
 
 overpass = Overpass()
 
@@ -38,9 +37,31 @@ def load_data():
         conn = psycopg2.connect(DB_URL)
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT tree_id, lat, lng, lat_offset, lng_offset, annotator_name FROM tree_details;"
+            """
+    SELECT tree_id, lat, lng, lat_offset, lng_offset, annotator_name,
+           height, diameter, species, common_name, img_path
+    FROM tree_details;
+    """
         )
+
+        # cursor.execute(
+        #     """
+        #     SELECT
+        #         t.tree_id,
+        #         t.lat,
+        #         t.lng,
+        #         t.lat_offset,
+        #         t.lng_offset,
+        #         i.pano_id,
+        #         t.species,
+        #         t.common_name,
+        #         t.description,
+        #         t.annotator_name
+        #     FROM tree_details t JOIN streetview_images i ON t.image_id = i.image_id;
+        #     """
+        # )
         coordinates = cursor.fetchall()
+        print(f"Loaded {len(coordinates)} coordinates from the database.")
         cursor.close()
         conn.close()
     except Exception as e:
@@ -65,7 +86,6 @@ def download_and_compress_images(coordinates, target_size=(300, 150)):
                 panorama = streetview.get_panorama(pano, zoom=5)
                 panorama = panorama.resize(
                     target_size,
-                    # Image.ANTIALIAS
                 )  # Resize to target size
                 panorama.save(image_path, "JPEG", quality=85)
 
@@ -117,7 +137,6 @@ def add_tree_markers(map_object, coordinates):
         </div>
         """
 
-        # Initialize the marker with a default icon size
         colour = "blue" if annotator_name == "Model" else "green"
         marker = folium.Marker(
             location=[lat, lon],
