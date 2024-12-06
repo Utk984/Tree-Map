@@ -1,5 +1,5 @@
 def sidebar_components(states_df, cities_df, st):
-    center_lat, center_lon, zoom = 20.5937, 78.9629, 4
+    center_lat, center_lon, zoom = 20.5937, 78.9629, 5
     location = ""
 
     st.sidebar.title("Map Options")
@@ -21,14 +21,14 @@ def sidebar_components(states_df, cities_df, st):
 
     if selected_city:
         city_data = cities_df[cities_df["name"] == selected_city].iloc[0]
-        center_lat, center_lon, zoom = city_data["latitude"], city_data["longitude"], 11
+        center_lat, center_lon, zoom = city_data["latitude"], city_data["longitude"], 13
         location = selected_city
     elif selected_state:
         state_data = states_df[states_df["name"] == selected_state].iloc[0]
         center_lat, center_lon, zoom = (
             state_data["latitude"],
             state_data["longitude"],
-            7,
+            8,
         )
         location = selected_state
 

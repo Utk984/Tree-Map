@@ -1,4 +1,3 @@
-import base64
 import os
 
 import folium
@@ -7,13 +6,16 @@ import numpy as np
 import pandas as pd
 import psycopg2
 import streamlit as st
+from dotenv import load_dotenv
+from geopy.geocoders import Nominatim
 from OSMPythonTools.overpass import Overpass
 from scipy.spatial import ConvexHull, Delaunay
 from streamlit_folium import folium_static
-from streetlevel import streetview
 
-from utils.boundaries import get_osm_data
+from utils.boundaries import get_osm_data, get_sector_boundary
 from utils.sidebar import sidebar_components
+
+load_dotenv()
 
 DB_URL = os.getenv("DB_URL")
 # Directory to store fetched images
@@ -23,6 +25,7 @@ os.makedirs(IMAGE_DIR, exist_ok=True)
 overpass = Overpass()
 
 st.set_page_config(layout="wide", page_title="Tree Inventory of India")
+# st.html("<style> .main {overflow: hidden} </style>")
 
 
 @st.cache_data(ttl=60)
@@ -36,30 +39,23 @@ def load_data():
     try:
         conn = psycopg2.connect(DB_URL)
         cursor = conn.cursor()
+
         cursor.execute(
             """
-    SELECT tree_id, lat, lng, lat_offset, lng_offset, annotator_name,
-           height, diameter, species, common_name, img_path
-    FROM tree_details;
-    """
+            SELECT
+                t.tree_id,
+                t.lat,
+                t.lng,
+                t.lat_offset,
+                t.lng_offset,
+                t.species,
+                t.common_name,
+                t.description,
+                t.img_path,
+                i.address
+            FROM tree_details t JOIN streetview_images i ON t.image_id = i.image_id;
+            """
         )
-
-        # cursor.execute(
-        #     """
-        #     SELECT
-        #         t.tree_id,
-        #         t.lat,
-        #         t.lng,
-        #         t.lat_offset,
-        #         t.lng_offset,
-        #         i.pano_id,
-        #         t.species,
-        #         t.common_name,
-        #         t.description,
-        #         t.annotator_name
-        #     FROM tree_details t JOIN streetview_images i ON t.image_id = i.image_id;
-        #     """
-        # )
         coordinates = cursor.fetchall()
         print(f"Loaded {len(coordinates)} coordinates from the database.")
         cursor.close()
@@ -70,24 +66,13 @@ def load_data():
     return states, cities, coordinates
 
 
-def download_and_compress_images(coordinates, target_size=(300, 150)):
-    for tree_id, lat, lon, lat_offset, lng_offset, _ in coordinates:
-        lat += lat_offset / 1113200
-        lon += lng_offset / 1113200
-
-        # File path for each image by tree_id
-        image_path = f"{IMAGE_DIR}/tree_{tree_id}.jpg"
-
-        # Only download if the image does not already exist
-        if not os.path.exists(image_path):
-            pano = streetview.find_panorama(lat, lon, radius=500)
-            if pano:
-                # Get and compress the panorama image
-                panorama = streetview.get_panorama(pano, zoom=5)
-                panorama = panorama.resize(
-                    target_size,
-                )  # Resize to target size
-                panorama.save(image_path, "JPEG", quality=85)
+def get_address_geopy(lat, lng):
+    geolocator = Nominatim(user_agent="geoapi")
+    location = geolocator.reverse((lat, lng), language="en")
+    if location:
+        return location.address
+    else:
+        return None
 
 
 def add_boundary_to_map(boundary_coords, map_object, coordinates):
@@ -100,48 +85,90 @@ def add_boundary_to_map(boundary_coords, map_object, coordinates):
 
     delaunay = Delaunay(boundary_coords)
     filtered_coords = [
-        (tree_id, lat, lon, lat_offset, lng_offset, annotator_name)
-        for tree_id, lat, lon, lat_offset, lng_offset, annotator_name in coordinates
+        (
+            tree_id,
+            lat,
+            lon,
+            lat_offset,
+            lng_offset,
+            species,
+            common_name,
+            description,
+            img_path,
+            address,
+        )
+        for tree_id, lat, lon, lat_offset, lng_offset, species, common_name, description, img_path, address in coordinates
         if delaunay.find_simplex([lat, lon]) >= 0
     ]
 
     return filtered_coords
 
 
+from folium.plugins import FastMarkerCluster, MarkerCluster
+
+
+def add_markers_from_csv(map_object):
+    data = pd.read_csv("./chandigarh_panoramas.csv")
+
+    # Check if 'lat' and 'lon' columns exist
+    if "lat" not in data.columns or "lon" not in data.columns:
+        raise ValueError("CSV must contain 'lat' and 'lon' columns.")
+
+    # Add a MarkerCluster to the map
+    cluster = MarkerCluster(
+        options={"disableClusteringAtZoom": 17, "spiderfyOnMaxZoom": False}
+    )
+    cluster.add_to(map_object)
+
+    # Add markers to the cluster
+    for _, row in data.iterrows():
+        folium.Marker(location=[row["lat"], row["lon"]]).add_to(cluster)
+
+    return map_object
+
+
 def add_tree_markers(map_object, coordinates):
-    for tree_id, lat, lon, lat_offset, lng_offset, annotator_name in coordinates:
+    for (
+        tree_id,
+        lat,
+        lon,
+        lat_offset,
+        lng_offset,
+        species,
+        common_name,
+        description,
+        img_path,
+        address,
+    ) in coordinates:
         lat += lat_offset / 1113200
         lon += lng_offset / 1113200
 
-        # Check for existing compressed image
-        image_path = f"{IMAGE_DIR}/tree_{tree_id}.jpg"
-        if os.path.exists(image_path):
-            # Encode the image in base64 for embedding in HTML
-            with open(image_path, "rb") as img_file:
-                img_data = img_file.read()
-                img_base64 = base64.b64encode(img_data).decode("utf-8")
-                image_html = (
-                    f'<img src="data:image/jpg;base64,{img_base64}" width="100%">'
-                )
+        image_url = "https://treeinventory-images.s3.ap-south-1.amazonaws.com/YHuImFJqNsGqB6W2tKxB8w_view0_tree0_box0.jpg"
+        image_html = f'<img src="{img_path}" width="100%">'
+
+        # address = None
+        if address:
+            address_html = (
+                f'<p style="margin: 2px 0;"><strong>Address:</strong> {address}</p>'
+            )
         else:
-            image_html = "<p>Street View not available</p>"
+            address_html = f'<p style="margin: 2px 0;"><strong>Address:</strong> {lat:.8f}, {lon:.8f}</p>'
 
         popup_content = f"""
-        <div style="width: 200px; line-height: 1.2; margin: 0;">
+        <div style="width: 250px; line-height: 1.2; margin: 0;">
             <h4 style="margin: 0; padding-bottom: 4px;">Tree {tree_id}</h4>
-            <p style="margin: 2px 0;"><strong>Latitude:</strong> {lat:.8f}</p>
-            <p style="margin: 2px 0;"><strong>Longitude:</strong> {lon:.8f}</p>
-            <p style="margin: 2px 0;"><strong>Species:</strong> A</p>
-            <p style="margin: 2px 0;"><strong>Age:</strong> xxx</p>
             {image_html}
+            {address_html}
+            <p style="margin: 2px 0;"><strong>Species:</strong> {species}</p>
+            <p style="margin: 2px 0;"><strong>Common Name:</strong> {common_name}</p>
+            <p style="margin: 2px 0;"><strong>Description:</strong> {description}</p>
         </div>
         """
 
-        colour = "blue" if annotator_name == "Model" else "green"
         marker = folium.Marker(
             location=[lat, lon],
-            popup=folium.Popup(popup_content, max_width=200),
-            icon=folium.Icon(icon="leaf", color=colour, size=(5, 5)),
+            popup=folium.Popup(popup_content, max_width=250),
+            icon=folium.Icon(icon="leaf", color="green", size=(4, 4)),
         )
 
         marker.add_to(map_object)
@@ -150,17 +177,32 @@ def add_tree_markers(map_object, coordinates):
 
 
 def main():
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            margin: 0;
+            padding: 0;
+        }
+        iframe {
+            width: 100% !important;
+            height: calc(100vh - 200px) !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
     st.title("🌳 Tree Inventory 🌳")
     st.markdown(
         "### Explore tree data and boundaries within India using interactive maps."
     )
 
+    # Load data
     states_df, cities_df, coordinates = load_data()
     filtered_coordinates = coordinates
 
-    # Pre-download and compress images
-    download_and_compress_images(filtered_coordinates)
-
+    # Sidebar components
     center_lat, center_lon, zoom, location = sidebar_components(
         states_df, cities_df, st
     )
@@ -180,6 +222,7 @@ def main():
 
     if location:
         boundary_data = get_osm_data(location)
+        # boundary_data = get_sector_boundary("48")
         filtered_coordinates = add_boundary_to_map(boundary_data, m, coordinates)
 
     st.sidebar.markdown(
@@ -200,6 +243,7 @@ def main():
         force_separate_button=True,
     ).add_to(m)
 
+    # Display the map
     folium_static(m)
 
 
