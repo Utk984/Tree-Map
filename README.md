@@ -45,9 +45,12 @@ This project is a **Streamlit web app** designed for **Tree Inventorization**, w
 
 ## How to Run the App
 
-Once all dependencies are installed and the PostGIS server is configured, you can run the Streamlit app locally with the following command:
+Once all dependencies are installed and the PostGIS server is configured, you can run the Streamlit app locally with the following steps:
 
 ```bash
+cd static/streetview_images
+python -m http.server 8000
+cd ..
 ./run.sh
 ```
 
