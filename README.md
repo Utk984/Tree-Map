@@ -50,7 +50,7 @@ Once all dependencies are installed and the PostGIS server is configured, you ca
 ```bash
 cd static/streetview_images
 python -m http.server 8000
-cd ..
+cd ../..
 ./run.sh
 ```
 
