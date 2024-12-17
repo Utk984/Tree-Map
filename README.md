@@ -23,8 +23,8 @@ This project is a **Streamlit web app** designed for **Tree Inventorization**, w
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/yourusername/map-app.git
-    cd map-app
+    git clone https://github.com/Utk984/Tree-Web-Map.git
+    cd Tree-Web-Map
     ```
 
 2. **Install dependencies**:
