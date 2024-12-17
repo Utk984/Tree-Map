@@ -7,6 +7,7 @@ import pandas as pd
 import psycopg2
 import streamlit as st
 from dotenv import load_dotenv
+from folium.plugins import MarkerCluster
 from geopy.geocoders import Nominatim
 from OSMPythonTools.overpass import Overpass
 from scipy.spatial import ConvexHull, Delaunay
@@ -18,8 +19,8 @@ from utils.sidebar import sidebar_components
 load_dotenv()
 
 DB_URL = os.getenv("DB_URL")
-# Directory to store fetched images
-IMAGE_DIR = "streetview_images"
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+IMAGE_DIR = os.path.join(project_root, "static", "streetview_images")
 os.makedirs(IMAGE_DIR, exist_ok=True)
 
 overpass = Overpass()
@@ -104,30 +105,15 @@ def add_boundary_to_map(boundary_coords, map_object, coordinates):
     return filtered_coords
 
 
-from folium.plugins import FastMarkerCluster, MarkerCluster
-
-
-def add_markers_from_csv(map_object):
-    data = pd.read_csv("./chandigarh_panoramas.csv")
-
-    # Check if 'lat' and 'lon' columns exist
-    if "lat" not in data.columns or "lon" not in data.columns:
-        raise ValueError("CSV must contain 'lat' and 'lon' columns.")
-
-    # Add a MarkerCluster to the map
-    cluster = MarkerCluster(
-        options={"disableClusteringAtZoom": 17, "spiderfyOnMaxZoom": False}
-    )
-    cluster.add_to(map_object)
-
-    # Add markers to the cluster
-    for _, row in data.iterrows():
-        folium.Marker(location=[row["lat"], row["lon"]]).add_to(cluster)
-
-    return map_object
-
-
 def add_tree_markers(map_object, coordinates):
+    cluster = MarkerCluster(
+        # Disable clustering at zoom level 17
+        options={
+            "disableClusteringAtZoom": 17,
+            "spiderfyOnMaxZoom": False,
+        }
+    )
+
     for (
         tree_id,
         lat,
@@ -143,8 +129,10 @@ def add_tree_markers(map_object, coordinates):
         lat += lat_offset / 1113200
         lon += lng_offset / 1113200
 
-        image_url = "https://treeinventory-images.s3.ap-south-1.amazonaws.com/YHuImFJqNsGqB6W2tKxB8w_view0_tree0_box0.jpg"
-        image_html = f'<img src="{img_path}" width="100%">'
+        image_path = os.path.join(
+            "http://127.0.0.1:8000/", f"{img_path.split('/')[-1]}"
+        )
+        image_html = f'<img src="{image_path}" width="100%">'
 
         # address = None
         if address:
@@ -165,13 +153,14 @@ def add_tree_markers(map_object, coordinates):
         </div>
         """
 
-        marker = folium.Marker(
+        folium.Marker(
             location=[lat, lon],
             popup=folium.Popup(popup_content, max_width=250),
-            icon=folium.Icon(icon="leaf", color="green", size=(4, 4)),
-        )
+            icon=folium.Icon(icon="tree", prefix="fa", color="green"),
+        ).add_to(cluster)
 
-        marker.add_to(map_object)
+        # marker.add_to(map_object)
+    cluster.add_to(map_object)
 
     return map_object
 
@@ -194,9 +183,6 @@ def main():
     )
 
     st.title("🌳 Tree Inventory 🌳")
-    st.markdown(
-        "### Explore tree data and boundaries within India using interactive maps."
-    )
 
     # Load data
     states_df, cities_df, coordinates = load_data()
@@ -221,8 +207,10 @@ def main():
     ).add_to(m)
 
     if location:
-        boundary_data = get_osm_data(location)
-        # boundary_data = get_sector_boundary("48")
+        if location.startswith("Sector:"):
+            boundary_data = get_sector_boundary(location.split(":")[1])
+        else:
+            boundary_data = get_osm_data(location)
         filtered_coordinates = add_boundary_to_map(boundary_data, m, coordinates)
 
     st.sidebar.markdown(
