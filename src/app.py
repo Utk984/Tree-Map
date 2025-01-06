@@ -1,4 +1,5 @@
 import os
+import re
 
 import folium
 import folium.plugins
@@ -8,6 +9,7 @@ import psycopg2
 import streamlit as st
 from dotenv import load_dotenv
 from folium.plugins import MarkerCluster
+from geopy.distance import geodesic
 from geopy.geocoders import Nominatim
 from OSMPythonTools.overpass import Overpass
 from scipy.spatial import ConvexHull, Delaunay
@@ -26,15 +28,46 @@ os.makedirs(IMAGE_DIR, exist_ok=True)
 overpass = Overpass()
 
 st.set_page_config(layout="wide", page_title="Tree Inventory of India")
-# st.html("<style> .main {overflow: hidden} </style>")
+st.html("<style> .main {overflow: hidden} </style>")
+
+
+def load_data_fromcsv():
+    df = pd.read_csv("./28_29_predicted.csv")
+    df["id"] = range(1, len(df) + 1)
+    df["conf"] = df["conf"].apply(
+        lambda x: float(re.search(r"([\d.]+)", str(x)).group())
+    )
+    df = df[df["conf"] >= 0.1]
+    df = df[df["image_path"].str.contains("view0|view2")]
+
+    df = df[
+        [
+            "id",
+            "tree_lat",
+            "tree_lng",
+            "lat_offset",
+            "lng_offset",
+            "gpt_species",
+            "gpt_common_name",
+            "gpt_description",
+            "image_path",
+            "address",
+        ]
+    ]
+
+    df["lat_offset"] = df["lat_offset"].astype(float)
+    df["lng_offset"] = df["lng_offset"].astype(float)
+    df["tree_lat"] = df["tree_lat"].astype(float)
+    df["tree_lng"] = df["tree_lng"].astype(float)
+
+    df.dropna(inplace=True)
+    coordinates = df.values.tolist()
+
+    return coordinates
 
 
 @st.cache_data(ttl=60)
-def load_data():
-    # Load state and city data
-    states = pd.read_csv("./locations/states.csv")
-    cities = pd.read_csv("./locations/cities.csv")
-
+def load_data_fromdb():
     # Load coordinates from the database
     coordinates = []
     try:
@@ -58,13 +91,14 @@ def load_data():
             """
         )
         coordinates = cursor.fetchall()
-        print(f"Loaded {len(coordinates)} coordinates from the database.")
         cursor.close()
         conn.close()
+
+        print(f"Loaded {len(coordinates)} coordinates from the database.")
     except Exception as e:
         st.error(f"Error loading data from database: {e}")
 
-    return states, cities, coordinates
+    return coordinates
 
 
 def get_address_geopy(lat, lng):
@@ -105,9 +139,84 @@ def add_boundary_to_map(boundary_coords, map_object, coordinates):
     return filtered_coords
 
 
-def add_tree_markers(map_object, coordinates):
+def add_tree_markers(map_object, coordinates, min_distance=1.0):
+    """
+    Add tree markers to the map while maintaining a minimum distance between trees.
+
+    :param map_object: The folium map object
+    :param coordinates: List of tree data
+    :param min_distance: Minimum distance in meters between trees
+    """
     cluster = MarkerCluster(
-        # Disable clustering at zoom level 17
+        options={
+            "disableClusteringAtZoom": 17,
+            "spiderfyOnMaxZoom": False,
+        }
+    )
+
+    plotted_locations = []  # Keep track of already plotted tree locations
+
+    for (
+        tree_id,
+        lat,
+        lon,
+        lat_offset,
+        lng_offset,
+        species,
+        common_name,
+        description,
+        img_path,
+        address,
+    ) in coordinates:
+        # Apply offsets
+        lat += lat_offset / 1113200
+        lon += lng_offset / 1113200
+
+        # Check if the new tree is at least `min_distance` away from existing trees
+        if all(
+            geodesic((lat, lon), (plotted_lat, plotted_lon)).meters >= min_distance
+            for plotted_lat, plotted_lon in plotted_locations
+        ):
+            # Add this tree's location to the plotted list
+            plotted_locations.append((lat, lon))
+
+            # Prepare image and popup content
+            image_path = os.path.join(
+                "http://127.0.0.1:8000/", f"{img_path.split('/')[-1]}"
+            )
+            image_html = f'<img src="{image_path}" width="100%">'
+
+            if address:
+                address_html = (
+                    f'<p style="margin: 2px 0;"><strong>Address:</strong> {address}</p>'
+                )
+            else:
+                address_html = f'<p style="margin: 2px 0;"><strong>Address:</strong> {lat:.8f}, {lon:.8f}</p>'
+
+            popup_content = f"""
+            <div style="width: 250px; line-height: 1.2; margin: 0;">
+                <h4 style="margin: 0; padding-bottom: 4px;">Tree {tree_id}</h4>
+                {image_html}
+                {address_html}
+                <p style="margin: 2px 0;"><strong>Species:</strong> {species}</p>
+                <p style="margin: 2px 0;"><strong>Common Name:</strong> {common_name}</p>
+                <p style="margin: 2px 0;"><strong>Description:</strong> {description}</p>
+            </div>
+            """
+
+            # Add marker to the cluster
+            folium.Marker(
+                location=[lat, lon],
+                popup=folium.Popup(popup_content, max_width=250),
+                icon=folium.Icon(icon="tree", prefix="fa", color="green"),
+            ).add_to(cluster)
+
+    cluster.add_to(map_object)
+    return map_object
+
+
+def add_tree_markers2(map_object, coordinates):
+    cluster = MarkerCluster(
         options={
             "disableClusteringAtZoom": 17,
             "spiderfyOnMaxZoom": False,
@@ -134,7 +243,6 @@ def add_tree_markers(map_object, coordinates):
         )
         image_html = f'<img src="{image_path}" width="100%">'
 
-        # address = None
         if address:
             address_html = (
                 f'<p style="margin: 2px 0;"><strong>Address:</strong> {address}</p>'
@@ -159,9 +267,7 @@ def add_tree_markers(map_object, coordinates):
             icon=folium.Icon(icon="tree", prefix="fa", color="green"),
         ).add_to(cluster)
 
-        # marker.add_to(map_object)
     cluster.add_to(map_object)
-
     return map_object
 
 
@@ -173,19 +279,51 @@ def main():
             margin: 0;
             padding: 0;
         }
+        .main {
+            padding: 0.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         iframe {
             width: 100% !important;
-            height: calc(100vh - 200px) !important;
+            height: 80vh !important;
+            margin: 0 auto;
+        }
+        #MainMenu {visibility: hidden;}
+        header {visibility: hidden;}
+        .block-container {
+            padding-top: 0.5rem;
+            padding-bottom: 0rem;
+            max-width: 100% !important;
+        }
+        h1 {
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-size: 1.8em;
+            margin: 10;
+            width: 100%;
+            color: white;
+        }
+        .stMarkdown {
+            width: 100%;
+        }
+        div[data-testid="stVerticalBlock"] {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         </style>
         """,
         unsafe_allow_html=True,
     )
-
     st.title("🌳 Tree Inventory 🌳")
 
     # Load data
-    states_df, cities_df, coordinates = load_data()
+    states_df = pd.read_csv("./locations/states.csv")
+    cities_df = pd.read_csv("./locations/cities.csv")
+    coordinates = load_data_fromcsv()
     filtered_coordinates = coordinates
 
     # Sidebar components
@@ -193,9 +331,7 @@ def main():
         states_df, cities_df, st
     )
 
-    m = folium.Map(
-        location=[center_lat, center_lon], zoom_start=zoom, max_zoom=23, tiles=None
-    )
+    m = folium.Map(location=[center_lat, center_lon], zoom_start=zoom, tiles=None)
 
     folium.TileLayer(
         tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
@@ -231,7 +367,6 @@ def main():
         force_separate_button=True,
     ).add_to(m)
 
-    # Display the map
     folium_static(m)
 
 
