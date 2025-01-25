@@ -44,14 +44,13 @@ def compute_confusion_matrix_with_matches(df_groundtruth, df_predictions, thresh
     fn_count = len(false_negatives)
     fp_count = len(false_positives)
 
-    # Create confusion matrix
-    confusion_matrix = {
-        "True Positives (TP)": tp_count,
-        "False Positives (FP)": fp_count,
-        "False Negatives (FN)": fn_count,
-    }
+    print(f"True Positives: {tp_count}")
+    print(f"False Positives: {fp_count}")
+    print(f"False Negatives: {fn_count}")
+    print(f"\nPrecision: {tp_count / (tp_count + fp_count):.2f}")
+    print(f"Recall: {tp_count / (tp_count + fn_count):.2f}")
 
-    return confusion_matrix, tp_matches, false_negatives, false_positives
+    return tp_matches
 
 
 def plot_with_matches(
@@ -65,72 +64,86 @@ def plot_with_matches(
         max_zoom=25,
     )
 
-    folium.TileLayer(
-        tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        attr='&copy; <a href="https://www.esri.com">Esri</a> | Imagery © <a href="https://www.esri.com/en-us/arcgis/products/arcgis-online/overview">Esri</a>',
-        name="ESRI World Imagery",
-        control=True,
-        max_zoom=25,
-    ).add_to(fmap)
-
-    folium.TileLayer(
-        tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
-        attr='&copy; <a href="https://www.esri.com">Esri</a>',
-        name="ESRI World Street Map",
-        control=True,
-        max_zoom=25,
-    ).add_to(fmap)
-
     # Add ground truth points
     for _, row in df_groundtruth.iterrows():
         folium.Marker(
             location=[row["tree_lat"], row["tree_lng"]],
-            popup="Ground Truth",
+            popup=row["pano_id"],
             icon=folium.Icon(color="green", icon="info-sign"),
         ).add_to(fmap)
 
-    # Add predicted points
     for _, row in df_predictions.iterrows():
+        # HTML content for the popup with an image
+        path = "../static/28_29_images/" + row["image_path"].split("/")[-1]
+        image_popup = folium.Popup(
+            f"""
+        <div style="width: 150px; height: auto; text-align: center;">
+            <p>{row["pano_id"]}</p>
+            <img src="{path}" alt="Prediction Image" style="width: 100%; height: auto;" />
+        </div>
+        """,
+            max_width=200,
+        )
+
         folium.Marker(
             location=[row["tree_lat"], row["tree_lng"]],
-            popup="Prediction",
+            popup=image_popup,
             icon=folium.Icon(color="red", icon="info-sign"),
         ).add_to(fmap)
 
+    blue_count = 0
+
     # Highlight true positives with a circle around both points
     for gt_coord, pred_coord in tp_matches:
-        # Calculate the midpoint between ground truth and prediction
         midpoint = [
             (gt_coord[0] + pred_coord[0]) / 2,
             (gt_coord[1] + pred_coord[1]) / 2,
         ]
 
+        # get pano_id of gt_cord from df_groundtruth
+        gt_pano_id = df_groundtruth[
+            (df_groundtruth["tree_lat"] == gt_coord[0])
+            & (df_groundtruth["tree_lng"] == gt_coord[1])
+        ]["pano_id"].values[0]
+
+        # get pano_id of pred_cord from df_predictions
+        pred_pano_id = df_predictions[
+            (df_predictions["tree_lat"] == pred_coord[0])
+            & (df_predictions["tree_lng"] == pred_coord[1])
+        ]["pano_id"].values[0]
+
+        color = "purple"
+        if gt_pano_id == pred_pano_id:
+            blue_count += 1
+            color = "blue"
+
         # Calculate distance between the two points for the radius
-        radius = geodesic(gt_coord, pred_coord).meters / 2 + 2  # Add small buffer
+        radius = geodesic(gt_coord, pred_coord).meters / 2 + 2
 
         # Draw a circle around the pair
         folium.Circle(
             location=midpoint,
             radius=radius,
-            color="blue",
+            color=color,
             fill=True,
             fill_opacity=0.2,
             popup="True Positive Pair",
         ).add_to(fmap)
 
     folium.LayerControl().add_to(fmap)
+
+    print(f"\nMatches with same pano_id: {blue_count / len(tp_matches) * 100:.2f}%")
     return fmap
 
 
 # Example usage
-df_groundtruth = pd.read_csv("annotations.csv")
-df_predictions = pd.read_csv("street_panoramas.csv")
+df_groundtruth = pd.read_csv("./28_29_groundtruth.csv")
+df_predictions = pd.read_csv("./28_29_predicted.csv")
+# df_predictions = df_predictions[
+#     df_predictions["image_path"].str.contains("view0|view2")
+# ]
 
-confusion_matrix, tp_matches, false_negatives, false_positives = (
-    compute_confusion_matrix_with_matches(df_groundtruth, df_predictions)
-)
-
-print(confusion_matrix)
+tp_matches = compute_confusion_matrix_with_matches(df_groundtruth, df_predictions)
 
 # Define the map center
 map_center = [

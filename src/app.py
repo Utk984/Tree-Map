@@ -1,5 +1,4 @@
 import os
-import re
 
 import folium
 import folium.plugins
@@ -13,7 +12,8 @@ from geopy.distance import geodesic
 from geopy.geocoders import Nominatim
 from OSMPythonTools.overpass import Overpass
 from scipy.spatial import ConvexHull, Delaunay
-from streamlit_folium import folium_static
+from streamlit_folium import folium_static, st_folium
+from tqdm import tqdm
 
 from utils.boundaries import get_osm_data, get_sector_boundary
 from utils.sidebar import sidebar_components
@@ -32,13 +32,13 @@ st.html("<style> .main {overflow: hidden} </style>")
 
 
 def load_data_fromcsv():
-    df = pd.read_csv("./28_29_predicted.csv")
+    df = pd.read_csv("./all_trees.csv")
     df["id"] = range(1, len(df) + 1)
-    df["conf"] = df["conf"].apply(
-        lambda x: float(re.search(r"([\d.]+)", str(x)).group())
-    )
-    df = df[df["conf"] >= 0.1]
-    df = df[df["image_path"].str.contains("view0|view2")]
+    # df["conf"] = df["conf"].apply(
+    #     lambda x: float(re.search(r"([\d.]+)", str(x)).group())
+    # )
+    # df = df[df["conf"] >= 0.1]
+    # df = df[df["image_path"].str.contains("view0|view2")]
 
     df = df[
         [
@@ -60,8 +60,10 @@ def load_data_fromcsv():
     df["tree_lat"] = df["tree_lat"].astype(float)
     df["tree_lng"] = df["tree_lng"].astype(float)
 
-    df.dropna(inplace=True)
+    df = df.dropna(subset=["tree_lat", "tree_lng"])
+
     coordinates = df.values.tolist()
+    print(len(coordinates))
 
     return coordinates
 
@@ -115,7 +117,7 @@ def add_boundary_to_map(boundary_coords, map_object, coordinates):
     hull = ConvexHull(points_array)
     boundary_points = points_array[hull.vertices]
     folium.Polygon(
-        locations=boundary_points, color="blue", weight=1, fill=True, fill_opacity=0.05
+        locations=boundary_points, color="blue", weight=2, fill=True, fill_opacity=0.2
     ).add_to(map_object)
 
     delaunay = Delaunay(boundary_coords)
@@ -154,8 +156,6 @@ def add_tree_markers(map_object, coordinates, min_distance=1.0):
         }
     )
 
-    plotted_locations = []  # Keep track of already plotted tree locations
-
     for (
         tree_id,
         lat,
@@ -167,74 +167,8 @@ def add_tree_markers(map_object, coordinates, min_distance=1.0):
         description,
         img_path,
         address,
-    ) in coordinates:
+    ) in tqdm(coordinates):
         # Apply offsets
-        lat += lat_offset / 1113200
-        lon += lng_offset / 1113200
-
-        # Check if the new tree is at least `min_distance` away from existing trees
-        if all(
-            geodesic((lat, lon), (plotted_lat, plotted_lon)).meters >= min_distance
-            for plotted_lat, plotted_lon in plotted_locations
-        ):
-            # Add this tree's location to the plotted list
-            plotted_locations.append((lat, lon))
-
-            # Prepare image and popup content
-            image_path = os.path.join(
-                "http://127.0.0.1:8000/", f"{img_path.split('/')[-1]}"
-            )
-            image_html = f'<img src="{image_path}" width="100%">'
-
-            if address:
-                address_html = (
-                    f'<p style="margin: 2px 0;"><strong>Address:</strong> {address}</p>'
-                )
-            else:
-                address_html = f'<p style="margin: 2px 0;"><strong>Address:</strong> {lat:.8f}, {lon:.8f}</p>'
-
-            popup_content = f"""
-            <div style="width: 250px; line-height: 1.2; margin: 0;">
-                <h4 style="margin: 0; padding-bottom: 4px;">Tree {tree_id}</h4>
-                {image_html}
-                {address_html}
-                <p style="margin: 2px 0;"><strong>Species:</strong> {species}</p>
-                <p style="margin: 2px 0;"><strong>Common Name:</strong> {common_name}</p>
-                <p style="margin: 2px 0;"><strong>Description:</strong> {description}</p>
-            </div>
-            """
-
-            # Add marker to the cluster
-            folium.Marker(
-                location=[lat, lon],
-                popup=folium.Popup(popup_content, max_width=250),
-                icon=folium.Icon(icon="tree", prefix="fa", color="green"),
-            ).add_to(cluster)
-
-    cluster.add_to(map_object)
-    return map_object
-
-
-def add_tree_markers2(map_object, coordinates):
-    cluster = MarkerCluster(
-        options={
-            "disableClusteringAtZoom": 17,
-            "spiderfyOnMaxZoom": False,
-        }
-    )
-
-    for (
-        tree_id,
-        lat,
-        lon,
-        lat_offset,
-        lng_offset,
-        species,
-        common_name,
-        description,
-        img_path,
-        address,
-    ) in coordinates:
         lat += lat_offset / 1113200
         lon += lng_offset / 1113200
 
@@ -243,24 +177,20 @@ def add_tree_markers2(map_object, coordinates):
         )
         image_html = f'<img src="{image_path}" width="100%">'
 
-        if address:
-            address_html = (
-                f'<p style="margin: 2px 0;"><strong>Address:</strong> {address}</p>'
-            )
-        else:
-            address_html = f'<p style="margin: 2px 0;"><strong>Address:</strong> {lat:.8f}, {lon:.8f}</p>'
+        address_html = f'<p style="margin: 2px 0;"><strong>Address:</strong> {lat:.8f}, {lon:.8f}</p>'
 
         popup_content = f"""
-        <div style="width: 250px; line-height: 1.2; margin: 0;">
-            <h4 style="margin: 0; padding-bottom: 4px;">Tree {tree_id}</h4>
-            {image_html}
-            {address_html}
-            <p style="margin: 2px 0;"><strong>Species:</strong> {species}</p>
-            <p style="margin: 2px 0;"><strong>Common Name:</strong> {common_name}</p>
-            <p style="margin: 2px 0;"><strong>Description:</strong> {description}</p>
-        </div>
+            <div style="width: 250px; line-height: 1.2; margin: 0;">
+                <h4 style="margin: 0; padding-bottom: 4px;">Tree {tree_id}</h4>
+                {image_html}
+                {address_html}
+                <p style="margin: 2px 0;"><strong>Species:</strong> {species}</p>
+                <p style="margin: 2px 0;"><strong>Common Name:</strong> {common_name}</p>
+                <p style="margin: 2px 0;"><strong>Description:</strong> {description}</p>
+            </div>
         """
 
+        # Add marker to the cluster
         folium.Marker(
             location=[lat, lon],
             popup=folium.Popup(popup_content, max_width=250),
@@ -331,16 +261,7 @@ def main():
         states_df, cities_df, st
     )
 
-    m = folium.Map(location=[center_lat, center_lon], zoom_start=zoom, tiles=None)
-
-    folium.TileLayer(
-        tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        attr="Esri",
-    ).add_to(m)
-    folium.TileLayer(
-        tiles="https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
-        attr="Esri",
-    ).add_to(m)
+    m = folium.Map(location=[center_lat, center_lon], zoom_start=zoom)
 
     if location:
         if location.startswith("Sector:"):
