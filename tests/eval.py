@@ -138,10 +138,12 @@ def plot_with_matches(
 
 # Example usage
 df_groundtruth = pd.read_csv("./28_29_groundtruth.csv")
-df_predictions = pd.read_csv("./28_29_predicted.csv")
-# df_predictions = df_predictions[
-#     df_predictions["image_path"].str.contains("view0|view2")
-# ]
+# df_predictions = pd.read_csv("./28_29_predicted.csv")
+df_predictions = pd.read_csv("./tree_data 2.csv")
+
+df_predictions = df_predictions[
+    df_predictions["image_path"].str.contains("view0|view2")
+]
 
 tp_matches = compute_confusion_matrix_with_matches(df_groundtruth, df_predictions)
 
@@ -157,4 +159,5 @@ map_with_matches = plot_with_matches(
 )
 
 # Save or display the map
-map_with_matches.save("map_with_matches.html")
+map_with_matches.save("map_with_matches2.html")
+# map_with_matches.save("map_with_matches1.html")
