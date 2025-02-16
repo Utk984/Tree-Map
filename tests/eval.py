@@ -1,19 +1,19 @@
 import folium
+import leafmap.foliumap as leafmap  # Import leafmap
 import pandas as pd
 from geopy.distance import geodesic
 
 
-def compute_confusion_matrix_with_matches(df_groundtruth, df_predictions, threshold=10):
+def compute_confusion_matrix_with_matches(df_groundtruth, df_predictions, threshold=5):
     # Extract coordinates
     groundtruth_coords = df_groundtruth[["tree_lat", "tree_lng"]].values
     prediction_coords = df_predictions[["tree_lat", "tree_lng"]].values
 
-    # Initialize tracking variables
     tp_count = 0
     false_positives = []
     false_negatives = set(range(len(groundtruth_coords)))
     matched_predictions = set()
-    tp_matches = []  # Store matched ground truth and predictions
+    tp_matches = []
 
     # Compute distances and match predictions to ground truth
     for i, gt_coord in enumerate(groundtruth_coords):
@@ -56,13 +56,11 @@ def compute_confusion_matrix_with_matches(df_groundtruth, df_predictions, thresh
 def plot_with_matches(
     df_groundtruth, df_predictions, tp_matches, map_center, zoom_start=16
 ):
-    # Create a folium map centered at the provided coordinates
-    fmap = folium.Map(
-        location=map_center,
-        zoom_start=zoom_start,
-        zoom_control=True,
-        max_zoom=25,
-    )
+    # Create a leafmap object (which is Folium-based) and add hybrid tiles
+    fmap = leafmap.Map(center=map_center, zoom=zoom_start, max_zoom=25)
+
+    # Add Google Satellite Hybrid Layer for better visibility of trees
+    fmap.add_basemap("HYBRID")
 
     # Add ground truth points
     for _, row in df_groundtruth.iterrows():
@@ -73,7 +71,6 @@ def plot_with_matches(
         ).add_to(fmap)
 
     for _, row in df_predictions.iterrows():
-        # HTML content for the popup with an image
         path = "../static/28_29_images/" + row["image_path"].split("/")[-1]
         image_popup = folium.Popup(
             f"""
@@ -90,6 +87,34 @@ def plot_with_matches(
             popup=image_popup,
             icon=folium.Icon(color="red", icon="info-sign"),
         ).add_to(fmap)
+
+        coordinates = (
+            row["coordinates"]
+            .replace("[", "")
+            .replace("]", "")
+            .replace("(", "")
+            .replace(")", "")
+            .replace("None", "")
+            .split(", ")
+        )
+
+        for i in range(0, len(coordinates), 2):
+            lat = coordinates[i].strip()
+            lon = coordinates[i + 1].strip() if i + 1 < len(coordinates) else None
+            if lat and lon:
+                try:
+                    lat = float(lat)
+                    lon = float(lon)
+                except ValueError:
+                    continue
+                folium.CircleMarker(
+                    location=[float(lat), float(lon)],
+                    radius=2,
+                    color="red",
+                    fill=True,
+                    fill_color="red",
+                    opacity=0.5,
+                ).add_to(fmap)
 
     blue_count = 0
 
@@ -139,11 +164,11 @@ def plot_with_matches(
 # Example usage
 df_groundtruth = pd.read_csv("./28_29_groundtruth.csv")
 # df_predictions = pd.read_csv("./28_29_predicted.csv")
-df_predictions = pd.read_csv("./tree_data 2.csv")
+df_predictions = pd.read_csv("./tree_data2.csv")
 
-df_predictions = df_predictions[
-    df_predictions["image_path"].str.contains("view0|view2")
-]
+# df_predictions = df_predictions[
+#     df_predictions["image_path"].str.contains("view0|view2")
+# ]
 
 tp_matches = compute_confusion_matrix_with_matches(df_groundtruth, df_predictions)
 
@@ -159,5 +184,5 @@ map_with_matches = plot_with_matches(
 )
 
 # Save or display the map
-map_with_matches.save("map_with_matches2.html")
+map_with_matches.save("map_with_matches3.html")
 # map_with_matches.save("map_with_matches1.html")
