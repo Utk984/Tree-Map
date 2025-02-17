@@ -63,9 +63,12 @@ def load_data_fromcsv():
     df = df.dropna(subset=["tree_lat", "tree_lng"])
 
     coordinates = df.values.tolist()
-    print(len(coordinates))
+    species = df["gpt_common_name"].value_counts()
+    # remove "Unknown" from value counts
+    species = species[species.index != "Unknown Tree Species"]
+    species = species[species.index != "Unknown"]
 
-    return coordinates
+    return coordinates, species
 
 
 @st.cache_data(ttl=60)
@@ -253,7 +256,7 @@ def main():
     # Load data
     states_df = pd.read_csv("./locations/states.csv")
     cities_df = pd.read_csv("./locations/cities.csv")
-    coordinates = load_data_fromcsv()
+    coordinates, species = load_data_fromcsv()
     filtered_coordinates = coordinates
 
     # Sidebar components
@@ -272,10 +275,31 @@ def main():
 
     st.sidebar.markdown(
         f"""
-        <div style="background-color:#f0f0f5; padding: 10px; border-radius: 10px; margin-top: 20px;">
+        <div style="background-color:#f0f0f5; padding: 10px; border-radius: 10px; margin-top: 20px; text-align: center;">
             <h2 style="color: #000000;">Total Trees 🌳 : {len(filtered_coordinates)}</h2>
         </div>
         """,
+        unsafe_allow_html=True,
+    )
+    species_count = species.head(5)
+    st.sidebar.markdown(
+        f"""
+    <div style="
+        background-color: #f0f0f5;
+        padding: 10px; 
+        border-radius: 10px; 
+        margin-top: 20px; 
+    ">
+        <h2 style="color: #000000; text-align: center;">Top 5 species</h2>
+        <ul style="list-style-type: none; padding: 0; font-size: 18px; color: #000;">
+            <li style="padding: 5px 0;"><b>{species_count.index[0]}</b>: {species_count[0]}</li>
+            <li style="padding: 5px 0;"><b>{species_count.index[1]}</b>: {species_count[1]}</li>
+            <li style="padding: 5px 0;"><b>{species_count.index[2]}</b>: {species_count[2]}</li>
+            <li style="padding: 5px 0;"><b>{species_count.index[3]}</b>: {species_count[3]}</li>
+            <li style="padding: 5px 0;"><b>{species_count.index[4]}</b>: {species_count[4]}</li>
+        </ul>
+    </div>
+    """,
         unsafe_allow_html=True,
     )
 
