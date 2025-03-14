@@ -14,7 +14,6 @@ from OSMPythonTools.overpass import Overpass
 from scipy.spatial import ConvexHull, Delaunay
 from streamlit_folium import folium_static, st_folium
 from tqdm import tqdm
-
 from utils.boundaries import get_osm_data, get_sector_boundary
 from utils.sidebar import sidebar_components
 
@@ -38,7 +37,6 @@ def load_data_fromcsv():
     #     lambda x: float(re.search(r"([\d.]+)", str(x)).group())
     # )
     # df = df[df["conf"] >= 0.1]
-    # df = df[df["image_path"].str.contains("view0|view2")]
 
     df = df[
         [
