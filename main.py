@@ -6,8 +6,7 @@ import leafmap.foliumap as leafmap
 import numpy as np
 import pandas as pd
 from folium.plugins import MarkerCluster
-from scipy.spatial import cKDTree
-from shapely.geometry import Point, Polygon
+from shapely.geometry import Point
 from tqdm import tqdm
 
 
@@ -155,8 +154,6 @@ def add_tree_markers(map_object, tree_gdf, min_distance=1.0):
         # Get just the filename without the path for use in URL
         image_filename = img_path.split("/")[-1]
 
-        # For cross-origin compatibility, use an iframe to load the image
-        # This will ensure the image loads regardless of how the HTML is viewed\
         image_url = f"http://localhost:8000/{image_filename}"
         image_html = f'<img src="{image_url}" width="100%">'
         coords_html = f'<p style="margin: 2px 0;"><strong>Coordinates:</strong> {lat:.6f}, {lon:.6f}</p>'
@@ -164,9 +161,6 @@ def add_tree_markers(map_object, tree_gdf, min_distance=1.0):
             f'<p style="margin: 2px 0;"><strong>Confidence:</strong> {conf:.2f}</p>'
         )
 
-        address_html = (
-            f'<p style="margin: 2px 0;"><strong>Address:</strong> {image_url}</p>'
-        )
         popup_content = f"""
             <div style="width: 250px; line-height: 1.2; margin: 0;">
                 <h4 style="margin: 0; padding-bottom: 4px;">Tree {idx}</h4>
