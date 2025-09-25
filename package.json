@@ -18,14 +18,18 @@
     "@deck.gl/mesh-layers": "^9.1.14",
     "@deck.gl/react": "^9.1.14",
     "@deck.gl/widgets": "^9.1.14",
+    "@types/three": "^0.180.0",
+    "aframe": "^1.7.1",
     "axios": "^1.7.7",
     "maplibre-gl": "^4.7.1",
     "papaparse": "^5.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-map-gl": "^7.1.9"
+    "react-map-gl": "^7.1.9",
+    "three": "^0.180.0"
   },
   "devDependencies": {
+    "@types/aframe": "^1.2.8",
     "@types/node": "^24.5.2",
     "@types/papaparse": "^5.3.14",
     "@types/react": "^18.3.3",

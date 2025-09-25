@@ -24,16 +24,13 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const panelStyle: React.CSSProperties = {
-    position: 'absolute',
-    top: '20px',
-    right: '20px',
+    position: 'relative',
     backgroundColor: 'rgba(255, 255, 255, 0.95)',
     borderRadius: '10px',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     fontSize: '14px',
     minWidth: '200px',
-    zIndex: 100,
     overflow: 'hidden',
     transition: 'all 0.3s ease'
   };

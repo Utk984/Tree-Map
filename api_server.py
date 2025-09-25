@@ -301,6 +301,50 @@ def cleanup_resources():
     except Exception as e:
         logger.error(f"❌ Error during cleanup: {e}")
 
+@app.route('/api/panorama/<pano_id>', methods=['GET'])
+def get_panorama(pano_id):
+    """
+    Fetch the original panorama image for the given pano_id.
+    
+    Args:
+        pano_id: Panorama ID to fetch
+        
+    Returns:
+        Image file (JPEG) or error message
+    """
+    try:
+        if processor is None:
+            return jsonify({"error": "Processor not initialized"}), 500
+        
+        logger.info(f"🖼️ Fetching panorama for pano_id: {pano_id}")
+        
+        # Fetch the panorama using the processor (synchronous version)
+        panorama_data = processor.fetch_panorama_sync(pano_id)
+        
+        if panorama_data is None:
+            return jsonify({"error": "Failed to fetch panorama"}), 500
+        
+        # Handle PIL Image directly without any processing/conversion
+        if hasattr(panorama_data, 'save'):  # It's a PIL Image
+            image_buffer = io.BytesIO()
+            panorama_data.save(image_buffer, format='JPEG', quality=95)
+            image_bytes = image_buffer.getvalue()
+        else:  # It's a numpy array (fallback)
+            encode_params = [cv2.IMWRITE_JPEG_QUALITY, 95]
+            _, buffer = cv2.imencode('.jpg', panorama_data, encode_params)
+            image_bytes = buffer.tobytes()
+        
+        # Return the image
+        return send_file(
+            io.BytesIO(image_bytes),
+            mimetype='image/jpeg',
+            as_attachment=False
+        )
+        
+    except Exception as e:
+        logger.error(f"Error fetching panorama: {str(e)}")
+        return jsonify({"error": "Failed to fetch panorama"}), 500
+
 def signal_handler(sig, frame):
     """Handle shutdown signals gracefully."""
     logger.info("🛑 Received shutdown signal, cleaning up...")

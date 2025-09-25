@@ -279,6 +279,59 @@ class PanoramaProcessor:
             logger.error(f"❌ Error generating centered view for {row.get('image_path', 'unknown')}: {str(e)}")
             return None
 
+    def fetch_panorama_sync(self, pano_id: str) -> Optional[np.ndarray]:
+        """
+        Fetch the original panorama image for a given pano_id using streetlevel (synchronous).
+        
+        Args:
+            pano_id: Panorama ID to fetch
+            
+        Returns:
+            Panorama image as numpy array or None if failed
+        """
+        try:
+            from streetlevel import streetview
+            import numpy as np
+            from PIL import Image
+            
+            # Use streetlevel to find and download the panorama
+            pano = streetview.find_panorama_by_id(pano_id)
+            if pano is None:
+                print(f"Failed to find panorama {pano_id}")
+                return None
+            
+            # Download the panorama image at highest resolution
+            # Try to get the highest quality panorama available
+            try:
+                # Get panorama with maximum quality if supported
+                panorama_image = streetview.get_panorama(pano, zoom=5)  # Highest zoom level
+            except:
+                # Fallback to default if zoom parameter not supported
+                panorama_image = streetview.get_panorama(pano)
+            
+            if panorama_image is None:
+                print(f"Failed to download panorama {pano_id}")
+                return None
+            
+            # Return the PIL Image directly without any processing
+            if isinstance(panorama_image, Image.Image):
+                return panorama_image
+            elif isinstance(panorama_image, np.ndarray):
+                return panorama_image
+            else:
+                print(f"Unexpected panorama image type: {type(panorama_image)}")
+                return None
+                
+        except Exception as e:
+            print(f"Error fetching panorama {pano_id}: {e}")
+            return None
+
+    async def fetch_panorama(self, pano_id: str) -> Optional[np.ndarray]:
+        """
+        Async wrapper for fetch_panorama_sync.
+        """
+        return self.fetch_panorama_sync(pano_id)
+
     async def generate_full_panorama_with_csv_masks(self, pano_id: str, csv_data: pd.DataFrame,
                                                    session: aiohttp.ClientSession,
                                                    output_dir: str = "data/full") -> Optional[Dict[str, Any]]:

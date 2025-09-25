@@ -5,8 +5,9 @@ import { MapViewState, PickingInfo } from '@deck.gl/core';
 import Map from 'react-map-gl/maplibre'; // Import Map from react-map-gl
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { loadTreeData, loadStreetViewData } from './utils/dataLoader';
-import { TreeModal } from './components/TreeModal';
+import { TreePopup } from './components/TreePopup';
 import { ControlPanel } from './components/ControlPanel';
+import { ThreePanoramaViewer } from './components/ThreePanoramaViewer';
 import { BaseMapType } from './components/BaseMapSwitcher';
 import { TreeData, StreetViewData, ClickedTreeInfo, LayerVisibility } from './types';
 
@@ -27,6 +28,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [clickedTree, setClickedTree] = useState<ClickedTreeInfo | null>(null);
+  const [popupPosition, setPopupPosition] = useState<{ x: number; y: number } | null>(null);
   const [layerVisibility, setLayerVisibility] = useState<LayerVisibility>({
     trees: true,
     streetViews: true,
@@ -110,21 +112,28 @@ function App() {
     };
   }, []);
 
-  const handleTreeClick = useCallback((info: PickingInfo) => {
+  const handleTreeClick = useCallback((info: PickingInfo, event: any) => {
     if (info.object && info.layer?.id === 'trees') {
       const tree = info.object as TreeData;
       console.log('Tree clicked:', tree);
+      
+      // Get mouse position relative to the viewport for proper popup positioning
+      const x = event.clientX;
+      const y = event.clientY;
+      
       setClickedTree({
         csv_index: tree.csv_index,
         pano_id: tree.pano_id,
         tree_lat: tree.tree_lat,
         tree_lng: tree.tree_lng,
       });
+      setPopupPosition({ x, y });
     }
   }, []);
 
   const handleCloseModal = useCallback(() => {
     setClickedTree(null);
+    setPopupPosition(null);
   }, []);
 
   const handleLayerVisibilityChange = useCallback((layer: keyof LayerVisibility, visible: boolean) => {
@@ -147,65 +156,65 @@ function App() {
     switch (baseMapType) {
       case 'satellite':
         return {
-          version: 8 as const,
+          version: 8,
           sources: {
             'esri-satellite': {
-              type: 'raster' as const,
+              type: 'raster',
               tiles: ['https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
               tileSize: 256,
             },
           },
           layers: [{
             id: 'esri-satellite',
-            type: 'raster' as const,
+            type: 'raster',
             source: 'esri-satellite',
           }],
         };
       case 'streets':
         return {
-          version: 8 as const,
+          version: 8,
           sources: {
             'osm-streets': {
-              type: 'raster' as const,
+              type: 'raster',
               tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
               tileSize: 256,
             },
           },
           layers: [{
             id: 'osm-streets',
-            type: 'raster' as const,
+            type: 'raster',
             source: 'osm-streets',
           }],
         };
       case 'minimal':
         return {
-          version: 8 as const,
+          version: 8,
           sources: {
             'carto-minimal': {
-              type: 'raster' as const,
+              type: 'raster',
               tiles: ['https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'],
               tileSize: 256,
             },
           },
           layers: [{
             id: 'carto-minimal',
-            type: 'raster' as const,
+            type: 'raster',
             source: 'carto-minimal',
           }],
         };
       default:
         return {
-          version: 8 as const,
+          version: 8,
           sources: {
             'default-satellite': {
-              type: 'raster' as const,
+              type: 'raster',
               tiles: ['https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
               tileSize: 256,
             },
           },
           layers: [{
             id: 'default-satellite',
-            type: 'raster' as const,
+            type: 'raster',
             source: 'default-satellite',
           }],
         };
@@ -283,82 +292,140 @@ function App() {
   }
 
   return (
-    <div style={{ height: '100vh', width: '100vw', position: 'relative' }}>
-      <DeckGL
-        viewState={viewState}
-        onViewStateChange={({ viewState }) => setViewState(viewState as MapViewState)}
-        controller={true}
-        layers={layers}
-        onClick={handleTreeClick}
-        getTooltip={(info) => {
-          if (!info.object) return null;
+    <div style={{ 
+      height: '100vh', 
+      width: '100vw', 
+      display: 'flex',
+      position: 'relative'
+    }}>
+      {/* Left Side - Map */}
+      <div style={{
+        width: '50%',
+        height: '100%',
+        padding: '10px',
+        boxSizing: 'border-box',
+        position: 'relative',
+        backgroundColor: '#f0f0f0',
+        borderRadius: '8px',
+        overflow: 'hidden'
+      }}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          position: 'relative'
+        }}>
+          <DeckGL
+            viewState={viewState}
+            onViewStateChange={({ viewState }) => setViewState(viewState as MapViewState)}
+            controller={true}
+            layers={layers}
+            onClick={handleTreeClick}
+            getTooltip={(info) => {
+              if (!info.object) return null;
 
-          if (info.layer?.id === 'trees') {
-            const tree = info.object as TreeData;
-            return {
-              html: `
-                <div>
-                  <b>Tree Location:</b> ${tree.tree_lat.toFixed(6)}, ${tree.tree_lng.toFixed(6)}<br/>
-                  <b>Panorama ID:</b> ${tree.pano_id}<br/>
-                  <b>CSV Index:</b> ${tree.csv_index}<br/>
-                  <b>Confidence:</b> ${tree.conf?.toFixed(3) || 'N/A'}
-                </div>
-              `,
-              style: {
-                backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                color: 'white',
-                fontSize: '12px',
-                padding: '8px',
-                borderRadius: '4px',
-                maxWidth: '300px',
-              },
-            };
-          }
+              if (info.layer?.id === 'trees') {
+                const tree = info.object as TreeData;
+                return {
+                  html: `
+                    <div>
+                      <b>Tree Location:</b> ${tree.tree_lat.toFixed(6)}, ${tree.tree_lng.toFixed(6)}<br/>
+                      <b>Panorama ID:</b> ${tree.pano_id}<br/>
+                      <b>CSV Index:</b> ${tree.csv_index}<br/>
+                      <b>Confidence:</b> ${tree.conf?.toFixed(3) || 'N/A'}
+                    </div>
+                  `,
+                  style: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    color: 'white',
+                    fontSize: '12px',
+                    padding: '8px',
+                    borderRadius: '4px',
+                    maxWidth: '300px',
+                  },
+                };
+              }
 
-          if (info.layer?.id === 'streetviews') {
-            const sv = info.object as StreetViewData;
-            return {
-              html: `
-                <div>
-                  <b>Street View:</b> ${sv.lat.toFixed(6)}, ${sv.lng.toFixed(6)}<br/>
-                  <b>Panorama ID:</b> ${sv.pano_id}
-                </div>
-              `,
-              style: {
-                backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                color: 'white',
-                fontSize: '12px',
-                padding: '8px',
-                borderRadius: '4px',
-              },
-            };
-          }
+              if (info.layer?.id === 'streetviews') {
+                const sv = info.object as StreetViewData;
+                return {
+                  html: `
+                    <div>
+                      <b>Street View:</b> ${sv.lat.toFixed(6)}, ${sv.lng.toFixed(6)}<br/>
+                      <b>Panorama ID:</b> ${sv.pano_id}
+                    </div>
+                  `,
+                  style: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    color: 'white',
+                    fontSize: '12px',
+                    padding: '8px',
+                    borderRadius: '4px',
+                  },
+                };
+              }
 
-          return null;
-        }}
-      >
-        <Map
-          mapStyle={getMapStyle(currentBaseMap)}
-          style={{ width: '100%', height: '100%' }}
-        />
-      </DeckGL>
+              return null;
+            }}
+          >
+            <Map
+              mapStyle={getMapStyle(currentBaseMap)}
+              style={{ width: '100%', height: '100%' }}
+            />
+          </DeckGL>
 
-      <ControlPanel 
-        layerVisibility={layerVisibility}
-        onVisibilityChange={handleLayerVisibilityChange}
-        treeCount={treeData.length}
-        streetViewCount={streetViewData.length}
-        currentBaseMap={currentBaseMap}
-        onBaseMapChange={handleBaseMapChange}
-      />
+          {/* Control Panel - Top left */}
+          <div style={{
+            position: 'absolute',
+            top: '15px',
+            left: '15px',
+            zIndex: 1000
+          }}>
+            <ControlPanel 
+              layerVisibility={layerVisibility}
+              onVisibilityChange={handleLayerVisibilityChange}
+              treeCount={treeData.length}
+              streetViewCount={streetViewData.length}
+              currentBaseMap={currentBaseMap}
+              onBaseMapChange={handleBaseMapChange}
+            />
+          </div>
+        </div>
 
-      {clickedTree && (
-        <TreeModal 
+      </div>
+
+      {/* Right Side - Panorama Viewer */}
+      <div style={{
+        width: '50%',
+        height: '100%',
+        padding: '10px',
+        boxSizing: 'border-box',
+        backgroundColor: '#f0f0f0'
+      }}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '8px',
+          overflow: 'hidden'
+        }}>
+          <ThreePanoramaViewer 
+            panoId={clickedTree?.pano_id || null}
+            treeLat={clickedTree?.tree_lat}
+            treeLng={clickedTree?.tree_lng}
+          />
+        </div>
+      </div>
+
+      {/* Tree Popup - At main container level to avoid overflow issues */}
+      {clickedTree && popupPosition && (
+        <TreePopup 
           csvIndex={clickedTree.csv_index}
           panoId={clickedTree.pano_id}
           treeLat={clickedTree.tree_lat}
           treeLng={clickedTree.tree_lng}
           onClose={handleCloseModal}
+          position={popupPosition}
         />
       )}
     </div>
