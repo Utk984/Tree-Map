@@ -1,0 +1,90 @@
+{
+  "pano_id": "teDm-mQjgSHQBIc8dFYKGQ",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/teDm-mQjgSHQBIc8dFYKGQ_view1_tree0_box2.jpg",
+        "confidence": 0.010520951822400093,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "g_P6_1ic0X1XMh2^LQKeBf0<a5n<[200O1000000000B>K5J6XOh0dL]3XOg0^Nb1QOo0J6K5O100000\\Un?"
+          },
+          "bbox": [
+            273.0,
+            307.0,
+            297.0,
+            597.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/teDm-mQjgSHQBIc8dFYKGQ_view2_tree0_box1.jpg",
+        "confidence": 0.020916718989610672,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "kmg;c2mc000000VMfMV@d3f=WLeBk5T=XJeBm5[=TJ_BQ6`=RJ[BQ6e=QJVBR6j=QJoAS6Q>RJeAS6[>Q1000000001O00001O001I7F:lLcBgLR>_Oi@T2^c0ZOf0gNY[OEje02<00000YeQ:"
+          },
+          "bbox": [
+            534.0,
+            317.0,
+            565.0,
+            565.0
+          ]
+        }
+      }
+    ],
+    "view_7": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/teDm-mQjgSHQBIc8dFYKGQ_view7_tree0_box0.jpg",
+        "confidence": 0.01181168481707573,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Y[7l0de00000001O3M2O4K=DU1W[O[M[c0d4ZNh0WO;F4K2O2N00003MO3M4H`0C3M:D]1]N_Yfe0"
+          },
+          "bbox": [
+            10.0,
+            329.0,
+            35.0,
+            533.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

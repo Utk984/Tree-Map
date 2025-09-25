@@ -1,0 +1,88 @@
+{
+  "pano_id": "ayoYuUBVBpV-0rA3YVEkqQ",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ayoYuUBVBpV-0rA3YVEkqQ_view1_tree0_box3.jpg",
+        "confidence": 0.010315468534827232,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "f\\Y>\\3Tc000000O1N2O1N2O1OL5N1O2M3L3I8E;M2N3NM32L4I7J6M3N2L4K5K5L4L4D<L4N2N2N2O1N2Mml[7"
+          },
+          "bbox": [
+            650.0,
+            358.0,
+            687.0,
+            481.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ayoYuUBVBpV-0rA3YVEkqQ_view1_tree0_box4.jpg",
+        "confidence": 0.010244240052998066,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Vf1S6]`0000000N2H8ZK[_OSO0f3Ua0gLm^O_Ob00@2L11`2ca0dMX@n1T`0QNo_Of1X`0ZNk_On0j`0ROW_O?Wa0Aj^O6^a0Kc^OHha08X2001O06J11aWPf0"
+          },
+          "bbox": [
+            2.0,
+            294.0,
+            21.0,
+            488.0
+          ]
+        }
+      }
+    ],
+    "view_5": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ayoYuUBVBpV-0rA3YVEkqQ_view5_tree0_box1.jpg",
+        "confidence": 0.020170636475086212,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Seb8b1nd000000M3E;I7J7L3L8F6J6K5K5aNjL__O[3``0iLZ_OZ3d`0mLR_OX3m`0V1O1O1L400000000000000000K5`Md@gMa?R2b2L4K5I7L4L4K5J6H8M3L4K5I7LRjm<"
+          },
+          "bbox": [
+            390.0,
+            338.0,
+            434.0,
+            505.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

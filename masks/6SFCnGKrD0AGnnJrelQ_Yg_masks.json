@@ -1,0 +1,88 @@
+{
+  "pano_id": "6SFCnGKrD0AGnnJrelQ_Yg",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/6SFCnGKrD0AGnnJrelQ_Yg_view1_tree0_box0.jpg",
+        "confidence": 0.010116602294147015,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ePQ8:ke0g1cN`0b\\O`Mma0j3H3M4L0O100001O0000001O3M5K4L8H9G7I6J8H8H4L3M5K7I4L4L5K4L3M5K9BmXf="
+          },
+          "bbox": [
+            365.0,
+            375.0,
+            399.0,
+            505.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/6SFCnGKrD0AGnnJrelQ_Yg_view1_tree0_box1.jpg",
+        "confidence": 0.010082791559398174,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "olme0n1bd000000O7H<D;E`0@5L3M1O2N3N1N100001O001O00O1N3N1O100bJ"
+          },
+          "bbox": [
+            998.0,
+            174.0,
+            1023.0,
+            301.0
+          ]
+        }
+      }
+    ],
+    "view_12": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/6SFCnGKrD0AGnnJrelQ_Yg_view12_tree0_box0.jpg",
+        "confidence": 0.011785625480115414,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "fUU:R1^e000000DPOR[OW1jd0;G:F9SOSNo\\OT2nb0l0K9G>B6JX1hN8H5K2N1O1O4L000000000000[Kf_OeN8m3V`0RM_@k2a?PMf@n2Z?nLm@n2T?lLUAQ3k>cLcA[3k`0N00000O10O1N3N1N2N101N2O0O10N2L4M3N3M2O1O2O1M2N3D<L5J5M3N2M2O2N1O2N1M3N2L`N[N]^Od1fa0]NW^Ob1la0^NR^Oa1Qb0aNj]O_1Yb0cNb]O_1_b0dNW]Ob1jb0`Nm\\Oe1Uc0j0100O100O1N200O1O1O1O1O1O1N2N2O1O1N2O1N2O1N2O1N2O1N2N2N2N2L4L4N2M3M3N2O1N2N2N2N20000000R`f9"
+          },
+          "bbox": [
+            462.0,
+            286.0,
+            581.0,
+            481.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

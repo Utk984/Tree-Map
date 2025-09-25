@@ -1,0 +1,88 @@
+{
+  "pano_id": "-NqQndcLI4VbwKtElIyiPQ",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-NqQndcLI4VbwKtElIyiPQ_view0_tree0_box0.jpg",
+        "confidence": 0.01570507325232029,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jnbe0`0Pf00000001O1O1\\ZOAUe0a0gZOBXe0`0dZOC[e0j0O1O2P]OIc?8o_O9m?J[_Ol0d`0e2K0000000000000000000000000000000000L;H3L5K20O1M3H:N2N0V@"
+          },
+          "bbox": [
+            982.0,
+            506.0,
+            1023.0,
+            661.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-NqQndcLI4VbwKtElIyiPQ_view2_tree0_box0.jpg",
+        "confidence": 0.019638389348983765,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "fg?V2j1Z1V=fNjBZ1V=fNjBZ1V=fNjBZ1V=oN_BS1a=_OhAf0X>i300000000000H8Cb0B;D;[Oe0@`0XOh0E;K5K4C>SNl1A?00000la\\e0"
+          },
+          "bbox": [
+            22.0,
+            278.0,
+            49.0,
+            517.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-NqQndcLI4VbwKtElIyiPQ_view2_tree0_box1.jpg",
+        "confidence": 0.010340276174247265,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "e[W88Xf000000Kc0^O[2gMm0SO6K6I2O1O100000J5N4K7kMZ^OROhal="
+          },
+          "bbox": [
+            374.0,
+            386.0,
+            391.0,
+            533.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

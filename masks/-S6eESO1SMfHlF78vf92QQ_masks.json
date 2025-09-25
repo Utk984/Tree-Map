@@ -1,0 +1,88 @@
+{
+  "pano_id": "-S6eESO1SMfHlF78vf92QQ",
+  "views": {
+    "view_7": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-S6eESO1SMfHlF78vf92QQ_view7_tree0_box0.jpg",
+        "confidence": 0.03564076125621796,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Rg4a1od00000004L6J5K3M4L6J5K35K31M2L3N003N2O00N6L3N02O01N1M3M5J4L2N2N13NK4L3M4L4L5K3M5Cc0[ORc]e0"
+          },
+          "bbox": [
+            6.0,
+            514.0,
+            47.0,
+            701.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-S6eESO1SMfHlF78vf92QQ_view7_tree0_box3.jpg",
+        "confidence": 0.010255607776343822,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "_V^d0;`e0a1T[OSOYb0d3nNe0\\O:Fj0VOb0]On0UO0001O005Jk0UO9F7Ja0_OZ2eM\\1dNb0_O5J100000Ph`1"
+          },
+          "bbox": [
+            930.0,
+            271.0,
+            953.0,
+            526.0
+          ]
+        }
+      }
+    ],
+    "view_8": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-S6eESO1SMfHlF78vf92QQ_view8_tree0_box0.jpg",
+        "confidence": 0.012124480679631233,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ffTe01je0j0I6T\\OEZa0b0[^OLXa0e0X^OCca0f0n]OEma0f2I8H;Ec0]Oi0WOl0TO00000004L2N1^JPAb3R?SLhAN\\OZO:P1f>^OUBF[1OX?Mn@NW?KTUk0"
+          },
+          "bbox": [
+            962.0,
+            282.0,
+            984.0,
+            513.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

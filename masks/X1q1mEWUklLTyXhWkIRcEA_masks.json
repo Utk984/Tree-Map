@@ -1,0 +1,88 @@
+{
+  "pano_id": "X1q1mEWUklLTyXhWkIRcEA",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/X1q1mEWUklLTyXhWkIRcEA_view0_tree0_box1.jpg",
+        "confidence": 0.02140793204307556,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "fYld0_2Qd0000000f0S]ORMl`0Y400000000000000000000000000000000000TLn^OZ2Ra0bM`_OFYO[1Se0SO6FlbP1"
+          },
+          "bbox": [
+            950.0,
+            342.0,
+            976.0,
+            485.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/X1q1mEWUklLTyXhWkIRcEA_view0_tree0_box3.jpg",
+        "confidence": 0.011656729504466057,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "\\PY5i0be0Y1gZOoMJ6gc0i2F3N1N2N2k^OmLj>T3PAPMP?S3k@oLU?U3d@nL]?T3[@QMf?c3U_OmLl`0[41O2N5Kf0ZO7I9VL[^OW2Vc0I2N2N2N1O1O1O1O001O3M1OO10000002N3M4L2N000000lZY`0"
+          },
+          "bbox": [
+            240.0,
+            263.0,
+            281.0,
+            441.0
+          ]
+        }
+      }
+    ],
+    "view_1": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/X1q1mEWUklLTyXhWkIRcEA_view1_tree0_box2.jpg",
+        "confidence": 0.013403727672994137,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jT`e0g0ie0000000002N3M1O2N1O2N1O2N2N3M3M1O2N1O2N23MO3M1O1M4d[O^Ncc0a2E:Dl0XO5K5K4L3M3M2N1O2N001O001O00001O000V@"
+          },
+          "bbox": [
+            978.0,
+            506.0,
+            1023.0,
+            661.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

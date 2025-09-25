@@ -1,0 +1,90 @@
+{
+  "pano_id": "2KFvUYtfgS_YFDj0ZDA9xg",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/2KFvUYtfgS_YFDj0ZDA9xg_view1_tree0_box0.jpg",
+        "confidence": 0.011563489213585854,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^TZ`0Q3_c00000004Lg0YO3M13MK5O0004MO01O001O1O1O2N2N6J9G:F5K:Ea0@`0_O7J000000hX_5"
+          },
+          "bbox": [
+            742.0,
+            430.0,
+            773.0,
+            560.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/2KFvUYtfgS_YFDj0ZDA9xg_view2_tree0_box0.jpg",
+        "confidence": 0.018094994127750397,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "oPTc0h0he000000O2N3L3J7N1O1O1O001O1O1O2N1O3M3M4L8Hj0VOR2nM4L1O1O4L0000000007Dh0YOdQd2"
+          },
+          "bbox": [
+            870.0,
+            310.0,
+            903.0,
+            477.0
+          ]
+        }
+      }
+    ],
+    "view_5": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/2KFvUYtfgS_YFDj0ZDA9xg_view5_tree0_box0.jpg",
+        "confidence": 0.015675321221351624,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ZVfb0e0ke0000000001O1O2N1O13M001O0000O1000000000001O0O2O000000000000001O0000000000000101N5L4K2O00OO20O1O00001O0O2M2N2N2O1O1O100O1O1O100O2OO1010O000001O3M2N2N1OO10000O1000000000000O101N10O02O0000000O1001O001O00000001O0002N1O0000000O2O1O00O100O1O100O1O100O1O100O100O1O1O1O1O100O2N1O0O100O1000000O100O10000O10000O100O100O100O1O1O10000O10000000000000000O10000"
+          },
+          "bbox": [
+            850.0,
+            554.0,
+            1023.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

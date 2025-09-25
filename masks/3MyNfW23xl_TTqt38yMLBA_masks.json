@@ -1,0 +1,90 @@
+{
+  "pano_id": "3MyNfW23xl_TTqt38yMLBA",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/3MyNfW23xl_TTqt38yMLBA_view1_tree0_box0.jpg",
+        "confidence": 0.010869801044464111,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "[cV>c3mb000000K5SO]L[^OU4j`0V1@`0H80000000000000000000WNd@lKn?m3^1_Oa0M8E7J7lNg\\OiN_c0Q1h\\O[Njc0]1o0cNR[O=MChe02=00000Unb7"
+          },
+          "bbox": [
+            646.0,
+            310.0,
+            677.0,
+            509.0
+          ]
+        }
+      }
+    ],
+    "view_8": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/3MyNfW23xl_TTqt38yMLBA_view8_tree0_box0.jpg",
+        "confidence": 0.010267860256135464,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "YXka03Zf08I4XOKlZO<Re0c0N4L2N2N1O3M1O2N2N24L2O10O1001O1OO1O010O2O2M3N3O6G;E6J1O1N1010O1008H3LM3M3M3M6Ec0_Oj0WOj0VOgac3"
+          },
+          "bbox": [
+            812.0,
+            302.0,
+            858.0,
+            497.0
+          ]
+        }
+      }
+    ],
+    "view_12": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/3MyNfW23xl_TTqt38yMLBA_view12_tree0_box2.jpg",
+        "confidence": 0.01095978356897831,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ZQne0_4Qb00000001O1O1O001O1O1O1O000004L1O1O2N2M2OO2M2N2O2O0aE"
+          },
+          "bbox": [
+            998.0,
+            330.0,
+            1023.0,
+            480.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

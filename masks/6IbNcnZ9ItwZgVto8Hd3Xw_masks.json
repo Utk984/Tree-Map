@@ -1,0 +1,90 @@
+{
+  "pano_id": "6IbNcnZ9ItwZgVto8Hd3Xw",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/6IbNcnZ9ItwZgVto8Hd3Xw_view0_tree0_box1.jpg",
+        "confidence": 0.011663652956485748,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jUk8V4Zb0000000001O001O000000O100O1O1O1VOS^OmL[b0P1[WX="
+          },
+          "bbox": [
+            402.0,
+            538.0,
+            419.0,
+            673.0
+          ]
+        }
+      }
+    ],
+    "view_1": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/6IbNcnZ9ItwZgVto8Hd3Xw_view1_tree0_box3.jpg",
+        "confidence": 0.010401460342109203,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "na0i3gb000O1O1O6J4L4L2N2M2O1N3M2N2M4K4_Nb1D=J7Ia[Qf0"
+          },
+          "bbox": [
+            0.0,
+            574.0,
+            19.0,
+            694.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/6IbNcnZ9ItwZgVto8Hd3Xw_view2_tree0_box0.jpg",
+        "confidence": 0.013470207341015339,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "RXl7n3bb00000005Ka0_O0000000000000000L4O100O1O7I9ESoT>"
+          },
+          "bbox": [
+            358.0,
+            546.0,
+            378.0,
+            693.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

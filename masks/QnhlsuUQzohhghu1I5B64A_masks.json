@@ -1,0 +1,63 @@
+{
+  "pano_id": "QnhlsuUQzohhghu1I5B64A",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/QnhlsuUQzohhghu1I5B64A_view1_tree0_box0.jpg",
+        "confidence": 0.029911907389760017,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bcS6_1S6S2Y5mMgJS2Y5mMgJS2Y5mMgJS2Y5mMgJS2Y5oMeJR2Z5PNdJR2Z5PNdJQ2[5QNcJP2\\5SN`JP2^5SN_JR2\\5PNaJQ2_5QN^JP2b5RN[Jo1e5SNWJo1i5TNSJm1m5TNPJn1P6TNmIm1S6VNhIl1X6VNdIl1\\6VNbIj1^6XN`Ih1`6[N]Ie1c6^NZIb1f6`NXI`1h6cNUI]1k6gNZE\\Mm2n3i70dG2\\85[GMe8QLSEg3a0hLCe3i:cK`E^:[;aLWDSLl;Z3PEfIIU1AeNX<l5kElJP;o4\\3K4O001O1O0002M3N1O2M2M3N2M6J3L5kAdIn;b6jCfIo;c6gCgIm;b6oCdIf;c6WDbIb;c6\\DlIS;W6mDiIP;[6nDfIP;]6nDdIQ;]6nDdIQ;^6mDcIR;_6mDaIR;`6nD`IQ;b6mD_IS;a6mD_IR;c6bDiGLe1b;c6aDjGJd1e;b6`DhIa;X6]DiId;V6\\DjIf;U6XDlIj;S6SDoIS<k5lCVJ]<j7;E8H5K3M4L4L5K<Db1^N;E8H9ZMa_OiNWa0>n^O^OXa0VOW_OQOHIF`1fa0PO\\_O_OG`1mc00001O00000000cbX>"
+          },
+          "bbox": [
+            278.0,
+            146.0,
+            373.0,
+            513.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/QnhlsuUQzohhghu1I5B64A_view2_tree0_box3.jpg",
+        "confidence": 0.014898032881319523,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "[kPf0c0me000000O3M7I8G;F5]\\OjNda0]1S]O4^b0W2H5K5K5L1N4L3M2M4L3N1O0lE"
+          },
+          "bbox": [
+            1002.0,
+            324.0,
+            1023.0,
+            491.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 2
+  }
+}

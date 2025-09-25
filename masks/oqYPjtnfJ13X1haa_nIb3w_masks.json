@@ -1,0 +1,88 @@
+{
+  "pano_id": "oqYPjtnfJ13X1haa_nIb3w",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/oqYPjtnfJ13X1haa_nIb3w_view1_tree0_box1.jpg",
+        "confidence": 0.01868978887796402,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "nbi<S2]d00000004L>B:F;E4L3M1O1O1O004L0000L400O6K2VMP]Oo1Sd0E7lMS\\OX1fd0J5WOi0J[[S9"
+          },
+          "bbox": [
+            582.0,
+            382.0,
+            608.0,
+            501.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/oqYPjtnfJ13X1haa_nIb3w_view1_tree0_box2.jpg",
+        "confidence": 0.016248159110546112,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "iTad0d0le0000001001O2M4M102O1O0O1O1O2N101O3L4L10O4L3N000O02O1O1OO2M3M3N1O10130NM0O012NN1O1O2N1O2N2N1O2I7M1O1O2M3NW_i0"
+          },
+          "bbox": [
+            934.0,
+            441.0,
+            986.0,
+            569.0
+          ]
+        }
+      }
+    ],
+    "view_10": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/oqYPjtnfJ13X1haa_nIb3w_view10_tree0_box2.jpg",
+        "confidence": 0.0124488091096282,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "f[X74m0<Rd0Dn[O<Rd0Dn[O<Rd0Dn[O<Rd0Gi[O>Td01X[Oa0[d0P1J2N1O1O1O4L000000000000000000K5O<C5WOe[OTO^d0l0b[OTO^d0l0b[OTO^d0l0b[OTOZbd>"
+          },
+          "bbox": [
+            330.0,
+            342.0,
+            357.0,
+            421.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

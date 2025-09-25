@@ -1,0 +1,88 @@
+{
+  "pano_id": "Vsveus_uM-XJqpCPlf7JTQ",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/Vsveus_uM-XJqpCPlf7JTQ_view0_tree0_box3.jpg",
+        "confidence": 0.02005534991621971,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "RlT5]1Se00000002N4L4L4L4L;E=C3M1O1O44H2N2N3M2N1O001O0000OL4O1O0ON20N4M3L1O5J6J6I7E;H8M3N2N2N2O1N2O1O1N2O1O1O_XW`0"
+          },
+          "bbox": [
+            234.0,
+            354.0,
+            284.0,
+            449.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/Vsveus_uM-XJqpCPlf7JTQ_view0_tree0_box4.jpg",
+        "confidence": 0.01532156951725483,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "RZc2n1bd00000007I;E6J3M2N5K000006J2N1O1O00001O000000001O0^N]\\O2hc0GS]OARc0;c1M3N2N2O1N2M3O1O1O2LcnQc0"
+          },
+          "bbox": [
+            118.0,
+            354.0,
+            155.0,
+            449.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/Vsveus_uM-XJqpCPlf7JTQ_view3_tree0_box2.jpg",
+        "confidence": 0.021629415452480316,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jfl9;X2b0h`0^OX_Ob0h`0^OX_Ob0h`0^OX_Ob0h`0AS_Oa0m`0a200000000000000000J6C=F:L4SNV\\Oo0oc0kNn\\O7Yc0Gi1N2O1N20000000Vco;"
+          },
+          "bbox": [
+            450.0,
+            314.0,
+            477.0,
+            425.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

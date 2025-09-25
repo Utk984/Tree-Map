@@ -1,0 +1,63 @@
+{
+  "pano_id": "mNc0HHAcke_CCLOqhv7YwA",
+  "views": {
+    "view_9": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/mNc0HHAcke_CCLOqhv7YwA_view9_tree0_box0.jpg",
+        "confidence": 0.01406861376017332,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "`aee0:Vf000000N2H8`Hb0kEa1h94mBo1P=j3O10000O1000000O100000000000000000000000000001O0000O100O100N"
+          },
+          "bbox": [
+            986.0,
+            2.0,
+            1023.0,
+            281.0
+          ]
+        }
+      }
+    ],
+    "view_10": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/mNc0HHAcke_CCLOqhv7YwA_view10_tree0_box0.jpg",
+        "confidence": 0.01310646627098322,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "eQZ32^f00000003L<E6J4K5L3L4M3L2@mN`[OV1^d0a0M2N1O2N3M2N2N1O2N2N1O1O5W\\OaMWc0Q3K2N2N2N1O1O1O2N1O1O2N1O1O1O1O2N1O1O2N1O1O1O1O2N1OdMS^O6la0E]^O8ba0Ce^O<Za0Ch^O<Xa0Cj^O=Ua0Cl^O<Ta0Cn^O<Ra0Do^O;Qa0DQ_O;o`0EQ_O;o`0EQ_O;o`0ER_O:n`0FR_O:n`0FS_O9m`0FT_O:l`0FU_O9k`0FV_O:j`0EW_O:j`0FW_O8j`0GW_O8j`0HV_O8j`0GV_O9k`0GT_O:l`0oNP^OLU1T1l`0oNQ^OKR1W1n`0lNR^OLo0Y1Pa0iNS^OKm0_1Pa0dNU^OLi0b1Sa0aNU^OMf0d1Ua0^NV^ONd0d1Wa0\\NW^O0a0d1Ya0ZNW^O3?c1[a0YNW^O4=c1]a0WNW^O7;b1Wb0aNf]O_1[b0bNd]O]1\\b0dNc]O[1`b0bNa]O]1ab0XNf\\O5j0a1hb0\\NY]Od1jc0M2O1N3N1O1N3M2O2N2N2N2N2N2L4E;K5N2O001O1O2KWhe`0"
+          },
+          "bbox": [
+            150.0,
+            578.0,
+            263.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 2
+  }
+}

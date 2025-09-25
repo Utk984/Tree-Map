@@ -1,0 +1,88 @@
+{
+  "pano_id": "VEoILh6Omxd40dzNY2rQ1g",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/VEoILh6Omxd40dzNY2rQ1g_view1_tree0_box1.jpg",
+        "confidence": 0.013904581777751446,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Wbg2`1_d0n0B=Ci0XOn0QOh1YNi0XOk0TO0001O00001O1O2N3M7I`1`Nh0XOY2gMZ1fN>BTRXc0"
+          },
+          "bbox": [
+            124.0,
+            371.0,
+            146.0,
+            625.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/VEoILh6Omxd40dzNY2rQ1g_view1_tree0_box3.jpg",
+        "confidence": 0.011898203752934933,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Tej;i0ge000000M7Hf0ZOe1\\Nm1UNn0RO]2dMS1lN9IO1O2N3M6JQ1oNS1mNd0\\O[1eNc0]OX2hMk0UO6J000000Q]Q:"
+          },
+          "bbox": [
+            538.0,
+            371.0,
+            565.0,
+            689.0
+          ]
+        }
+      }
+    ],
+    "view_8": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/VEoILh6Omxd40dzNY2rQ1g_view8_tree0_box0.jpg",
+        "confidence": 0.026806948706507683,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "VkUd0;n07gc0IY\\O7gc0IY\\O7gc0IY\\O7gc0e1DS2mMd0\\O5K2N1O1O005K0000000000000=Cd0\\Ob0^Od0\\O6J000000001O00002N6E<G?A8D`0XO^Z_1"
+          },
+          "bbox": [
+            918.0,
+            390.0,
+            955.0,
+            561.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

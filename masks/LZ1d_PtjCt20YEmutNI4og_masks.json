@@ -1,0 +1,88 @@
+{
+  "pano_id": "LZ1d_PtjCt20YEmutNI4og",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/LZ1d_PtjCt20YEmutNI4og_view0_tree0_box0.jpg",
+        "confidence": 0.01589687168598175,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jnPf0l5d1eJk<[5UCeJk<[5UCeJk<[5UCeJk<^5PCeJo<_5jBgJS=]5dBiJ[=Z5\\BnJb=W5PBSKo=g601O0000O1000000001O00000VB"
+          },
+          "bbox": [
+            1002.0,
+            442.0,
+            1023.0,
+            707.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/LZ1d_PtjCt20YEmutNI4og_view0_tree0_box1.jpg",
+        "confidence": 0.011587074026465416,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^d^a0i4ga00000007I\\1dNc1]N4L2N2N9G00000000000000L4O1[JnBk1ca0XOl0TOk0TOc0_O000000l^]4"
+          },
+          "bbox": [
+            794.0,
+            366.0,
+            821.0,
+            637.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/LZ1d_PtjCt20YEmutNI4og_view2_tree0_box1.jpg",
+        "confidence": 0.015559402294456959,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "nVn04Yf03J7CE\\ZOb0^e0;M3M2[KPOiCS1X<oNcCS1]<nN`CT1a<nNYCT1i<QOmBS1S=POhBQ1Y=SO`BP1a=TOVBP1j=UOlAo0V>SOaAS1_>ROTAU1n>V30O10001O00001O001O0010O0010O00001O0O2N2N2O1N2N3M1O2O1N1O2O0O1O1O10000O1O1O01O0N3M20000O2N101O001O01O0001N101O01O0^Nc^ORN^a0f1Q_OSNn`0h1Z_OUNg`08m@GS?4TAIn>OYA0db000O100O1O001O10000000QUac0"
+          },
+          "bbox": [
+            42.0,
+            515.0,
+            133.0,
+            706.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

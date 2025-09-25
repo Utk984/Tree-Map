@@ -1,0 +1,88 @@
+{
+  "pano_id": "cGAwSHF5LCxgGYtBSey02w",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/cGAwSHF5LCxgGYtBSey02w_view0_tree0_box1.jpg",
+        "confidence": 0.014545897021889687,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "fim8P1`3Mc=3]BMc=3]BMc=3]BMc=4YB2d=R1QAZOj>Y4M4b_O[Ji?Z6Li0WOb0^O0000000001O1O2N4L5K8H6J5K7If1ZN?A:F;E000000Ybk<"
+          },
+          "bbox": [
+            406.0,
+            342.0,
+            437.0,
+            593.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/cGAwSHF5LCxgGYtBSey02w_view0_tree0_box2.jpg",
+        "confidence": 0.012272287160158157,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "koQ=Z1Ve000000O8GS3mLe0\\O=C6J5K4I7M1O1O001O00O1iKWBFj=CaCGa<0PDFR<1aDCa;8^5M3M3L8HRQk8"
+          },
+          "bbox": [
+            594.0,
+            334.0,
+            620.0,
+            541.0
+          ]
+        }
+      }
+    ],
+    "view_1": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/cGAwSHF5LCxgGYtBSey02w_view1_tree0_box1.jpg",
+        "confidence": 0.015919862315058708,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "SYW`0V3Zc000000N4J6H7J7K4N2N1N3N3N4L5L6I:E`0A<C9H8G100O10000001OO1O1N2J600000000000000000SK_Ak1a>mM[B_1e=]N_Cc0a<YOnC<R<^OnD\\O^;4g5L4N2L4JXcU5"
+          },
+          "bbox": [
+            738.0,
+            350.0,
+            787.0,
+            569.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

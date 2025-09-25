@@ -1,0 +1,90 @@
+{
+  "pano_id": "YCUdvSEZxqZU6UoxDXKxjA",
+  "views": {
+    "view_2": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/YCUdvSEZxqZU6UoxDXKxjA_view2_tree0_box0.jpg",
+        "confidence": 0.012277443893253803,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bhh5T2\\d000000M8Fn0RO<F8G7M4L5K4L:F00000000000000000000L4N2M3N2M3eNe^O^Mea0k1m1C;I6K6dNg[O5mno?"
+          },
+          "bbox": [
+            262.0,
+            542.0,
+            295.0,
+            697.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/YCUdvSEZxqZU6UoxDXKxjA_view3_tree0_box1.jpg",
+        "confidence": 0.011118882335722446,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "_ZR5d2lc00000001N2O2N2N1O00O1I\\\\ObMec0Y2<M5IP1oN:H300000\\bo`0"
+          },
+          "bbox": [
+            230.0,
+            622.0,
+            249.0,
+            713.0
+          ]
+        }
+      }
+    ],
+    "view_11": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/YCUdvSEZxqZU6UoxDXKxjA_view11_tree0_box1.jpg",
+        "confidence": 0.012133302167057991,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "k_jc0_1Qe000000_Oa0mMjNe]O]2Ya0n1D<E;C=[Oe0L4N2O1O1O1O1O1O1O1O1O1N2OZKcB;\\=kNfC\\OeMMd>CWE^OQ=>b4O10O01O01000O1000O0100O01000O10L320000000Roc1"
+          },
+          "bbox": [
+            902.0,
+            62.0,
+            949.0,
+            329.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

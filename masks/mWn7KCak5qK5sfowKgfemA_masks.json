@@ -1,0 +1,88 @@
+{
+  "pano_id": "mWn7KCak5qK5sfowKgfemA",
+  "views": {
+    "view_8": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/mWn7KCak5qK5sfowKgfemA_view8_tree0_box0.jpg",
+        "confidence": 0.013968104496598244,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "SgSf0e0c0Q2oa0oMQ^OQ2oa0oMQ^OQ2oa0oMQ^OQ2na0QNn]OR2Rb0V101N5MO1O2N2N1O0000000000hC"
+          },
+          "bbox": [
+            1006.0,
+            385.0,
+            1023.0,
+            517.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/mWn7KCak5qK5sfowKgfemA_view8_tree0_box1.jpg",
+        "confidence": 0.011340144090354443,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ncQ`0h1hd00000002N6J8Hg0YO<D3M6J0000000000000000000009bL\\]OZ2nc0@6K000000^dj5"
+          },
+          "bbox": [
+            730.0,
+            350.0,
+            757.0,
+            465.0
+          ]
+        }
+      }
+    ],
+    "view_10": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/mWn7KCak5qK5sfowKgfemA_view10_tree0_box0.jpg",
+        "confidence": 0.019592275843024254,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "nn`d0P4`b00000004Lb0^O=C8L13H>B=C2N001O0000N2M3H8SOmKQ_O_4o`0a0000000000K5L4I7SOm0_Oa0UN^]OQOYc0l0S]OfNRc0W1U1M3A?J600000RmR1"
+          },
+          "bbox": [
+            934.0,
+            254.0,
+            973.0,
+            429.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

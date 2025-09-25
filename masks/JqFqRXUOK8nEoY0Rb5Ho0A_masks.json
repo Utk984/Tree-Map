@@ -1,0 +1,88 @@
+{
+  "pano_id": "JqFqRXUOK8nEoY0Rb5Ho0A",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/JqFqRXUOK8nEoY0Rb5Ho0A_view1_tree0_box0.jpg",
+        "confidence": 0.01724284142255783,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^d4W4Yb000000L6H<E<Fc1]N7I5J5G9_O`0C=_Oa0F9YOh001O1O006Ja0_O4L1O1O00000000000000000000O10000O10000O10006XN`DSHc;i6iEmHa:k4aGQKd8`3iH\\Lc7i2oHUMX`0M2O2N1N2N3MW_Te0"
+          },
+          "bbox": [
+            6.0,
+            314.0,
+            60.0,
+            665.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/JqFqRXUOK8nEoY0Rb5Ho0A_view1_tree0_box1.jpg",
+        "confidence": 0.012182661332190037,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "]Ple0X1h0YOSc0[2H6K5K9o\\OhLXb0k3M1O1O103L02N<D>B=C7I5K5Kn0RO4H6N2M3N00lNROc\\OQ1Wc0EV\\O>dc0Z1L400iA"
+          },
+          "bbox": [
+            995.0,
+            408.0,
+            1023.0,
+            545.0
+          ]
+        }
+      }
+    ],
+    "view_9": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/JqFqRXUOK8nEoY0Rb5Ho0A_view9_tree0_box1.jpg",
+        "confidence": 0.010682236403226852,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "mkUd0Y8W>00000O1M3N2N2O100O1N200O100O1000000001O2N>B4L9GQ1oNd2\\Me2aLe[O_Odkf1"
+          },
+          "bbox": [
+            918.0,
+            399.0,
+            945.0,
+            677.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

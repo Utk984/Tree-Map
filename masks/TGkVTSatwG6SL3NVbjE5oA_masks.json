@@ -1,0 +1,88 @@
+{
+  "pano_id": "TGkVTSatwG6SL3NVbjE5oA",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/TGkVTSatwG6SL3NVbjE5oA_view1_tree0_box0.jpg",
+        "confidence": 0.015849614515900612,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "\\b]b0Z3Vc000000J6\\Od0C=I7G9A?ZOf0E;C=^Ob0H8F:J6L40000000@`0F:B>\\Od0G9cN]1G9K5E;TOl0C=I700000fXY3"
+          },
+          "bbox": [
+            838.0,
+            202.0,
+            873.0,
+            469.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/TGkVTSatwG6SL3NVbjE5oA_view1_tree0_box2.jpg",
+        "confidence": 0.012905910611152649,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "RTl7Z7V?0000004L6J5K3M4L00000009G3M3M3M<Dk0UO=C`0YJa_O7HX3Vc0XO>kMS]OIRTT>"
+          },
+          "bbox": [
+            358.0,
+            418.0,
+            380.0,
+            673.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/TGkVTSatwG6SL3NVbjE5oA_view3_tree0_box5.jpg",
+        "confidence": 0.011282552033662796,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "\\QQ6h0he0000001002N5K3N2M4L4M6Ic0^O7S]OjMo`0_2e^OcM\\a0h2m]OdMRb0]310O0001O0000000O1O1O2K4oNY]OQNob0OX]OLM_Ocd0?X1M4Kagg?"
+          },
+          "bbox": [
+            274.0,
+            396.0,
+            306.0,
+            540.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

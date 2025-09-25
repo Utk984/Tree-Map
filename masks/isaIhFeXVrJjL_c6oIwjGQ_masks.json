@@ -1,0 +1,90 @@
+{
+  "pano_id": "isaIhFeXVrJjL_c6oIwjGQ",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/isaIhFeXVrJjL_c6oIwjGQ_view1_tree0_box1.jpg",
+        "confidence": 0.030007462948560715,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "RRZ`0g4ia00000001O1O1O1O1O4L000000000000000000000000K:lKg^Oj0Xc0mNT^OD]md5"
+          },
+          "bbox": [
+            742.0,
+            354.0,
+            766.0,
+            513.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/isaIhFeXVrJjL_c6oIwjGQ_view2_tree0_box1.jpg",
+        "confidence": 0.01163579523563385,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bZ]5l4da0000000000000004L00000000000000L4N2M3J6WOi0XOh0gNY1M3O1O1O1O1O1O1O1O1O1N2N2M3N2N2M3K5L4M3FX^T`0"
+          },
+          "bbox": [
+            246.0,
+            370.0,
+            288.0,
+            529.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/isaIhFeXVrJjL_c6oIwjGQ_view3_tree0_box0.jpg",
+        "confidence": 0.02581046149134636,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "S^m;d0n2o0]>QOcAo0]>QOcAo0]>QOcAo0]>RO`AP1`>SOZAP1f>VOPAn0Q?XOe@k0Z?]O]@f0b?@U@c0k?Ec_Of0\\`0k2L0N2O1O1M3J600000000000000000L4M3I7A?gK^^O[3fb0F8I7I8H`1aN:Fb0]O:D[Qg9"
+          },
+          "bbox": [
+            542.0,
+            342.0,
+            580.0,
+            525.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "pano_id": "AYqUI4EBZzGqLv2RkRWFhQ",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/AYqUI4EBZzGqLv2RkRWFhQ_view0_tree0_box1.jpg",
+        "confidence": 0.021710004657506943,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "h[T8:Vf000000100O010O0100O001O001O1O001N2N2K5J6N2O2N2O01000O10O2OO1000O21M6K:E`0A1N4T]OmMRa0U2h^OPNWa0S2d^OoM[a0W2\\^OnMca0]2n]OgMQb0]3O1N3N2M3K4G9G:E;@?@a0N2NlKUAe0i>YO_Ac0_>[OjA`0T>^OWB<f=BbB:\\=DjB;S=CSC<j<B]C=_<@iC>T<_ORDa0k;]O\\Da0a;[OgDd0V;UOTEk0i:oN`EP1^:mNhER1V:lNoEU1m9iN[FS1g9hN`FT1^9iNkFS1T9kNQGU1k8iN[GX1_8hNfGX1R8jNTH^1`7`NeHb1V7^NlHc1Q7\\NRId1l6ZNXIh1d6WN`If1`6YNdId1\\6[NgIc1Y6\\NiIc1W6[NmIc1S6\\NPJb1P6]NRJ^1R6aNQJ\\1P6cNRJ[1d=N1N100000hmW<"
+          },
+          "bbox": [
+            370.0,
+            178.0,
+            465.0,
+            473.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/AYqUI4EBZzGqLv2RkRWFhQ_view2_tree0_box4.jpg",
+        "confidence": 0.013445358723402023,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "]gP9<Tf000000N3lNW1aMfNc^OW2Ya0b1M3I7L4L4L4gNY1000000000K5N2O1O1O1N2O1O1N6J3N2O0PNR_O^Nn`0[1\\_ObNc`02W_OWO:f0Z`03c_OQO6m0W`0Oh_OgN<Z1l?Mk_OeN;_1j?JYA7g>GZA:f>C[A?e>^O]Ac0c>[O^Af0b>WO`Aj0`>ROcAo0]>lNhAT1X>gNlAY1U>cNoA]1Q>^NTBa1m=ZNXBf1Xa01000000fhZ<"
+          },
+          "bbox": [
+            410.0,
+            282.0,
+            461.0,
+            477.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 2
+  }
+}

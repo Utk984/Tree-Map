@@ -1,0 +1,88 @@
+{
+  "pano_id": "VGGRQUAezRW1HXP7Mc5nNg",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/VGGRQUAezRW1HXP7Mc5nNg_view0_tree0_box3.jpg",
+        "confidence": 0.013607196509838104,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Vah94\\f01O2N2N1O1O1O1O1O1O1O1O2N2N2N2N2N31ON1O3M2a[OVOSc0m0b\\OZO]c0m1000000O1O1K50000000K;D;YOn0YO;M2000000000O1M3M300O100M31O1O1O1O1O1O1O1O1O1O1O1O10000000jQY;"
+          },
+          "bbox": [
+            444.0,
+            358.0,
+            509.0,
+            441.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/VGGRQUAezRW1HXP7Mc5nNg_view0_tree0_box4.jpg",
+        "confidence": 0.010233338922262192,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "fZX?Q2_d00000001O00001O0000O6K1N3L3VOk0_O^]l6"
+          },
+          "bbox": [
+            694.0,
+            374.0,
+            709.0,
+            440.0
+          ]
+        }
+      }
+    ],
+    "view_4": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/VGGRQUAezRW1HXP7Mc5nNg_view4_tree0_box2.jpg",
+        "confidence": 0.014400442130863667,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Vbb8S15a0_c0_Oa\\Oa0_c0_Oa\\Oa0_c0_Oa\\Oa0_c0X1000000004L3M2N3M4L6J5^NY\\O1ic0J]\\O3cc0M]\\O3cc0M]\\O3cc0M]\\O3`n_="
+          },
+          "bbox": [
+            390.0,
+            358.0,
+            409.0,
+            449.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

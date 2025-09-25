@@ -1,0 +1,88 @@
+{
+  "pano_id": "WsY6w1lDg493xuQe1xNRGw",
+  "views": {
+    "view_3": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/WsY6w1lDg493xuQe1xNRGw_view3_tree0_box0.jpg",
+        "confidence": 0.06575377285480499,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ZZ_;T1X3Ll=4TBLl=4TBLl=4TBLl=8nAJR>>bAF^>>XAHh>:k@1U?3]@7c?1`_Od0``0f2000000000000000K5O1QKh^Od4ea0QOn0I8J5K5H9@`0SOW1@f0ZOXa[:"
+          },
+          "bbox": [
+            522.0,
+            298.0,
+            551.0,
+            469.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/WsY6w1lDg493xuQe1xNRGw_view3_tree0_box3.jpg",
+        "confidence": 0.013067587278783321,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Vja>V2Zd0000000000000000000O1M3H8^Ob0^Ob0E;N200000jS`7"
+          },
+          "bbox": [
+            662.0,
+            358.0,
+            681.0,
+            427.0
+          ]
+        }
+      }
+    ],
+    "view_12": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/WsY6w1lDg493xuQe1xNRGw_view12_tree0_box0.jpg",
+        "confidence": 0.011712301522493362,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "]bm;Q16Aad0?_[OAad0?_[OAad0?_[OAad0a0\\[O@bd0Y1J7N2N2N1O1O1O1O1O2N1O1O4L00000000000000L4N2M3L4]Oc0F:C=M3N2N2^O[ZO8Rf0L3K4Nlof9"
+          },
+          "bbox": [
+            542.0,
+            486.0,
+            580.0,
+            569.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

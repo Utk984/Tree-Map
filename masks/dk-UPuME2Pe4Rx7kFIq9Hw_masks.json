@@ -1,0 +1,90 @@
+{
+  "pano_id": "dk-UPuME2Pe4Rx7kFIq9Hw",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/dk-UPuME2Pe4Rx7kFIq9Hw_view1_tree0_box0.jpg",
+        "confidence": 0.02430136501789093,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "c_c26Zf000000fL[1^^OSOVa0]3Dd0WO>G8O1O4L000000000005F9J;E?kNSl]c0"
+          },
+          "bbox": [
+            118.0,
+            390.0,
+            138.0,
+            565.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/dk-UPuME2Pe4Rx7kFIq9Hw_view3_tree0_box1.jpg",
+        "confidence": 0.014661051332950592,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "V_l47R1MW21\\>2]_OMW21\\>2]_OMW21\\>2]_OMW21\\>3U_O<S2Ic>Ok^OT1m1QOX?\\2o^OgNQa0\\300000000000000000000000Ln0ROdgTa0"
+          },
+          "bbox": [
+            222.0,
+            390.0,
+            242.0,
+            549.0
+          ]
+        }
+      }
+    ],
+    "view_7": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/dk-UPuME2Pe4Rx7kFIq9Hw_view7_tree0_box0.jpg",
+        "confidence": 0.013144588097929955,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^Tm6i1gd00000001O2N3M3g[OTNhc0Z200000000000000000_OR\\O`Nnc0\\1Z\\O`Nfc0`0e\\O[OL3_c0?`]O@`b0`0`]O@`b0`0`]O@`b0`0`]O@RbR?"
+          },
+          "bbox": [
+            314.0,
+            366.0,
+            337.0,
+            445.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

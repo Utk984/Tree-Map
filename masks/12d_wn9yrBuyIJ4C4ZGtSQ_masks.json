@@ -1,0 +1,90 @@
+{
+  "pano_id": "12d_wn9yrBuyIJ4C4ZGtSQ",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/12d_wn9yrBuyIJ4C4ZGtSQ_view1_tree0_box0.jpg",
+        "confidence": 0.02325153909623623,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bl<f1jd00000003M4L<D=G3K<C5L2O38K51JNOO4O21J5J12K7H:F9F:E7I6J4M000000n^\\e0"
+          },
+          "bbox": [
+            18.0,
+            242.0,
+            49.0,
+            438.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/12d_wn9yrBuyIJ4C4ZGtSQ_view2_tree0_box0.jpg",
+        "confidence": 0.018963221460580826,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "n\\a1a0oe00000001O3M3M4L3M6J;E<DS1mN^1bNY1gN>F3M:NW1bNK3M5K5K4L4La0_Oa1_Nd0\\O;EZ1fN]1cNd0\\OXkWd0"
+          },
+          "bbox": [
+            70.0,
+            190.0,
+            101.0,
+            457.0
+          ]
+        }
+      }
+    ],
+    "view_4": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/12d_wn9yrBuyIJ4C4ZGtSQ_view4_tree0_box1.jpg",
+        "confidence": 0.011712719686329365,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "cYe04Yf06lYO=Se0m0CQ1e\\OUNQ`0\\2T_O]N\\`0f4UOW1iN<D6K5J5L5J5KSHbBX7P=fHUCa7`<^HfCg7Q<XHVDf7e;ZHcD^7^;aHkDV7U;kHoDo6S;PITEg6j:^I`EX1UN_2c<XLTF@]Nn3c;aLiGY3Y8fLoGP3T8PMXH`2l7_MZJ7k5I_JGg58Y8O100O100O100O10000000Rcnd0"
+          },
+          "bbox": [
+            30.0,
+            190.0,
+            69.0,
+            513.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

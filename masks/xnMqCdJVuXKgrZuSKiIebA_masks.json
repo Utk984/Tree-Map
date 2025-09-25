@@ -1,0 +1,90 @@
+{
+  "pano_id": "xnMqCdJVuXKgrZuSKiIebA",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/xnMqCdJVuXKgrZuSKiIebA_view0_tree0_box0.jpg",
+        "confidence": 0.010038887150585651,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "YaSf0k3eb000000O1M4M2N3M2O10O01O1O001N2O100YJ"
+          },
+          "bbox": [
+            1006.0,
+            183.0,
+            1023.0,
+            325.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/xnMqCdJVuXKgrZuSKiIebA_view2_tree0_box0.jpg",
+        "confidence": 0.010031587444245815,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jP2a2oc0000000O1N2N;F1N00101N100ON31M3K5L4N2N2O1O1O100O1O1O1N2O1N2N2O1O1M3N2N2M3L:Fdabe0"
+          },
+          "bbox": [
+            2.0,
+            634.0,
+            40.0,
+            714.0
+          ]
+        }
+      }
+    ],
+    "view_5": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/xnMqCdJVuXKgrZuSKiIebA_view5_tree0_box0.jpg",
+        "confidence": 0.01369644608348608,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jRn=e0`2Cc`0=]_OCc`0=]_OCc`0=]_OCc`0a0T_OEk`0b0]^O1aa01X^O6fa0KU^O:ja0HP^Oa0ka0R200000000000000004L2J5M3K7kNe1SN[[OOF5feQ8"
+          },
+          "bbox": [
+            634.0,
+            314.0,
+            657.0,
+            433.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

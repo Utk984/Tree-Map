@@ -1,0 +1,63 @@
+{
+  "pano_id": "Qo5Q6ODiWABlzN1a3kTcIw",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/Qo5Q6ODiWABlzN1a3kTcIw_view1_tree0_box4.jpg",
+        "confidence": 0.012035860680043697,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "fTf7T3\\c00000001O1O2N2N1O2N1O2N1O1O2N1O1O2N2N1O2N3M3M3M2N2N2N2N2N2N3M3M3M6J5K4cBUKm8n4kFfKf8^4SGeKm8_4lFeKW9c5\\E^Jf:e5SE\\JQ;e5jDYJ\\;h5_DVJi;i5QDXJU<g5eCZJd<g5nB^J\\=V7:F6J7J^C\\H]:^7`EgHc:T7[EoHg:n6WETIm:h6REYIR;c6nD]IU;`6jDbIW;\\6iDdIY;[6fDdI^;Y6aDhI`;Y6]DiId;X6nBSIR1d0R<d6jC\\IY<d6dC]I]<c6bC^I]<c6aCeIX<_6dCcIZ<a6bC_I]<c6cC\\I]<e6aC[I_<h6^CWId<k6YCUIg<n6VCRIj<Q7RCPIn<Y81O002O2M5K5K3M3N4L5K4M9G9F3N101a0E=HA<D?A6J3M3M5K4L3M3M2N3M1O2N3M2N2N2N2N2N2N2I8J5L4K5H8mNe^OcLga0X3l0\\MU]O]1ob0aNX]OW1lb0eNW]OYOFh1Xc0kN[]OR1hb0lNZ]OP1jb0lNZ]OCZOU1_c0UOe]Of0_b0UOd]Oh0ab0ROd]Ol0Qd0M3N2N2N2M3N2N2M2O100000SQg;"
+          },
+          "bbox": [
+            350.0,
+            54.0,
+            489.0,
+            533.0
+          ]
+        }
+      }
+    ],
+    "view_5": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/Qo5Q6ODiWABlzN1a3kTcIw_view5_tree0_box0.jpg",
+        "confidence": 0.010805968195199966,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Y`oe02]f06K4M2N4L5J7J:F8G6J5L4K4M3M2N1O1N2O0O3L3N4L2N0^C"
+          },
+          "bbox": [
+            1000.0,
+            392.0,
+            1023.0,
+            489.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 2
+  }
+}

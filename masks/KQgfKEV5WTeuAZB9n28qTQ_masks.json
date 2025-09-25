@@ -1,0 +1,90 @@
+{
+  "pano_id": "KQgfKEV5WTeuAZB9n28qTQ",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/KQgfKEV5WTeuAZB9n28qTQ_view1_tree0_box0.jpg",
+        "confidence": 0.022873785346746445,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "QkPf0c0me000000M9Bf0@a0_O9I5K4M3M4L2N120O1N1L8I=A9G5M0VF"
+          },
+          "bbox": [
+            1002.0,
+            306.0,
+            1023.0,
+            445.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/KQgfKEV5WTeuAZB9n28qTQ_view2_tree0_box1.jpg",
+        "confidence": 0.016264332458376884,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^Vn5a1od0000004NN4M2M3N2M3M8H9H22L00000O1000O1010O01O5KO001O1O1O1O1O1O0000001OROkM^]OX2bb0k00000000000000000000L4O1O1O1^Ng\\OK[c0KU]ONlb0H`]O5ab0Eh]O7Yb0Em]O8Tb0EQ^O8Vb0^OP^O?Sd0L6J6I300000RgT?"
+          },
+          "bbox": [
+            270.0,
+            366.0,
+            333.0,
+            469.0
+          ]
+        }
+      }
+    ],
+    "view_10": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/KQgfKEV5WTeuAZB9n28qTQ_view10_tree0_box0.jpg",
+        "confidence": 0.01630384661257267,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "QWfb0j0fe0000001O2000011N6I4M101M2OO1O3M01O10O1O1O010O1O01O00010O0010O1000O1O0010O01O02N01N11O0001O01O0010N1000010N2O02N01N2O010O0O1001O01N100000000O110O000001O000O100O10000O10O0001O0O10O01000O00100O01O001O0O101O0010O01O000O2O001O1O000O2N10001O00010O0010O10O01000O0000001O0010O0010O00100O010O0100O0010O1O01O0010O010O1O0010O010O010O10O02O0O2N10000O01000O10j[O"
+          },
+          "bbox": [
+            850.0,
+            577.0,
+            1023.0,
+            710.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "pano_id": "8O3hYbe6fqpMOxdeXxcEcQ",
+  "views": {
+    "view_10": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/8O3hYbe6fqpMOxdeXxcEcQ_view10_tree0_box0.jpg",
+        "confidence": 0.010932640172541142,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bkf<h5h`00000009G;E0000000000000000000000000004LP1TMW_OQNlb0fNinX9"
+          },
+          "bbox": [
+            578.0,
+            466.0,
+            600.0,
+            669.0
+          ]
+        }
+      }
+    ],
+    "view_11": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/8O3hYbe6fqpMOxdeXxcEcQ_view11_tree0_box0.jpg",
+        "confidence": 0.017992839217185974,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jVX24_f0M000102OO01N2N2N1O100O2O00002M2M2O2M4M00100O1O1000_O`ZO2_e0JgZO5Ye0GlZO8he0N11N00010O00001O001O1O00O200O00O011N1dNHT\\ONXO>Xd0f1\\Od0H;o]OUM`?LV_On4j`0<00000000000000000000c0]O9GV1jNi1QNV1lNSUgb0"
+          },
+          "bbox": [
+            102.0,
+            470.0,
+            170.0,
+            645.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/8O3hYbe6fqpMOxdeXxcEcQ_view11_tree0_box2.jpg",
+        "confidence": 0.01519752573221922,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Xcl82]f03N2O0000000000000001O1OO2O0O100O2OO0100010N1O2O10OO1O2O0O100010N101Uhj<"
+          },
+          "bbox": [
+            404.0,
+            551.0,
+            438.0,
+            589.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

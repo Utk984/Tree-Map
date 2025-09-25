@@ -1,0 +1,90 @@
+{
+  "pano_id": "QHJof4fqlBree9LD7P19rw",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/QHJof4fqlBree9LD7P19rw_view0_tree0_box1.jpg",
+        "confidence": 0.014044591225683689,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "PTR73ee0\\1VMX3bNa0J1O1O1O1O1O1000000O10000O1000000O1001O00001O001O002N1O2N2N6E=F9F;DW1SMV]OGZic>"
+          },
+          "bbox": [
+            321.0,
+            317.0,
+            358.0,
+            493.0
+          ]
+        }
+      }
+    ],
+    "view_1": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/QHJof4fqlBree9LD7P19rw_view1_tree0_box0.jpg",
+        "confidence": 0.026635292917490005,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Pab8j0a0Y3a`0gL__OY3a`0gL__OY3a`0gL__OY3a`0[1O100000000O10000000000001O00000000000000001O0000001O001O1O001I7L4jM`2ROh0A`0ZOTdP="
+          },
+          "bbox": [
+            390.0,
+            318.0,
+            430.0,
+            493.0
+          ]
+        }
+      }
+    ],
+    "view_12": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/QHJof4fqlBree9LD7P19rw_view12_tree0_box1.jpg",
+        "confidence": 0.01041991077363491,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^gW5a0oe00000002M5Ka0_Oi0XO5J1N2N2O1O1O1K5000K5N2J6POP1K5M3O1O1N2N2O1N200000Ria`0"
+          },
+          "bbox": [
+            238.0,
+            382.0,
+            269.0,
+            465.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

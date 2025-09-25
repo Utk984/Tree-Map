@@ -1,0 +1,88 @@
+{
+  "pano_id": "1sgiZmrMJfubppFmwuLIEw",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/1sgiZmrMJfubppFmwuLIEw_view1_tree0_box0.jpg",
+        "confidence": 0.033126793801784515,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Ze^9S1]e00000002N7I`0@5K3M4L5i\\O_NUa0g1Q^OUOga0P3J000000000000I7C=K5H8hNX1J6K5L4fNl[O4Xd0IQ\\ONRd0OY1N2N2N2O1N2N20000000fVU<"
+          },
+          "bbox": [
+            430.0,
+            330.0,
+            469.0,
+            481.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/1sgiZmrMJfubppFmwuLIEw_view1_tree0_box2.jpg",
+        "confidence": 0.016003161668777466,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^ZRb0j0fe00000002N>lZOnNnc0m1M2N1O4L000000000000L4O105J7I6I7J5J4L200000gni3"
+          },
+          "bbox": [
+            822.0,
+            366.0,
+            849.0,
+            441.0
+          ]
+        }
+      }
+    ],
+    "view_7": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/1sgiZmrMJfubppFmwuLIEw_view7_tree0_box2.jpg",
+        "confidence": 0.011217189952731133,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jhS6b0^23]`0Mc_O3]`0Mc_O3]`0Mc_O3]`0N`_O5_`0NX_O9g`0IP_O>Pa0Ei^Od0Ra0^Oi^Oe0Wa0\\Oe^Og0[a0\\O]^Oi0ca0[OU^Oi0ka0n10000000000005K00K50K5O1N2M3L4J6K5M3L4N2L4K5XOh0L4N2M3L4K5L4K5L4N2O1O100O1O1O100O100O100O100O100O1O100O1O100O10000O10000001O0000000000000Voc>"
+          },
+          "bbox": [
+            278.0,
+            314.0,
+            357.0,
+            437.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

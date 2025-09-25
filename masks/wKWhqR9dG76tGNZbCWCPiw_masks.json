@@ -1,0 +1,90 @@
+{
+  "pano_id": "wKWhqR9dG76tGNZbCWCPiw",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/wKWhqR9dG76tGNZbCWCPiw_view0_tree0_box1.jpg",
+        "confidence": 0.01371920295059681,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "iYf:U3[c000000G;[Ni1jNP1I7000000000000000000000000006J4L;E7I5iK\\_O6:_Oh`00U4F7H61O1O0O0000000h]P;"
+          },
+          "bbox": [
+            486.0,
+            502.0,
+            521.0,
+            709.0
+          ]
+        }
+      }
+    ],
+    "view_1": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/wKWhqR9dG76tGNZbCWCPiw_view1_tree0_box2.jpg",
+        "confidence": 0.01259201392531395,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "moTa0X2Qb0iNa^Ol2X`0^2UO8I?C5M6J100000K5N2N2M4G8J6C>E:@b0YO[1nKR]l4"
+          },
+          "bbox": [
+            780.0,
+            480.0,
+            800.0,
+            717.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/wKWhqR9dG76tGNZbCWCPiw_view2_tree0_box1.jpg",
+        "confidence": 0.011799357831478119,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "X[S=4[f05L2O1O1N2N2O0O2N1O1O1O1O100000O11O01O0001N100001O010O00^\\OHk`09o^OKRa06j^OLVa05g^OMZa05a^OM`a05[^OMea07U^OKka0>i]OEWb0Z2001O00001O001O1O001O1O1O1J6N2N2N3M2N3M2N3J7hNPUS8"
+          },
+          "bbox": [
+            596.0,
+            295.0,
+            654.0,
+            425.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

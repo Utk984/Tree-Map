@@ -1,0 +1,88 @@
+{
+  "pano_id": "MkduA4l_KsB-7WtnN4E1Mw",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/MkduA4l_KsB-7WtnN4E1Mw_view0_tree0_box0.jpg",
+        "confidence": 0.039180461317300797,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "P\\P4\\9T=000001O1O2N10O0O1O1O1O2O000O1001O0011N01O1O2N1O2N1O1O1O001O001O00O10000000000O10000O100O1N2O1O1O100O100N2OO11O01000O1O001O1O0O2O1O1L40O100L4O1O1O100O1N2N2O1N2@`0[Oe0I7nNaA`IR?c2a4_O?UOV1bNhha`0"
+          },
+          "bbox": [
+            182.0,
+            402.0,
+            269.0,
+            720.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/MkduA4l_KsB-7WtnN4E1Mw_view0_tree0_box1.jpg",
+        "confidence": 0.013904321007430553,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "PR`=g4ia000000O2J501O1O004L0000000000000000000000000000K5O1N2[KbB3ie\\8"
+          },
+          "bbox": [
+            614.0,
+            346.0,
+            641.0,
+            509.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/MkduA4l_KsB-7WtnN4E1Mw_view3_tree0_box0.jpg",
+        "confidence": 0.013464740477502346,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Ri1X6X`0000000000000000000000005K1O1O1O1O2N2N3M3F:TNX_OhLK<Ua0l1j2gM[ele0"
+          },
+          "bbox": [
+            2.0,
+            386.0,
+            26.0,
+            585.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

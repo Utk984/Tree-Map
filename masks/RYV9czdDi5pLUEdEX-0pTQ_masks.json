@@ -1,0 +1,90 @@
+{
+  "pano_id": "RYV9czdDi5pLUEdEX-0pTQ",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/RYV9czdDi5pLUEdEX-0pTQ_view1_tree0_box0.jpg",
+        "confidence": 0.013074156828224659,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Pdo1k1ed000000L5ZOg0I7L201N101O4L00000000L4O100O1O2M3M2TOm0[Od000000nflc0"
+          },
+          "bbox": [
+            90.0,
+            319.0,
+            117.0,
+            421.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/RYV9czdDi5pLUEdEX-0pTQ_view3_tree0_box0.jpg",
+        "confidence": 0.01793856918811798,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bil1`3Pc0000000000000000000000000L400O100O100O1N2M3E;[Oe0K500000^`oc0"
+          },
+          "bbox": [
+            86.0,
+            338.0,
+            113.0,
+            449.0
+          ]
+        }
+      }
+    ],
+    "view_12": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/RYV9czdDi5pLUEdEX-0pTQ_view12_tree0_box0.jpg",
+        "confidence": 0.013790823519229889,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Vm^>h8h=0000005Ke0[Of0ZOn1RNg0YO:F8H<D5K4L6J0000000000000000000000000000000000000>Bb0^Oc0]Od0\\O=Cg0^DaDe:W<^O`1`N=C6J8HT1lNg0YOi0WO=C000000[Wl6"
+          },
+          "bbox": [
+            658.0,
+            262.0,
+            709.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

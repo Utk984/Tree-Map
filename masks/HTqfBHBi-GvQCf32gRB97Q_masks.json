@@ -1,0 +1,88 @@
+{
+  "pano_id": "HTqfBHBi-GvQCf32gRB97Q",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/HTqfBHBi-GvQCf32gRB97Q_view0_tree0_box0.jpg",
+        "confidence": 0.01970103569328785,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "a_f4m3cb000000O6I9G9H6J6K8H9G5K2N2N5K01O2N2N3M7Ib0^Oc0]Of0ZOP1POe0VOY1jN=@]eUa0"
+          },
+          "bbox": [
+            214.0,
+            10.0,
+            241.0,
+            201.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/HTqfBHBi-GvQCf32gRB97Q_view0_tree0_box1.jpg",
+        "confidence": 0.015503800474107265,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "j:l9d<00000000000000000000F:B>J6XIdBU4c=cKPDFVO>U=Gg6J3M3M3N1N3N1O2N1O1O2N1O1O2M3M3L5K6F[Qge0"
+          },
+          "bbox": [
+            0.0,
+            346.0,
+            34.0,
+            661.0
+          ]
+        }
+      }
+    ],
+    "view_4": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/HTqfBHBi-GvQCf32gRB97Q_view4_tree0_box0.jpg",
+        "confidence": 0.028214886784553528,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "n]b8?i54l9LTF4l9LTF4l9LTF4l9NQF4n9NlE7S:LgE9W:HdE<\\:G^E=a:FVE`0j:CjDg0U;[ObDl0^;VOZDQ1e;ROQDU1o;POeCX1Z<mN[CY1e<kNRC[1m<lNUAgN>b2]>5QA3o>g300000O100O1O1O100N2N2N2M3J6F:I7J6G9G9H8I7K5I7G9I7L4M3L4N2N2M3M3N2N2N2N2N2O1M3N6K1N3M2N2O1N2N1O2NN22N2N2N2M3M3N2N2N2N2M3N2O1L4M3N2O1M3O1N2N2N2N2O1O1N2N2O1N2N2Lfng;"
+          },
+          "bbox": [
+            390.0,
+            222.0,
+            488.0,
+            449.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

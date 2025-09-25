@@ -1,0 +1,90 @@
+{
+  "pano_id": "IzNd4vKoolCPGx92dja4qg",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/IzNd4vKoolCPGx92dja4qg_view1_tree0_box1.jpg",
+        "confidence": 0.015949051827192307,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "X`he0e0ke000000O3M5K5K6K7H9H8G7F8L3M2N4L4L6J5K3M4L4L5K4L3M4L5K:F5K4L6J4L1O0RC"
+          },
+          "bbox": [
+            990.0,
+            414.0,
+            1023.0,
+            578.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/IzNd4vKoolCPGx92dja4qg_view3_tree0_box0.jpg",
+        "confidence": 0.01966993510723114,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "eTY9n2bc000000I8TNm1L6K1O1O1L4000000000000000000000000000000000000000000000UL`_Of1``0jM\\@e1i?oMi@j1X?iM[AP2Qb0Ae0[O9G6J=_OSXY<"
+          },
+          "bbox": [
+            422.0,
+            362.0,
+            463.0,
+            537.0
+          ]
+        }
+      }
+    ],
+    "view_5": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/IzNd4vKoolCPGx92dja4qg_view5_tree0_box0.jpg",
+        "confidence": 0.01696920394897461,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "j<\\8T>000000]OWBXHP>a7c0H8L4K5K5N2M3L4K5K5H8G9I7D<kNU1C=SOm0TOl0^Ob0SOcQne0"
+          },
+          "bbox": [
+            0.0,
+            410.0,
+            24.0,
+            677.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

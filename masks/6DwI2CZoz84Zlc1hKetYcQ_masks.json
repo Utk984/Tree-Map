@@ -1,0 +1,88 @@
+{
+  "pano_id": "6DwI2CZoz84Zlc1hKetYcQ",
+  "views": {
+    "view_5": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/6DwI2CZoz84Zlc1hKetYcQ_view5_tree0_box1.jpg",
+        "confidence": 0.010867945849895477,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^VU:m0ce00000001O3M5Kn0RO7I?A:F4L4L0000000000000000bNR]OZOnb0Nm]OKWb0@b^O;ca0]Od^O>`a0_O`^O9Pd0J6OVQg;"
+          },
+          "bbox": [
+            462.0,
+            366.0,
+            489.0,
+            473.0
+          ]
+        }
+      }
+    ],
+    "view_12": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/6DwI2CZoz84Zlc1hKetYcQ_view12_tree0_box1.jpg",
+        "confidence": 0.015221837908029556,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Tin?j1fd00000004L:F?Ae0[O6J6J2M5L2l]OXL]a0h3a^OZL^a0m3Z^OTLga0Z4101N`0A4K4L3M2N4L5K4L1O3M2N1O010O2N1O2N1N4M6J;Ed0\\O:E`0@`0]OSkb5"
+          },
+          "bbox": [
+            726.0,
+            323.0,
+            768.0,
+            477.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/6DwI2CZoz84Zlc1hKetYcQ_view12_tree0_box2.jpg",
+        "confidence": 0.014849502593278885,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ngPf0W8Y>0000001O1O1O001O00001O00000000VL\\BhNd=X1[BiNe=V1[BkNe=U1XBnNh=R1WBoNi=Q1WBoNk6"
+          },
+          "bbox": [
+            1002.0,
+            222.0,
+            1023.0,
+            489.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

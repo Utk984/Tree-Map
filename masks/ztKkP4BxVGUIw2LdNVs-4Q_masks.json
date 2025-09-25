@@ -1,0 +1,88 @@
+{
+  "pano_id": "ztKkP4BxVGUIw2LdNVs-4Q",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ztKkP4BxVGUIw2LdNVs-4Q_view0_tree0_box1.jpg",
+        "confidence": 0.017931362614035606,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^R`=P8`>00000000000000000000000000000000000000000006J2NO1O100O100O1L4000000000000000000005eNgAUJY>Q5fBjJ\\=S1aAk1Ra0bLofo7"
+          },
+          "bbox": [
+            614.0,
+            366.0,
+            659.0,
+            621.0
+          ]
+        }
+      }
+    ],
+    "view_1": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ztKkP4BxVGUIw2LdNVs-4Q_view1_tree0_box2.jpg",
+        "confidence": 0.015501050278544426,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bdQ`06Zf00000003M5K;Ei0V]OkNg>U2f_ODT?W5eN?A000000000006Ja0_O`0WIk@W5f`0An0WKR^OT3Zd0[NP1_NbZOIQnm5"
+          },
+          "bbox": [
+            730.0,
+            370.0,
+            753.0,
+            621.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ztKkP4BxVGUIw2LdNVs-4Q_view1_tree0_box4.jpg",
+        "confidence": 0.010852266103029251,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bndc0c0me00000002N5K8H8H4L;f[OZOTb0Z3WOR1nN:k_O_Jg>i6LU1kN;E:F;E>B<D4L2N4L3McLnC`Ln;\\3ZDbLd;[3aDdL^;X3gDiLW;T3mDmLX;i2lDWM];nLlCk4m0VN]<P1iCPOd<A^D>l<PN]CP2Q=gLjCX3h?O2N2M4M3M5J9DX1ZNUal1"
+          },
+          "bbox": [
+            894.0,
+            370.0,
+            936.0,
+            716.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

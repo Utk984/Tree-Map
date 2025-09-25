@@ -1,0 +1,90 @@
+{
+  "pano_id": "vabqNLFzm2i0co3eEdT25g",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/vabqNLFzm2i0co3eEdT25g_view1_tree0_box3.jpg",
+        "confidence": 0.012251276522874832,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "P<T8\\>01N4Jc0]O9G6SLi@3d?Af@8b?^Oh@;`?WOm@?^?bNhA?T?mNlALmbWf0"
+          },
+          "bbox": [
+            0.0,
+            384.0,
+            11.0,
+            643.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/vabqNLFzm2i0co3eEdT25g_view2_tree0_box3.jpg",
+        "confidence": 0.010256827808916569,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jlcd0V3Zc0000000001O1O4L00000000000000000000K;J3eN_\\O@cc04V]O[OPc07n1B?E600000`\\X1"
+          },
+          "bbox": [
+            938.0,
+            378.0,
+            965.0,
+            485.0
+          ]
+        }
+      }
+    ],
+    "view_5": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/vabqNLFzm2i0co3eEdT25g_view5_tree0_box0.jpg",
+        "confidence": 0.0277102030813694,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "hYV9k2ec000000L4VNYM`_OS3_`0QMT_OY3k`0nLf^OZ3Za0o0O000000000000O100O100001ORNe^OjN_a0g0T_OSOl`0d0^_O[Oa`0:g_OE``0EP@:Sc0O2O00000000[Tc<"
+          },
+          "bbox": [
+            418.0,
+            346.0,
+            449.0,
+            513.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

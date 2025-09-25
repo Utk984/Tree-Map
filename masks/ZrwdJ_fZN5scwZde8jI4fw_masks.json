@@ -1,0 +1,90 @@
+{
+  "pano_id": "ZrwdJ_fZN5scwZde8jI4fw",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ZrwdJ_fZN5scwZde8jI4fw_view1_tree0_box1.jpg",
+        "confidence": 0.01203775405883789,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "`eXe03\\f07K10000O2O01O02N1O01N01O000100000O01O010O01O002O0O1000001N1O010O1O0O10010O000101N000001O001N102M2N2N1O3L4M1O0]L"
+          },
+          "bbox": [
+            968.0,
+            47.0,
+            1023.0,
+            151.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ZrwdJ_fZN5scwZde8jI4fw_view2_tree0_box0.jpg",
+        "confidence": 0.017413286492228508,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "hin=Y5Q`0_1D8I5L3N2M4M3M3M9fA^IT<m9bN7I4K5L6J:F?B9F3O08G3M1O000O0010O001N1O1000O101N2L6\\Oc0J:cNgERFP>T2PB0Qd0iNk0WOY^c7"
+          },
+          "bbox": [
+            635.0,
+            282.0,
+            676.0,
+            709.0
+          ]
+        }
+      }
+    ],
+    "view_11": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ZrwdJ_fZN5scwZde8jI4fw_view11_tree0_box1.jpg",
+        "confidence": 0.013754275627434254,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "[]Te0\\1Te000000O7H?B;E8I9Gd0\\O:F4L3O2M15Ke0[Oa0^O9H5K4K5L6J6J:E:F5K3N2L4M3M2N0O000000XTb0"
+          },
+          "bbox": [
+            962.0,
+            6.0,
+            997.0,
+            166.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

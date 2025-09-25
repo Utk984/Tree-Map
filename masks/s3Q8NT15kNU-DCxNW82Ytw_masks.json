@@ -1,0 +1,90 @@
+{
+  "pano_id": "s3Q8NT15kNU-DCxNW82Ytw",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/s3Q8NT15kNU-DCxNW82Ytw_view0_tree0_box0.jpg",
+        "confidence": 0.015684248879551888,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "[bTf0;e3Jb>d0QAK`>a0SAFh>d1k_OdNQ`0h1S_OjNk`0_3N2N100000000O2N1N3N2O0g_O"
+          },
+          "bbox": [
+            1007.0,
+            521.0,
+            1023.0,
+            695.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/s3Q8NT15kNU-DCxNW82Ytw_view2_tree0_box0.jpg",
+        "confidence": 0.012224162928760052,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Tma:f1_b0dNi]O74Y2Za0P2ZOYKV_OT5h`0;O10000O100O10]Ob0XOi0E:Aa0SNe]OlN]OF]c0g0U2K5N100000bg^;"
+          },
+          "bbox": [
+            480.0,
+            299.0,
+            501.0,
+            481.0
+          ]
+        }
+      }
+    ],
+    "view_7": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/s3Q8NT15kNU-DCxNW82Ytw_view7_tree0_box0.jpg",
+        "confidence": 0.013883637264370918,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Veg>>Rf00000001O1O1O1O2N1O1O1O1O1O22M10O001O0O2O1O1O1O002N1O1N101O1N200O2N100O002M5L6J:F2N0O101O0000000O1000000001O00000000O1000000O10000000000000000O1000001O000O110N10O1O1O2N2N4L2N1O1O1O1O1O1O1O001O1O001O1O00001O001O1O1O1O001O1O001N]OhNP\\OX1oc0iNQ\\OW1oc0jNQ\\OU1oc0kNQ\\OU1oc0kNQ\\OT1Pd0mNo[OS1Qd0mNo[OS1Qd0mNo[OS1Rd0lNn[OS1Sd0mNl[OT1Td0lNk[OU1Vd0kNh[OU1Yd0mNb[OV1^d0=3QO[[OOfd00\\[OMfd01][OLdd04][OJed05\\[OIfd07Z[O]OI1Qe0b0e01000001O000O5L0O100O101N101O003M1O1O001OO001O001O2N1O001O1O1O1O5K1O1O2L4L4M3M2N3Mm^l3"
+          },
+          "bbox": [
+            670.0,
+            582.0,
+            845.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

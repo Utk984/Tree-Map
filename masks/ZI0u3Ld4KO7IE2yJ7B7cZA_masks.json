@@ -1,0 +1,63 @@
+{
+  "pano_id": "ZI0u3Ld4KO7IE2yJ7B7cZA",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ZI0u3Ld4KO7IE2yJ7B7cZA_view1_tree0_box2.jpg",
+        "confidence": 0.037232574075460434,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "S^[4a1od0000001001O2M3N1O2N4M2M2N6K;D8H2OO001O1O2N5K7H5L2N1O2M2O2M3N2M3M3N2M5K3N1N3NgNUOo\\Og0ob0^OP]Oa0lb0Ho\\O8nb0MP]O2nb05o\\OJnb0;P]OElb0b0P]O_Od1VOQNLe`0f1c_OZOc1]Oe>_1g_OUOa1_Om=X2`@ZNZ1FV>`3eAeLY>^3UASMi>Q3c@bMZ?P5J:Fo0QO8H4L4L6J6J7Ib0^O4LlHiCQ4U<kKPDU4o;iKTDX4j;fKYDZ4f;eK\\D[4c;eK]D\\4b;cK`D\\4`;dK`D`4\\;_KfD`4Z;`KfD`4Z;_KhD`4X;_KiDa4W;^KkDa4U;^KlDb4T;^KlDb4T;]KmDc4S;\\KnDd4R;[KnDf4R;YKnDh4R;UKoDm4Q;oJRER5n:lJTEo4Q;_I^D8e0Y6n:UIkD<9]6n:TInD97c6Z<VIjCi6o=O1O1bJTAW3m>eL\\AU3f>fL`AW3a>bLiAZ3Y>`LnA]3S>`LSB\\3P>^LWB]3m=\\L\\B^3a`0QMR^OP1Rd0C`0ROmbl?"
+          },
+          "bbox": [
+            198.0,
+            222.0,
+            299.0,
+            557.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ZI0u3Ld4KO7IE2yJ7B7cZA_view3_tree0_box0.jpg",
+        "confidence": 0.04121088236570358,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "fRT98\\e0o0M2N1O2N2N1O2N2N3M2N2N2N2N2N2N1O2N2N1O3M3M3Y@cMU;a2eDcMY;c2_DeM[;e2YD]Mg;l2mCWMS<Q3bCRM^<_Oo@Y3U2^M]=g2nAfMV>a2XAfMi>d2a@gM^?f400O1\\OcIQAa6o>`00000000000000000000000000000000fJ^Af2b>QMnAh2R>TMXBf2h=WMdB`2\\=]MQCY2o<eMlD=Y;AYEMi:0m5M3L4L4N2M3M3N2O1N2N2N2MYZi;"
+          },
+          "bbox": [
+            415.0,
+            266.0,
+            486.0,
+            497.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 2
+  }
+}

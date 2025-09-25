@@ -1,0 +1,90 @@
+{
+  "pano_id": "SZoiDhnMZS5grzzQIHJWew",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/SZoiDhnMZS5grzzQIHJWew_view1_tree0_box0.jpg",
+        "confidence": 0.042548079043626785,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "nf1h5h`00000000000000000L400O10000O1O100O1O1N2O1M3M3J6H8F:kLV^On0`b0YN^^OY1dc0Aj0gNfTie0"
+          },
+          "bbox": [
+            2.0,
+            318.0,
+            31.0,
+            501.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/SZoiDhnMZS5grzzQIHJWew_view2_tree0_box0.jpg",
+        "confidence": 0.01318783313035965,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "V\\^4m1^2WNc?i1]@WNc?i1]@WNc?i1]@WNc?l1W@WNi?W2`_OWN[`0o30000000000000000000000000000000000000L4N2N2N2L4L4L4N2M3M3M3M3M3L4K5J6G9B>J6L4M3N2O1N2N2N2M3iNZ[OKI`0YPm`0"
+          },
+          "bbox": [
+            202.0,
+            358.0,
+            254.0,
+            505.0
+          ]
+        }
+      }
+    ],
+    "view_12": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/SZoiDhnMZS5grzzQIHJWew_view12_tree0_box0.jpg",
+        "confidence": 0.010493120178580284,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "nlo6\\1Te00000002N3M5K9G;E8H4L2N2N1O5K0004L1O1O0000001O0bNa\\OAic07\\1I7K4N3O000ON40O1O1O1O1O1O1O1O1O1O1O1O1N2N2O1O100000Ra[>"
+          },
+          "bbox": [
+            318.0,
+            318.0,
+            369.0,
+            413.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

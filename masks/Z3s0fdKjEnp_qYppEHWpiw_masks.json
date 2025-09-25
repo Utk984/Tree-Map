@@ -1,0 +1,88 @@
+{
+  "pano_id": "Z3s0fdKjEnp_qYppEHWpiw",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/Z3s0fdKjEnp_qYppEHWpiw_view1_tree0_box0.jpg",
+        "confidence": 0.03166015446186066,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ZR`=U1[e00000001O4L5K3M3M5K:^[OTNlc0Z2N1O1O4L00000000000000000005K4L>^O7L100000l\\Y8"
+          },
+          "bbox": [
+            614.0,
+            362.0,
+            645.0,
+            449.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/Z3s0fdKjEnp_qYppEHWpiw_view1_tree0_box5.jpg",
+        "confidence": 0.013502429239451885,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Rk<b1[4BT;>lDBT;>lDBT;>lDBT;`0iDBV;c0eD^OZ;j0]DXOb;m2XBVMf=Y3gAoLU>k5K9G;Eb0^O4L3M2N1O00000006J2bInBY3b=bKbCP4h<`KeCX4b<YKQD\\4]?D9F4M100000P`\\e0"
+          },
+          "bbox": [
+            18.0,
+            194.0,
+            49.0,
+            480.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/Z3s0fdKjEnp_qYppEHWpiw_view3_tree0_box1.jpg",
+        "confidence": 0.015865644440054893,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "RdP9V1Ze00000001O3M4L3M4Lk0UO3M2N1O001O000009G6J3M1N2O1O1N1]Of[OhNbd0h0k0I7N21N2O1O1O1O1O10O001O1N10000000V]`<"
+          },
+          "bbox": [
+            410.0,
+            354.0,
+            453.0,
+            440.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

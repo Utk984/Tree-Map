@@ -1,0 +1,88 @@
+{
+  "pano_id": "an_KYlyrJgH5avjy5ECpgA",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/an_KYlyrJgH5avjy5ECpgA_view0_tree0_box0.jpg",
+        "confidence": 0.013628019019961357,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Q[Rb0?W2T3P>lLPBT3P>lLPBT3P>lLPBT3l=VMo_OYOe1h3T>m2b@\\Il>\\7H6J5K6J3M5K000000000000000000L4N2VHVBe0>R2>hM_`0o0]@hNn^l3"
+          },
+          "bbox": [
+            822.0,
+            374.0,
+            846.0,
+            637.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/an_KYlyrJgH5avjy5ECpgA_view0_tree0_box1.jpg",
+        "confidence": 0.011498729698359966,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "mRm>=Sf000000H<oM\\On\\OR2oa0j1oNQ1H6J2N4L3M2N1O3M2N4L>B]1cN0000000000000000000000000000L4O1O1YO^AXIH0k>g6g0O1N2M3N2O1K5M9TOe_OgJm`0o2`2TOl0SOQ1ZOdk_6"
+          },
+          "bbox": [
+            678.0,
+            266.0,
+            727.0,
+            513.0
+          ]
+        }
+      }
+    ],
+    "view_12": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/an_KYlyrJgH5avjy5ECpgA_view12_tree0_box0.jpg",
+        "confidence": 0.01161329448223114,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "_i1o3ab0000001O3M3M>B2N3M2N2J<EnPUf0"
+          },
+          "bbox": [
+            2.0,
+            399.0,
+            14.0,
+            525.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

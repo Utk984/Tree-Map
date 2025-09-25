@@ -1,108 +1,176 @@
-# Interactive Map with Tree Marker Annotations
+# Tree Map - React + deck.gl Implementation
 
-This project is a **Streamlit web app** designed for **Tree Inventorization**, which uses **Folium** to display an interactive map with various layers. Users can explore geographic locations, select map types, and visualize individual tree markers. The app supports displaying country, state, and city-specific locations, with the number of tree markers updated dynamically based on the selected area. Tree locations are fetched from a PostGIS server.
+This project has been converted from Python + pydeck to **React + deck.gl** for better performance and modern web development practices.
 
-## Features
+## 🚀 Features
 
-- **Interactive map:** Displays a map centered on the selected country, state, or city.
-- **Map layers:** Supports various map types like OpenStreetMap and Esri Satellite.
-- **Marker display:** Shows individual tree markers with additional information.
-- **Sidebar controls:** Allows the user to select the map type, country, state, and city.
-- **Tree tracking:** Automatically updates the count of trees based on the selected area or region.
+- **Interactive map:** deck.gl-powered visualization with satellite imagery
+- **Tree markers:** Forest green markers showing detected tree locations
+- **Street view markers:** Blue markers showing street view panorama locations  
+- **Connection lines:** Orange lines connecting trees to their corresponding street views
+- **Click interactions:** Click on any tree marker to view the street-level perspective
+- **Layer controls:** Toggle visibility of different map layers
+- **Real-time data loading:** Loads tree and street view data from CSV files
+- **Responsive design:** Works on desktop and mobile devices
 
-## Table of Contents
+## 📁 Project Structure
 
-1. [Installation](#installation)
-2. [How to Run the App](#how-to-run-the-app)
-3. [Usage](#usage)
-4. [Customization](#customization)
-5. [Acknowledgments](#acknowledgment)
+```
+src/
+├── App.tsx              # Main application component with deck.gl map
+├── main.tsx             # React entry point
+├── types.ts             # TypeScript type definitions
+├── utils/
+│   └── dataLoader.ts    # CSV data loading and processing utilities
+└── components/
+    ├── TreeModal.tsx    # Modal for displaying tree street views
+    └── LayerControls.tsx # Map layer visibility controls
 
-## Installation
+public/
+├── south_delhi_trees_cleaned.csv    # Tree detection data
+└── south_delhi_panoramas.csv        # Street view panorama data
+```
 
-1. **Clone the repository**:
+## 🛠️ Installation & Setup
 
-    ```bash
-    git clone https://github.com/Utk984/Tree-Web-Map.git
-    cd Tree-Web-Map
-    ```
-
-2. **Install dependencies**:
-
-    The dependencies are listed in the `requirements.txt` file. To install them, run:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-    The following key packages are used:
-    
-    - **Streamlit**: For creating the web app interface
-    - **Pandas**: For handling CSV files containing location data
-    - **Folium**: For interactive mapping
-    - **Streamlit-Folium**: For integrating Folium maps into the Streamlit interface
-    - **PostGIS**: For fetching tree location data from a PostGIS server (details to be configured)
-
-## How to Run the App
-
-Once all dependencies are installed and the PostGIS server is configured, you can run the Streamlit app locally with the following steps:
+### 1. Install Dependencies
 
 ```bash
-cd static/streetview_images
-python -m http.server 8000
+npm install --legacy-peer-deps
 ```
-Run the run.sh script in a separate terminal
+
+> **Note:** The `--legacy-peer-deps` flag is used to resolve dependency conflicts between deck.gl and luma.gl packages.
+
+### 2. Start Development Server
 
 ```bash
-chmod +x run.sh
-./run.sh
+npm run dev
 ```
 
-This will launch the app in your web browser, where you can explore the map and adjust various settings from the sidebar.
+This will start the Vite development server on `http://localhost:3000`
 
-## Usage
+### 3. Start Python API Server
 
-### 1. **Map Types**
+In a separate terminal, start the Flask API server:
 
-- **OpenStreetMap**: Default map layer provided by OpenStreetMap contributors.
-- **Esri Satellite**: Satellite imagery provided by Esri.
-- **Esri Labels**: Adds labels for world boundaries and places from Esri.
-
-You can select the desired map type from the dropdown in the sidebar. The map will update instantly based on the selected map type.
-
-### 2. **Location Selection**
-
-- **Country**: Select a country from the dropdown to focus on that area.
-- **State**: If a country is selected, you can choose a state within that country.
-- **City**: If a state is selected, you can choose a city within that state.
-
-The map will automatically center and zoom to the selected location.
-
-### 3. **Tree Markers**
-
-- Markers are placed at tree locations fetched from the PostGIS server. Clicking on a marker will display a popup with information about the latitude and longitude.
-- The sidebar displays the total number of trees in the selected area or region. If no area is selected, it shows the total count of all markers.
-
-## Customization
-
-### 1. **Adding More Map Layers**
-
-To add new map types, you can modify the `map_types` dictionary in `app.py`. For example, to add **Stamen Terrain** maps:
-
-```python
-"Stamen Terrain": {
-    "url": "https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png",
-    "attribution": '&copy; <a href="https://stamen.com">Stamen</a>',
-    "name": "Stamen Terrain",
-},
+```bash
+python api_server.py
 ```
 
-### 2. **Connecting to PostGIS Server**
+This will start the API server on `http://localhost:5001` for serving tree view images.
 
-### 3. **Location Data**
+## 🎯 Usage
 
-If you want to expand the location data with more countries, states, or cities, update the corresponding CSV files located in the `./assets/locations/` directory.
+1. **Explore the Map:** 
+   - Pan and zoom to navigate the Delhi area
+   - Use mouse wheel to zoom, click and drag to pan
 
-## Acknowledgment
+2. **Layer Controls:**
+   - Use the control panel on the top-right to toggle layer visibility
+   - View counts for trees, street views, and connections
 
-This project was undertaken in collaboration with the [Geospatial Computer Vision Group](https://anupamsobti.github.io/geospatial-computer-vision/) led by [Dr. Anupam Sobti](https://anupamsobti.github.io/). I am grateful for the support and guidance provided throughout the development of this project.
+3. **Tree Interaction:**
+   - Click on any green tree marker to view its street-level perspective
+   - The modal will show the centered view of the tree from the street view panorama
+   - Includes metadata like coordinates, confidence scores, and panorama ID
+
+4. **Visual Elements:**
+   - 🌳 **Green markers**: Detected trees
+   - 🔵 **Blue markers**: Street view locations
+   - 🧡 **Orange lines**: Connections between trees and street views
+
+## 📊 Data Processing
+
+The application processes two CSV files:
+
+- **south_delhi_trees_cleaned.csv**: Contains tree detection data with coordinates, confidence scores, and panorama references
+- **south_delhi_panoramas.csv**: Contains street view panorama locations and metadata
+
+Key features:
+- Filters trees with distance < 12 meters from panoramas
+- Removes duplicate trees within 3 meters using spatial clustering
+- Generates connection lines between trees and their source panoramas
+
+## 🛡️ API Integration
+
+The React frontend communicates with the Python Flask API for:
+
+- **Tree view generation**: `/api/tree-view/{csv_index}`
+- **Tree information**: `/api/tree-info/{csv_index}` 
+- **Health checks**: `/health`
+
+The API serves base64-encoded images of tree-centered views generated from street view panoramas.
+
+## 🚀 Production Build
+
+```bash
+npm run build
+```
+
+This creates an optimized production build in the `dist/` directory.
+
+To preview the production build:
+
+```bash
+npm run preview
+```
+
+## 🔧 Technical Stack
+
+- **React 18** - Modern React with hooks and concurrent features
+- **TypeScript** - Type-safe development
+- **deck.gl** - High-performance WebGL-powered data visualization
+- **Vite** - Fast build tool and development server
+- **MapLibre GL** - Open-source mapping library
+- **Papa Parse** - CSV parsing library
+- **Axios** - HTTP client for API requests
+
+## 🌐 Deployment Options
+
+### Static Hosting
+The React build can be deployed to any static hosting service:
+- Vercel
+- Netlify  
+- GitHub Pages
+- AWS S3 + CloudFront
+
+### With API Server
+For full functionality including tree view generation:
+1. Deploy the React build to static hosting
+2. Deploy the Python Flask API to a cloud service (Heroku, Railway, etc.)
+3. Update API URLs in the React app configuration
+
+## 🐛 Troubleshooting
+
+### "Unable to connect to server" errors
+- Make sure the Flask API server is running on port 5001
+- Check that CORS is properly configured in `api_server.py`
+
+### CSV loading errors
+- Ensure CSV files are in the `public/` directory
+- Check that file names match exactly: `south_delhi_trees_cleaned.csv` and `south_delhi_panoramas.csv`
+
+### Dependency installation issues
+- Use `npm install --legacy-peer-deps` to resolve deck.gl peer dependency conflicts
+- Clear npm cache with `npm cache clean --force` if needed
+
+## 📈 Performance
+
+The React + deck.gl implementation offers significant performance improvements over the Python + pydeck version:
+
+- **Faster rendering**: WebGL-accelerated rendering for thousands of markers
+- **Better interactivity**: Smooth pan/zoom operations
+- **Reduced memory usage**: More efficient data handling in the browser
+- **Hot reloading**: Instant updates during development
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Make changes and test thoroughly
+4. Commit with descriptive messages
+5. Push to your fork and submit a pull request
+
+## 📝 License
+
+This project maintains the same license as the original Python implementation.

@@ -1,0 +1,90 @@
+{
+  "pano_id": "-roJzen4FoP12PwmK-0NaQ",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-roJzen4FoP12PwmK-0NaQ_view0_tree0_box0.jpg",
+        "confidence": 0.015259666368365288,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Ug1W4Yb000000<C;EQ1nN=CZ1dNVkWf0"
+          },
+          "bbox": [
+            2.0,
+            325.0,
+            10.0,
+            459.0
+          ]
+        }
+      }
+    ],
+    "view_1": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-roJzen4FoP12PwmK-0NaQ_view1_tree0_box0.jpg",
+        "confidence": 0.02967502735555172,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bWX7V6Z`00000004L8H>B000000000000000000000000000000000000000000000000000000000000000000000000000000000004L1O2N2Nn0ROd1\\Nl1_Le\\O0Ye0D300000n[m="
+          },
+          "bbox": [
+            330.0,
+            210.0,
+            389.0,
+            433.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-roJzen4FoP12PwmK-0NaQ_view2_tree0_box0.jpg",
+        "confidence": 0.013749056495726109,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "lnR<Z3^1TMl?l2T@TMl?l2T@TMl?l2T@TMk?V3f_OPMW`0f4N2O1O1O100O1L4000000000000004L1O00001O00001O00001O000K6N2N1O2Nd0[O]3bL=ATi`9"
+          },
+          "bbox": [
+            550.0,
+            238.0,
+            589.0,
+            417.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

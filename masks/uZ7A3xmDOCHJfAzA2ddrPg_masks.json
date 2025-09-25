@@ -1,0 +1,90 @@
+{
+  "pano_id": "uZ7A3xmDOCHJfAzA2ddrPg",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/uZ7A3xmDOCHJfAzA2ddrPg_view1_tree0_box4.jpg",
+        "confidence": 0.012898421846330166,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^Rl7=Sf00000000000000000001O0000001O001O2N3M2N5K7I7I6N1L7H<DU1kN6J00000000000000000000K5O1M3L4nMR2J6O01L310000001OO100O1O10000000bgY="
+          },
+          "bbox": [
+            358.0,
+            366.0,
+            417.0,
+            481.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/uZ7A3xmDOCHJfAzA2ddrPg_view2_tree0_box2.jpg",
+        "confidence": 0.010490408167243004,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "km\\8b1b0WOQc0i0o\\OWOQc0i0o\\OWOQc0i0o\\OWOob0[2I6G8I6N1O1O1O13L4N2M1N32NM2N2N2N3M5K8Hg1YN:F8H8HgX_="
+          },
+          "bbox": [
+            382.0,
+            334.0,
+            409.0,
+            465.0
+          ]
+        }
+      }
+    ],
+    "view_6": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/uZ7A3xmDOCHJfAzA2ddrPg_view6_tree0_box0.jpg",
+        "confidence": 0.01041127648204565,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "fd0j1fd000000000000000O100O1O1iNX[Oe0id0XO[[Og0ed0XO\\[Og0ed0XO[[Oi0ed0WOZ[Oi0gd0VOZ[Oi0gd0VOY[Oj0hd0UOX[Ol0hd0TOW[Ol0jd0SOW[Om0id0SOV[Om0kd0ROU[On0ld0ROS[On0nd0POS[OQ1Ve0O00O20O1O1O10O01O1O10O01OM31O100O1O1O1O1O1O1O1O1O1O1O1O1O100O1O1O100O100O100O100O100O100O1O1O100O1O1O100O1O1Ok\\fd0"
+          },
+          "bbox": [
+            0.0,
+            662.0,
+            80.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

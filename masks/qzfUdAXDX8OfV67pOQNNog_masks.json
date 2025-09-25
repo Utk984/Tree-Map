@@ -1,0 +1,88 @@
+{
+  "pano_id": "qzfUdAXDX8OfV67pOQNNog",
+  "views": {
+    "view_7": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/qzfUdAXDX8OfV67pOQNNog_view7_tree0_box0.jpg",
+        "confidence": 0.021888893097639084,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "RlPf0i0ge000000Nl0^ZO_N_d0f2ROl1UN6J3M2O2M3N001O001N1O2O1N1O2O0\\E"
+          },
+          "bbox": [
+            1002.0,
+            340.0,
+            1023.0,
+            514.0
+          ]
+        }
+      }
+    ],
+    "view_9": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/qzfUdAXDX8OfV67pOQNNog_view9_tree0_box1.jpg",
+        "confidence": 0.015705352649092674,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ZdP9Z1Ve00000002N<Dc0]O4L2N1O1O5K000004H4O1N3N1O10000000a_n<"
+          },
+          "bbox": [
+            410.0,
+            362.0,
+            433.0,
+            449.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/qzfUdAXDX8OfV67pOQNNog_view9_tree0_box2.jpg",
+        "confidence": 0.014062662608921528,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "mk1c7m>000001O2M2L5J5M4K6J5K5K4M5K4L5K3N4K3M3N2M2N3N2M3M3L4M2N3L3L5L3N3M2O2N4L4K5L3ZLc]OT3ob0M2M3N1O2N1N2O1O1N101O001N2O1N101O0O101O00001N101O1N101O1O1N2O1N2O1O1N2O1O1N2N2O1O0O2O1O001N2O1N101O0O20OO2O001O0O2O001O1O0O2N2O001O1N110N2O2N1O1N2O1O1O1O1O1O1O1O001O1O001O001O10000000aXac0"
+          },
+          "bbox": [
+            2.0,
+            477.0,
+            133.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

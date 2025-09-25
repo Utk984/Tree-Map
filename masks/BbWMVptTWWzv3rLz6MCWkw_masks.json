@@ -1,0 +1,88 @@
+{
+  "pano_id": "BbWMVptTWWzv3rLz6MCWkw",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/BbWMVptTWWzv3rLz6MCWkw_view1_tree0_box0.jpg",
+        "confidence": 0.012428395450115204,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Z]`:`2Pd0000000000000L400O1O100O1000000O1N2O1N20000000ff^;"
+          },
+          "bbox": [
+            478.0,
+            330.0,
+            501.0,
+            409.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/BbWMVptTWWzv3rLz6MCWkw_view1_tree0_box1.jpg",
+        "confidence": 0.011626838706433773,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "T[e8j2fc000000000000000000001O00000000000K5N2H8K500000khY="
+          },
+          "bbox": [
+            394.0,
+            324.0,
+            417.0,
+            413.0
+          ]
+        }
+      }
+    ],
+    "view_7": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/BbWMVptTWWzv3rLz6MCWkw_view7_tree0_box1.jpg",
+        "confidence": 0.017287882044911385,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ZP\\99Wf00000001O2N2N3M2N1O3M2N2N2N32MO100O1O10O100001N01O1000O01O2N1O1O1N101O010O001O0100O00100O1O2N1O1N2O1N2O1O1O2N2M200O1O1O20O01O0O10O02O0O10001O1N10001N10001N2O1O00000O2O00001O00001O0O2OO11O1O0000000O1000101N2N001O2N3LO3M2N2N2N2N2N1O2N2N3M2N1O2N2N2N1O2N3M2N1O000000doV:"
+          },
+          "bbox": [
+            426.0,
+            490.0,
+            557.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

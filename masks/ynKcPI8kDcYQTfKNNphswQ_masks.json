@@ -1,0 +1,88 @@
+{
+  "pano_id": "ynKcPI8kDcYQTfKNNphswQ",
+  "views": {
+    "view_10": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ynKcPI8kDcYQTfKNNphswQ_view10_tree0_box1.jpg",
+        "confidence": 0.013026882894337177,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jVVa0T2\\d00000000000000000000004L3M:F`0@3M000000Rfk4"
+          },
+          "bbox": [
+            782.0,
+            378.0,
+            801.0,
+            445.0
+          ]
+        }
+      }
+    ],
+    "view_11": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ynKcPI8kDcYQTfKNNphswQ_view11_tree0_box4.jpg",
+        "confidence": 0.016347656026482582,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "`YS:6Xf05kYO4_e0e0J4M5J7I5L2N4L5KUNj[O^1fd0O01300L1O2N1O1O0O2O3M30N1OO0100N00O1O4L3M005J4M0O10O1O2N01O1O001O1O1O1O0000001OO100O100O100000N201N101O000O1O1O2Mehl:"
+          },
+          "bbox": [
+            459.0,
+            573.0,
+            526.0,
+            720.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/ynKcPI8kDcYQTfKNNphswQ_view11_tree0_box5.jpg",
+        "confidence": 0.01291104406118393,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "VjR?`0Pf00000001O1O2N2N2N1O22NO1N1O2O1N10001N3N1O0O2O1O1O10O01O001O001O00002N100O00001O00O1O1O2N2N1O1O1N3N1O2M2N3M4L2N4N32L5J2O:G5K0O1N10O1O0O11O010000O101O01O00O10O2OO1001O10N101O00O10002N0O10O02O0O011N3M10O01O1O2O0O102N0O1O101O0O1O1O3M2N1O002O10O3K9G8H4L4L4L3M3M4L3M4L3M4Ljg^4"
+          },
+          "bbox": [
+            686.0,
+            486.0,
+            819.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

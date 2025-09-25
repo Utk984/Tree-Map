@@ -1,0 +1,88 @@
+{
+  "pano_id": "FWYbtg4qm_tj90DyW4sdNg",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/FWYbtg4qm_tj90DyW4sdNg_view0_tree0_box0.jpg",
+        "confidence": 0.027300171554088593,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ZdR71Q2;POa2S?TMmA;POa2S?TMmA;POa2S?TMmA;POa2n>lMXAO@Z2d>QMh@l6m>a000000000000000000000000oNQ1G9^Ob0jNV1oNQ1aNYbl>"
+          },
+          "bbox": [
+            322.0,
+            198.0,
+            345.0,
+            437.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/FWYbtg4qm_tj90DyW4sdNg_view0_tree0_box3.jpg",
+        "confidence": 0.01113001350313425,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "`[Y8:Sf09H<Dk0VO8Ia0_O?A9G7I4M2N4K3h^ORLi?P4o_O[Ll?f3Q@]Ln?e3m_O_LR`0b3i_ObLX`0a3`_OcLc`0c44M2OO4LO1O000000000000000000O100O100OeLX_Ok0m`0ROW_Ok0j`0QO]_Ol0c`0_NU@]1m?`NY@[1h?dNb@P1`?oNQ4N3M2M3N200O100O10001O1O1O0010O0001O010O01O01O00010O00100O000001OO2O0010O001000000clZ<"
+          },
+          "bbox": [
+            377.0,
+            269.0,
+            461.0,
+            473.0
+          ]
+        }
+      }
+    ],
+    "view_12": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/FWYbtg4qm_tj90DyW4sdNg_view12_tree0_box0.jpg",
+        "confidence": 0.015181703492999077,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^PT>T1\\e00000004L8H7`[OnNTc0[2L22L1O1O1O1O1O1O1O2N2N2N2N2N1O2N2N4L8H;E8H>^O_jf7"
+          },
+          "bbox": [
+            642.0,
+            622.0,
+            671.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

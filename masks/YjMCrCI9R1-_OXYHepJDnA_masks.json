@@ -1,0 +1,88 @@
+{
+  "pano_id": "YjMCrCI9R1-_OXYHepJDnA",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/YjMCrCI9R1-_OXYHepJDnA_view1_tree0_box0.jpg",
+        "confidence": 0.03584091365337372,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bab0i3gb00000001O2N1O2N[Lb]OZ3\\b0cLm]OY3lb0K8J8NU1dNiLbNZA\\1b>fNbAW1[>lNdAU1Y>nNfAS1iMgNX?9mBU1`MlN^?2QCZ2j<hMTC]2g<eMWC_2e<dMXC`2d<bMZCb2b<`M\\Cc2a<`MYCf2d<_MSCj2h<eMcBh2V=`M^Bk2[=]MUBo2g=Q3L4L2N2N2N4WB_G[=o8iCRGd:U9hD^GR;R:N1O1O00001O00O1000000O10000000000O100ZEkDQ:U<E5K4gIfCT2i<^KRCCi1Y4g?F5K3L5L2N3eMb]O>ab0YNi^Ob1Vc0M2M4L6J7G6J6G7M200000klTd0"
+          },
+          "bbox": [
+            26.0,
+            274.0,
+            105.0,
+            624.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/YjMCrCI9R1-_OXYHepJDnA_view1_tree0_box1.jpg",
+        "confidence": 0.028873948380351067,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^kh:h0he00000002N5K4L4L5K8H:F9G:Fg0YOf0ZO`0@5KZ1fNc0]O0000000000000000000009G?A^1bNi0WO=C8_O`\\ObMkc0Q2g0Ba0_O=A<_OSZOJRf06nYOJRf06nYOJRf06nYOJWgh:"
+          },
+          "bbox": [
+            490.0,
+            334.0,
+            533.0,
+            541.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/YjMCrCI9R1-_OXYHepJDnA_view2_tree0_box4.jpg",
+        "confidence": 0.015143695287406445,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^bc?X18?Qc0Ao\\O?Qc0Ao\\O?Qc0Ao\\O?Qc0a1O4L00000000000000000000000007I4L7C=G8H7lNP\\O]OQd0c0o[O]OQd0c0o[O]OQd0c0o[O]O_ZY6"
+          },
+          "bbox": [
+            710.0,
+            366.0,
+            737.0,
+            473.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

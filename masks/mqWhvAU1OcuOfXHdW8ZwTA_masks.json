@@ -1,0 +1,86 @@
+{
+  "pano_id": "mqWhvAU1OcuOfXHdW8ZwTA",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/mqWhvAU1OcuOfXHdW8ZwTA_view0_tree0_box1.jpg",
+        "confidence": 0.02100374735891819,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "nfi4P1`e00000005Kl0TO7I0000000000000006J6Em0VO9D<DeUXa0"
+          },
+          "bbox": [
+            218.0,
+            446.0,
+            237.0,
+            517.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/mqWhvAU1OcuOfXHdW8ZwTA_view0_tree0_box3.jpg",
+        "confidence": 0.01286290492862463,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bc\\;d0le000000N4J9F;B=fN\\2iN9G8H6J\\1dN0000000005oJl@\\2oa0Ec0]Oa0_O8H9G6J000000[c_:"
+          },
+          "bbox": [
+            518.0,
+            346.0,
+            545.0,
+            545.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/mqWhvAU1OcuOfXHdW8ZwTA_view0_tree0_box4.jpg",
+        "confidence": 0.012754563242197037,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ZaR26Zf04L2N1O1O2N1O1O1O1O1O1O2N13M00O1O1O101M2O2N2N2M3J9Km0SO4L5K0000000000@`0C=L4WO_[O]Ogd09SRbc0"
+          },
+          "bbox": [
+            94.0,
+            458.0,
+            132.0,
+            541.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 1,
+    "total_masks": 3
+  }
+}

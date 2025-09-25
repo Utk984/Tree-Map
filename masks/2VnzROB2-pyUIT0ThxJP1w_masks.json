@@ -1,0 +1,88 @@
+{
+  "pano_id": "2VnzROB2-pyUIT0ThxJP1w",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/2VnzROB2-pyUIT0ThxJP1w_view1_tree0_box0.jpg",
+        "confidence": 0.013334089890122414,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^hY3_1e0a1g`0_NY_Oa1g`0_NY_Oa1g`0_NY_Oa1g`0T200000000000000000000000000000000009B?gLm^O?bd0mNVadb0"
+          },
+          "bbox": [
+            150.0,
+            302.0,
+            174.0,
+            465.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/2VnzROB2-pyUIT0ThxJP1w_view1_tree0_box1.jpg",
+        "confidence": 0.010090086609125137,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "fRZ83\\f03Q[O8Eh0Ua0ROl^Oj2o`0YMk^Om2Sa0XMd^Om2[a0T1O2O000001N101N3N5I?A:WMf]O<i`j="
+          },
+          "bbox": [
+            378.0,
+            307.0,
+            394.0,
+            453.0
+          ]
+        }
+      }
+    ],
+    "view_9": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/2VnzROB2-pyUIT0ThxJP1w_view9_tree0_box0.jpg",
+        "confidence": 0.015590079128742218,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ilPf0[1Ue000000O2Q\\OeNdb0`1S]OSO]b0S1\\]OYOZb0l0a]OCRb0c0e]OISb0^2K5L4L[LT^Oh2ja0TM^^Oi2ba0hLY^OK;[3\\a0hLR_OW3m`0hLT_OX3k`0kLS_OV3j`0nL\\^OH?Z3Ta0\\Mg^Of2Wa0\\Mh^Od2Xa0\\Mh^Od2P6"
+          },
+          "bbox": [
+            1002.0,
+            360.0,
+            1023.0,
+            516.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

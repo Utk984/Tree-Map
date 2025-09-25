@@ -1,0 +1,90 @@
+{
+  "pano_id": "4LmNA0DW1kRvp8OJvzvXdQ",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/4LmNA0DW1kRvp8OJvzvXdQ_view1_tree0_box0.jpg",
+        "confidence": 0.014600527472794056,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "TTW3;mc0Y2UOk0F:J9RNTL__Ob0:f3W`0^100000L4O100O1N2TOl0[Oe0F:A?D<TN\\]O\\OTc0<d1B>N204K100000R[eb0"
+          },
+          "bbox": [
+            146.0,
+            314.0,
+            173.0,
+            501.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/4LmNA0DW1kRvp8OJvzvXdQ_view3_tree0_box0.jpg",
+        "confidence": 0.015223538503050804,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "PlT5Z4Vb000000N2I7C=00000000000L4J6\\Od0@`0D<E;D<E;E;WOi0YOmoj`0"
+          },
+          "bbox": [
+            234.0,
+            330.0,
+            256.0,
+            489.0
+          ]
+        }
+      }
+    ],
+    "view_10": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/4LmNA0DW1kRvp8OJvzvXdQ_view10_tree0_box0.jpg",
+        "confidence": 0.020139476284384727,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "a\\77Yf00000001O3N4K4L3O1N4M2M110O2N1O000O3M2N2N3N4K2N2N2O2M3O2LO1O1O2N2N3M3M3M4L5K3I7L4L4K4M2N100000ViVe0"
+          },
+          "bbox": [
+            10.0,
+            369.0,
+            57.0,
+            461.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

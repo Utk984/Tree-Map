@@ -1,0 +1,90 @@
+{
+  "pano_id": "oQVCNfga4TjSXYLmfBHMrA",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/oQVCNfga4TjSXYLmfBHMrA_view1_tree0_box0.jpg",
+        "confidence": 0.010986756533384323,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "kf[a0Z3Vc000000O7J7H9G8H7J5K4K7KO2N1O2N4L4L4L8H>Bk0UOd0\\O<D8B600000o_`4"
+          },
+          "bbox": [
+            790.0,
+            246.0,
+            817.0,
+            405.0
+          ]
+        }
+      }
+    ],
+    "view_4": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/oQVCNfga4TjSXYLmfBHMrA_view4_tree0_box1.jpg",
+        "confidence": 0.014333311468362808,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "WlPf0`2Pd00000003K:G<D;E?Ah0YO4K5L3M5K7J7G<D;E:E9H4M0UE"
+          },
+          "bbox": [
+            1002.0,
+            347.0,
+            1023.0,
+            578.0
+          ]
+        }
+      }
+    ],
+    "view_5": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/oQVCNfga4TjSXYLmfBHMrA_view5_tree0_box0.jpg",
+        "confidence": 0.0316932238638401,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ThW:i0ge00000010O3O1N100001OO2OO02N2N3M1O100O10O1000O7I2N1O1O1O1O3M2N1O1N3N2N1N3M3N1N1O2N3X]OfMSa0]2h^OiMUa0Y2g^OjMXa0Z2b^OiM\\a0\\2^^OgMaa0\\2\\^OdMda0]2Z^OdMfa0^2W^OcMia0b2P^OaMna0d2l]O_MSb0`3O1O1N2O1O1O2M2O2U_OdK^?^4^@dKb?`4X@bKg?d5000000001J7N3M7J4OOI7L3N3L6J?A=B9G7H7I6J7J9F;Ba0\\O`0Ca0UOj`Y:"
+          },
+          "bbox": [
+            466.0,
+            100.0,
+            554.0,
+            329.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

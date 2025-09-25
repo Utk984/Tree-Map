@@ -1,0 +1,63 @@
+{
+  "pano_id": "xUKP_Fn8reXeM0ORRzuU9A",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/xUKP_Fn8reXeM0ORRzuU9A_view1_tree0_box0.jpg",
+        "confidence": 0.016281384974718094,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Xig;d0le000000000O0100O10O1OV_O`0f:_OTEQ1c:POQB_OeNe0n1\\1U=dN\\Ae5U>m1^O9F4M4K10000O1000000O100000000001O001O001O1J7QKWDROm;^OQFOV:_ObF4S:oNYFm0f?M2N3N1O3L3M3N2O100000R^c9"
+          },
+          "bbox": [
+            534.0,
+            321.0,
+            585.0,
+            605.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/xUKP_Fn8reXeM0ORRzuU9A_view2_tree0_box0.jpg",
+        "confidence": 0.01709371991455555,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jfUd0a0V1c2_`0]Ma_Oc2_`0]Ma_Oc2_`0]Ma_Oc2_`0_M[_Oe2e`0`Mh^On2Xa0U1000001O1O2N3M5K7Ih1XN1OM3N2N2N2[Mm@kMU?d1QBfMP>i1lBjMV=m1WCmMP=e1V4nNo0F;I8FnUe1"
+          },
+          "bbox": [
+            918.0,
+            250.0,
+            947.0,
+            480.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 2
+  }
+}

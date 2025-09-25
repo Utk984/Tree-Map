@@ -1,0 +1,88 @@
+{
+  "pano_id": "D0y9hvCdgiDVydAzgBDpOw",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/D0y9hvCdgiDVydAzgBDpOw_view1_tree0_box0.jpg",
+        "confidence": 0.014076275750994682,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "\\`e8m0ce000000N5K?]O[1kN8H00000004L2N6J:\\MT\\OP2ld0ZOg0TOa0BgQ]="
+          },
+          "bbox": [
+            394.0,
+            482.0,
+            412.0,
+            581.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/D0y9hvCdgiDVydAzgBDpOw_view1_tree0_box1.jpg",
+        "confidence": 0.013779052533209324,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "cUZ85W1R1fb0nNZ]OR1fb0nNZ]OR1fb0nNZ]OR1ab0VO[]Ol0db0ZOR]Oj0nb0\\101OO1N2O1N2O1N2N2N2N2O1M3K5A?L4I7M3O1O1O1O1O1O100O1N2Com]="
+          },
+          "bbox": [
+            378.0,
+            398.0,
+            411.0,
+            487.0
+          ]
+        }
+      }
+    ],
+    "view_10": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/D0y9hvCdgiDVydAzgBDpOw_view10_tree0_box0.jpg",
+        "confidence": 0.019310936331748962,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "iRg7b0j0S1>gNf?Je_O]3MWMV`0P5N2O1O1O1OhKi_OY2W`0\\MV@b2i?QMg@m2Y?PMk@o2U?oLo@o2R?nLWAk2k>QMcAc2_>ZMmA[2]>XMkAc2\\a0Ei0WO<]O;H400000PdX>"
+          },
+          "bbox": [
+            351.0,
+            257.0,
+            373.0,
+            449.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

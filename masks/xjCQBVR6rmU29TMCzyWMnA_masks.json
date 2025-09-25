@@ -1,0 +1,90 @@
+{
+  "pano_id": "xjCQBVR6rmU29TMCzyWMnA",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/xjCQBVR6rmU29TMCzyWMnA_view1_tree0_box0.jpg",
+        "confidence": 0.03730801120400429,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Vdb8b3nb00000005K5K000000000000000000000000000000J;mLW]O4=c0be0gNm\\\\="
+          },
+          "bbox": [
+            390.0,
+            422.0,
+            413.0,
+            545.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/xjCQBVR6rmU29TMCzyWMnA_view2_tree0_box0.jpg",
+        "confidence": 0.01843792200088501,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ZjT=R4^b00000001O2N2N4L3M2N4L000000000000000:F4_Lo]O[2Ub0^Mn]Ob2Yb0RMl]On2kb000000OjMR]Ol0nb0RO_]Oc0`b0\\On]O1Xb0NU200O10O0100O2OO10O2O000000O100000000001O1O0010000000nhS8"
+          },
+          "bbox": [
+            598.0,
+            362.0,
+            653.0,
+            509.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/xjCQBVR6rmU29TMCzyWMnA_view3_tree0_box3.jpg",
+        "confidence": 0.010482066310942173,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "fYP<h0a0HVd08j[OHVd08j[OHVd08j[OHVd0=][ON`d0[1F8H4L2N3M5K00000000000000K5M30000000Zjn9"
+          },
+          "bbox": [
+            546.0,
+            406.0,
+            569.0,
+            497.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

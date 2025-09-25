@@ -1,0 +1,88 @@
+{
+  "pano_id": "4fcOqWb2BsSHh7JxZ4zHdw",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/4fcOqWb2BsSHh7JxZ4zHdw_view1_tree0_box0.jpg",
+        "confidence": 0.019000990316271782,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bWd1k0ee00000002N;Em0SO6X]OUN_`0U2R_OTNj`0m3L5K6J4L6J48G11034K1K5K8J9lLQ^OP1lc0M0O101O100O1N5L3L5I5J6J6J3NO00000j]oc0"
+          },
+          "bbox": [
+            74.0,
+            210.0,
+            113.0,
+            459.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/4fcOqWb2BsSHh7JxZ4zHdw_view3_tree0_box0.jpg",
+        "confidence": 0.01947799138724804,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bZk5j0fe00000003a[O[Omb0l0c\\OGSc0]2l\\OTM`a0T4J000000000000K;I8G;SOm0mNiYW`0"
+          },
+          "bbox": [
+            266.0,
+            306.0,
+            284.0,
+            449.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/4fcOqWb2BsSHh7JxZ4zHdw_view3_tree0_box1.jpg",
+        "confidence": 0.01580393686890602,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "R:]3e1QO[=o0eBQO[=P1dBPO\\=R1aBoN_=R1_BoNa=S1jAcLA\\2e>X3YAcKg>\\4_A_Ka>D`A`33iL]>APB[3HPMX>AYBY3CSMT>@]B]3CoLP>_ObBc0`NQ2Q1jMm=^OfB7PO]2b0iMb?IQ@Z2a0jM[?MZ@U2=lMU?2m@d1OYNQ?6aB0`NHl>9hBL^NJf>:RCIYNMa>:[CGVNN\\>=aCBUN0Y>=cEC\\:9jEFT:9oEGP:8RFHm97VFHk91[FOT`0ORRke0"
+          },
+          "bbox": [
+            0.0,
+            322.0,
+            28.0,
+            561.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

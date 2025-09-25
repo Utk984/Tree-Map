@@ -1,0 +1,86 @@
+{
+  "pano_id": "f00sXzL03UDpF5c0qA9yAg",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/f00sXzL03UDpF5c0qA9yAg_view0_tree0_box0.jpg",
+        "confidence": 0.018880635499954224,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Z_j49od08V[Oi0ab0SOj]O_3``0U2XO:Q@iI_?[6Z@hIf?a60000000000000000000000000000007I2N1O001O001J5N2O5Ho0lNi0\\NZ2^Nk0[O\\Wl`0"
+          },
+          "bbox": [
+            219.0,
+            378.0,
+            254.0,
+            593.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/f00sXzL03UDpF5c0qA9yAg_view0_tree0_box1.jpg",
+        "confidence": 0.014297791756689548,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "f[V9_2Qd000000G<eNc1UOl0VOf0D6L2N3F=L00L40000O10000O1000000O100O1N2O1O:^O;UOj0TLe^OUO8W2ca0[Nm_O7SQc<"
+          },
+          "bbox": [
+            418.0,
+            374.0,
+            450.0,
+            589.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/f00sXzL03UDpF5c0qA9yAg_view0_tree0_box2.jpg",
+        "confidence": 0.013806112110614777,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "mkR7Q1_e000000CZ1YNf1mMf1TOd0B<F5N2N2L40000000000000000000000007D9\\IV@X6V`0J5J7A]1hJU^OX2dd0dNkdf>"
+          },
+          "bbox": [
+            322.0,
+            366.0,
+            353.0,
+            593.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 1,
+    "total_masks": 3
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "pano_id": "40B7agHRj7-SNJVTlGg2-Q",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/40B7agHRj7-SNJVTlGg2-Q_view1_tree0_box2.jpg",
+        "confidence": 0.01192705798894167,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "V]k5i6g?000000001O1O1O4L000000000000000000000000K5N2L4aL_3H8J6L4K5G9F:K5K5I7H8I7J6I7HbUi?"
+          },
+          "bbox": [
+            266.0,
+            390.0,
+            304.0,
+            613.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/40B7agHRj7-SNJVTlGg2-Q_view3_tree0_box0.jpg",
+        "confidence": 0.014926577918231487,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "oTPd0P1`e000000K`0^Oi1^[OVMla0n3I700000000000000000000000J6L4M:PLh]OW3^c0XOlnn1"
+          },
+          "bbox": [
+            910.0,
+            286.0,
+            933.0,
+            433.0
+          ]
+        }
+      }
+    ],
+    "view_9": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/40B7agHRj7-SNJVTlGg2-Q_view9_tree0_box0.jpg",
+        "confidence": 0.022177794948220253,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "US[?6Zf000000N5Jc0\\Oi1UN]1iN2N2N4L0000000000000000WL[^Og2ea0SM]_Ok1i`0lMc_Om1db0^Oa0D=K4O1O1N2O000000P[^6"
+          },
+          "bbox": [
+            698.0,
+            310.0,
+            729.0,
+            449.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

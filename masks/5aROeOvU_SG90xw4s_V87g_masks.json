@@ -1,0 +1,88 @@
+{
+  "pano_id": "5aROeOvU_SG90xw4s_V87g",
+  "views": {
+    "view_10": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/5aROeOvU_SG90xw4s_V87g_view10_tree0_box0.jpg",
+        "confidence": 0.01329366210848093,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "k^Vf0m0ce000000O2O3L6J;i[OiN_b0n1e\\OeNnb0S3e]OVLg`0[5^O4L2O0^F"
+          },
+          "bbox": [
+            1010.0,
+            306.0,
+            1023.0,
+            490.0
+          ]
+        }
+      }
+    ],
+    "view_12": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/5aROeOvU_SG90xw4s_V87g_view12_tree0_box0.jpg",
+        "confidence": 0.020419158041477203,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Z[\\d05[f02N2N2N2N3M2N3M2N2N2N2N2N2N2N2N23N1N001N10000O110O01OO2O1O1N010002OO1O1O01O001O3N3M000O01O11M110O201M3M3L103M3LO102M00I7M3O1N200O1000O1O2N10000O101OO01O00003M3M3M4M2M4M8H2M2O1O5J5L2M110O01O000ZZO"
+          },
+          "bbox": [
+            927.0,
+            570.0,
+            1023.0,
+            720.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/5aROeOvU_SG90xw4s_V87g_view12_tree0_box3.jpg",
+        "confidence": 0.013621668331325054,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "naYb05[f02N1O2N1O2N2N2N3M3M5K5K4L3M3M5K5K510Kb0_O<C5L2O2N1M3ON3N1O1O1N3N1N2O2M4M2M3M2N3N2M2O2N5I6J3M3M5K5K4L3M5K4L3M2N3M3M2N1O2N1O2N1O00aYi2"
+          },
+          "bbox": [
+            832.0,
+            574.0,
+            920.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "pano_id": "-cyeqV-QQwrZzaRUd7Nrqg",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-cyeqV-QQwrZzaRUd7Nrqg_view1_tree0_box2.jpg",
+        "confidence": 0.016924621537327766,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^n1R5^a000000000000001O001O001O1L4O1N2N2M3M3L4M5H6ZOg0B>E>UO`hke0"
+          },
+          "bbox": [
+            2.0,
+            558.0,
+            27.0,
+            720.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-cyeqV-QQwrZzaRUd7Nrqg_view2_tree0_box1.jpg",
+        "confidence": 0.01603018492460251,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "b_\\;<Tf00000001O2N2N2N2N2N3M3M1O1O3M2N3M6J8N;BOW\\OTNlb0l1Q]OZNlb0e1S]OaNjb0^1T]OdNmb0Z1R]OhNmb0X1S]OhNmb0X1S]OiNlb0V1U]OkNjb0U1V]OkNjb0U1V]OkNjb0U1W]OjNjb0T1W]OlNlb0Q1T]OoNSc0Ab\\Oi0;Fhc05Y\\OJic03X\\OMic02W\\ONic03U\\ONlc01T\\OOlc01U\\ONkc03V\\OKjc06U\\OJkc07U\\OHkc08T\\OJjc08T\\OIkc0;o[OIoc0_1M5K4K6K7H`0@3M2N6J1O1O1O1WNVLk@k3V?XLe@\\2fNeNf`0oNa@X2UO_N^`0[OZ@P2E]NS`0ES@l17VNg?Oo_Oj1ma0WNn]Od1Zb0`NY]O[1Vc0jN[\\O\\1ic0c03M3L4N2M3L4K5K6J6Eb0E4L2N1O101O0000001O000O10000O1000O1000O10O1O1O1E;1O1O1O1O1O100O100O1O1O100O10000000^T_8"
+          },
+          "bbox": [
+            518.0,
+            274.0,
+            637.0,
+            461.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/-cyeqV-QQwrZzaRUd7Nrqg_view3_tree0_box4.jpg",
+        "confidence": 0.012730784714221954,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "To1\\4Tb0000001O4L9Ga2_MmYXf0"
+          },
+          "bbox": [
+            2.0,
+            580.0,
+            9.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

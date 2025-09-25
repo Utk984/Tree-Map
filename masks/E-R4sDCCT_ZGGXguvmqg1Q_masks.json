@@ -1,0 +1,88 @@
+{
+  "pano_id": "E-R4sDCCT_ZGGXguvmqg1Q",
+  "views": {
+    "view_1": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/E-R4sDCCT_ZGGXguvmqg1Q_view1_tree0_box1.jpg",
+        "confidence": 0.013294688425958157,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "Rc^e0n0`e09H:Gl0UOf0YO7I4M6X]O`LSb0T4KO1O1O001O1O1O1J6N2O1O1O2N4L;aLh\\OP3lc0A7H9F9H:Ef0ZO8FR`;"
+          },
+          "bbox": [
+            976.0,
+            351.0,
+            1006.0,
+            489.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/E-R4sDCCT_ZGGXguvmqg1Q_view2_tree0_box1.jpg",
+        "confidence": 0.014835216104984283,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "[iR7g2ic000000K504L0000000000L4O100O1O1N2N2N2L4gN\\\\O@jc0`0V\\O@jc0`0V\\O@jc0`0V\\O@dnl>"
+          },
+          "bbox": [
+            322.0,
+            390.0,
+            345.0,
+            485.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/E-R4sDCCT_ZGGXguvmqg1Q_view2_tree0_box2.jpg",
+        "confidence": 0.011270074173808098,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "bm\\8k0ee00000002N4L2N3P\\OM]a07Y^O=Ya0Io]Ok0oa0m1N4L000000000000000000J;E7ZNe1K6H8G8K6M3N2M3N10000000RhY="
+          },
+          "bbox": [
+            382.0,
+            338.0,
+            417.0,
+            477.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

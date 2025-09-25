@@ -1,0 +1,90 @@
+{
+  "pano_id": "iW--rMiQByF-Xgk_4YUMaA",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/iW--rMiQByF-Xgk_4YUMaA_view0_tree0_box1.jpg",
+        "confidence": 0.012824835255742073,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "^8b6n?00M3F:SOm0^Ob0jLe^On0da0lNS3L4N2N2M3M3L4J6L4M3LfRSf0"
+          },
+          "bbox": [
+            0.0,
+            270.0,
+            17.0,
+            479.0
+          ]
+        }
+      }
+    ],
+    "view_1": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/iW--rMiQByF-Xgk_4YUMaA_view1_tree0_box0.jpg",
+        "confidence": 0.03492344543337822,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "dRS4`7P?00000J7O5K00000000000000000000000000000000L4O100O100O1O100O100O1O100O100O10000O100O100O1O100O1N2N2L4M3^Ld@Ka?`Mc@\\1;d0[?fMl@V157h?ZNVCn0nnUa0"
+          },
+          "bbox": [
+            186.0,
+            302.0,
+            241.0,
+            553.0
+          ]
+        }
+      }
+    ],
+    "view_3": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/iW--rMiQByF-Xgk_4YUMaA_view3_tree0_box1.jpg",
+        "confidence": 0.0100940503180027,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "V`^a0j0c2a0U?_Ok@a0U?_Ok@a0U?_Ok@a0U?EV@\\1X?ROk_OS4_=VLlAV4T>S200000000000000000fH\\B_1g0a0oc0XNhcd4"
+          },
+          "bbox": [
+            794.0,
+            230.0,
+            811.0,
+            485.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 3,
+    "total_masks": 3
+  }
+}

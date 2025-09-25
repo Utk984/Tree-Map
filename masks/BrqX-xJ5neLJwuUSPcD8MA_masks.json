@@ -1,0 +1,88 @@
+{
+  "pano_id": "BrqX-xJ5neLJwuUSPcD8MA",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/BrqX-xJ5neLJwuUSPcD8MA_view0_tree0_box0.jpg",
+        "confidence": 0.01745566353201866,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "P_R:3]f000000L9I7^ZOBdd0i1^O]2cM3M1O5K000000L8K1O2N1N2O1M3B>E;J1hN]1O1N2O1O100O1O1O1N2N2O1N2L4K5L4M3]Oc0LnY_;"
+          },
+          "bbox": [
+            458.0,
+            438.0,
+            500.0,
+            585.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/BrqX-xJ5neLJwuUSPcD8MA_view0_tree0_box1.jpg",
+        "confidence": 0.012750962749123573,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "RaPf07n3g0_=YOaBg0_=YOaBg0_=YOaBg0_=ZO^Bi0a=XOPBV1P>jNiA^1V>cNeAa1[>`NaAc1_>^N^Ad1b>^Ni_OV3V`0mLb_OX3^`0iL^_OZ3b`0fL\\_O\\3d`0eLX_O^3h`0bLT_Ob3l`0`Lm^Oe3Sa0l00001O000N"
+          },
+          "bbox": [
+            1002.0,
+            2.0,
+            1023.0,
+            168.0
+          ]
+        }
+      }
+    ],
+    "view_9": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/BrqX-xJ5neLJwuUSPcD8MA_view9_tree0_box0.jpg",
+        "confidence": 0.024537384510040283,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "dbSe03Yf08J3O2O1N2N2O2M3N2M3N2N2N2N2N110N2N010O1O1O10000O10004L3L1O10O1000O2OO0100O100O10O1O02O1N3N2d[OQNPd0W22N2N1O2N2N2N1O1O3M3M1O001O1O1O00"
+          },
+          "bbox": [
+            960.0,
+            590.0,
+            1023.0,
+            720.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

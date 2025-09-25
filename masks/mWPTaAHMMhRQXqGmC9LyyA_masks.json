@@ -1,0 +1,88 @@
+{
+  "pano_id": "mWPTaAHMMhRQXqGmC9LyyA",
+  "views": {
+    "view_0": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/mWPTaAHMMhRQXqGmC9LyyA_view0_tree0_box2.jpg",
+        "confidence": 0.03193258121609688,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "l_U7d0le000000M4J8e[Ol0k`0@j^On0k`0ZOm^Oo0o`0XOc^OR1Za0W2K6J;Ec0]O4L0000000S1mN4fKU_O92d0m`0iNWAQ1Wb0M3M3M1O000000jef>"
+          },
+          "bbox": [
+            326.0,
+            262.0,
+            353.0,
+            465.0
+          ]
+        }
+      },
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/mWPTaAHMMhRQXqGmC9LyyA_view0_tree0_box4.jpg",
+        "confidence": 0.012268425896763802,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "TZc28Xf000000K>^Og0YOe0Cb0j[OiMPc0W3Db0^O4L2N2O0O6J100O1O1kM[L`@VO;g4U?m10000000000000oLXAZNh>X1TBUNY>d1WBgMR>T2X3M4K5nM]\\OGLe0be0E6I4N100000[bPc0"
+          },
+          "bbox": [
+            118.0,
+            254.0,
+            157.0,
+            473.0
+          ]
+        }
+      }
+    ],
+    "view_2": [
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/mWPTaAHMMhRQXqGmC9LyyA_view2_tree0_box0.jpg",
+        "confidence": 0.01513581071048975,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "RSk0a0oe0000000101N2N2N2O2N4L4M2N2N4L3M2O1N2O1N010O6I`0@11N3Lg0ZO5J>@=CdPod0"
+          },
+          "bbox": [
+            38.0,
+            386.0,
+            68.0,
+            493.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}

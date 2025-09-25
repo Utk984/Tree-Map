@@ -1,0 +1,88 @@
+{
+  "pano_id": "JPCNFPWetTiJOubZzeS6OA",
+  "views": {
+    "view_11": [
+      {
+        "tree_index": "0-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/JPCNFPWetTiJOubZzeS6OA_view11_tree0_box1.jpg",
+        "confidence": 0.01281595230102539,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "jQY9a0oe00000001O1O1O1O2N2N3M4oZOUOUd0g1L2N6J00000000000000K5O1N2N2N7TOh0I600000P^`<"
+          },
+          "bbox": [
+            422.0,
+            346.0,
+            453.0,
+            413.0
+          ]
+        }
+      }
+    ],
+    "view_12": [
+      {
+        "tree_index": "1-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/JPCNFPWetTiJOubZzeS6OA_view12_tree0_box3.jpg",
+        "confidence": 0.014861226081848145,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "fYc2^2Rd000000O2N3M2N2K4A?K6O000000O100O1O1L4B>I7K5L4M3M3N2M3J6L4N2O1N2O1O1O1O1O1O100O1O1O1O1O1O1O1O1O>B1N3N1O10000000hZeb0"
+          },
+          "bbox": [
+            118.0,
+            314.0,
+            173.0,
+            425.0
+          ]
+        }
+      },
+      {
+        "tree_index": "2-0",
+        "image_path": "/home/utkarsh/TreeInventorization/data/views/JPCNFPWetTiJOubZzeS6OA_view12_tree0_box6.jpg",
+        "confidence": 0.012460427358746529,
+        "mask_data": {
+          "orig_shape": [
+            720,
+            1024
+          ],
+          "encoding": "rle",
+          "rle": {
+            "size": [
+              720,
+              1024
+            ],
+            "counts": "ZS[?f0je00000003M5K4L4L;Ee0[O;E3M1O001O0000O5L1N00M22L4B>H8H8A?K5O100000f\\^6"
+          },
+          "bbox": [
+            698.0,
+            330.0,
+            729.0,
+            415.0
+          ]
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_views": 2,
+    "total_masks": 3
+  }
+}
