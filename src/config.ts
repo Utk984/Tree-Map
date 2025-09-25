@@ -9,7 +9,7 @@ export const config = {
   githubPagesBaseUrl: 'https://utk984.github.io/tree-map.github.io/',
   
   // Production API URL (you'll need to deploy this separately)
-  productionApiUrl: 'https://your-api-domain.com'
+  productionApiUrl: 'https://tree-map-github-io.onrender.com'
 };
 
 // Determine if we're in production
