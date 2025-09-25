@@ -1,19 +1,17 @@
-/// <reference types="vite/client" />
-
 // Configuration for different environments
 export const config = {
   // API base URL - will be different for development vs production
-  apiBaseUrl: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001',
+  apiBaseUrl: (import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:5001',
   
   // GitHub Pages base URL (update this to your actual repository name)
   githubPagesBaseUrl: 'https://utk984.github.io/tree-map.github.io/',
   
   // Production API URL (you'll need to deploy this separately)
-  productionApiUrl: 'https://tree-map-github-io.onrender.com'
+  productionApiUrl: 'http://localhost:5001'
 };
 
 // Determine if we're in production
-export const isProduction = import.meta.env.PROD;
+export const isProduction = (import.meta as any).env?.PROD;
 
 // Get the appropriate API URL
 export const getApiUrl = () => {
