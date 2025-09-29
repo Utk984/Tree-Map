@@ -27,6 +27,7 @@ export interface ClickedTreeInfo {
   pano_id: string;
   tree_lat: number;
   tree_lng: number;
+  image_path?: string;
 }
 
 export interface LayerVisibility {
@@ -36,16 +37,27 @@ export interface LayerVisibility {
 
 export type BaseMapType = 'satellite' | 'streets' | 'minimal';
 
-// API response types
-export interface TreeViewResponse {
-  success: boolean;
-  csv_index: number;
-  pano_id: string;
-  tree_lat: number;
-  tree_lng: number;
-  image_x: number;
-  image_y: number;
+// Mask data types
+export interface MaskData {
+  orig_shape: [number, number];
+  encoding: string;
+  rle: {
+    size: [number, number];
+    counts: string;
+  };
+  bbox: [number, number, number, number];
+}
+
+export interface TreeMask {
+  tree_index: string;
+  image_path: string;
   confidence: number;
-  image_base64: string;
-  error?: string;
+  mask_data: MaskData;
+}
+
+export interface PanoramaMaskData {
+  pano_id: string;
+  views: {
+    [viewKey: string]: TreeMask[];
+  };
 }

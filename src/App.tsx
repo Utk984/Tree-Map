@@ -5,7 +5,6 @@ import { MapViewState, PickingInfo } from '@deck.gl/core';
 import Map from 'react-map-gl/maplibre'; // Import Map from react-map-gl
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { loadTreeData, loadStreetViewData } from './utils/dataLoader';
-import { TreePopup } from './components/TreePopup';
 import { ControlPanel } from './components/ControlPanel';
 import { ThreePanoramaViewer } from './components/ThreePanoramaViewer';
 import { BaseMapType } from './components/BaseMapSwitcher';
@@ -28,7 +27,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [clickedTree, setClickedTree] = useState<ClickedTreeInfo | null>(null);
-  const [popupPosition, setPopupPosition] = useState<{ x: number; y: number } | null>(null);
   const [layerVisibility, setLayerVisibility] = useState<LayerVisibility>({
     trees: true,
     streetViews: true,
@@ -112,28 +110,19 @@ function App() {
     };
   }, []);
 
-  const handleTreeClick = useCallback((info: PickingInfo, event: any) => {
+  const handleTreeClick = useCallback((info: PickingInfo) => {
     if (info.object && info.layer?.id === 'trees') {
       const tree = info.object as TreeData;
       console.log('Tree clicked:', tree);
-      
-      // Get mouse position relative to the viewport for proper popup positioning
-      const x = event.clientX;
-      const y = event.clientY;
       
       setClickedTree({
         csv_index: tree.csv_index,
         pano_id: tree.pano_id,
         tree_lat: tree.tree_lat,
         tree_lng: tree.tree_lng,
+        image_path: tree.image_path,
       });
-      setPopupPosition({ x, y });
     }
-  }, []);
-
-  const handleCloseModal = useCallback(() => {
-    setClickedTree(null);
-    setPopupPosition(null);
   }, []);
 
   const handleLayerVisibilityChange = useCallback((layer: keyof LayerVisibility, visible: boolean) => {
@@ -156,70 +145,70 @@ function App() {
     switch (baseMapType) {
       case 'satellite':
         return {
-          version: 8,
+          version: 8 as const,
           sources: {
             'esri-satellite': {
-              type: 'raster',
+              type: 'raster' as const,
               tiles: ['https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
               tileSize: 256,
             },
           },
           layers: [{
             id: 'esri-satellite',
-            type: 'raster',
+            type: 'raster' as const,
             source: 'esri-satellite',
           }],
         };
       case 'streets':
         return {
-          version: 8,
+          version: 8 as const,
           sources: {
             'osm-streets': {
-              type: 'raster',
+              type: 'raster' as const,
               tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
               tileSize: 256,
             },
           },
           layers: [{
             id: 'osm-streets',
-            type: 'raster',
+            type: 'raster' as const,
             source: 'osm-streets',
           }],
         };
       case 'minimal':
         return {
-          version: 8,
+          version: 8 as const,
           sources: {
             'carto-minimal': {
-              type: 'raster',
+              type: 'raster' as const,
               tiles: ['https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'],
               tileSize: 256,
             },
           },
           layers: [{
             id: 'carto-minimal',
-            type: 'raster',
+            type: 'raster' as const,
             source: 'carto-minimal',
           }],
         };
       default:
         return {
-          version: 8,
+          version: 8 as const,
           sources: {
             'default-satellite': {
-              type: 'raster',
+              type: 'raster' as const,
               tiles: ['https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
               tileSize: 256,
             },
           },
           layers: [{
             id: 'default-satellite',
-            type: 'raster',
+            type: 'raster' as const,
             source: 'default-satellite',
           }],
         };
     }
-  }, []);
+  }, []) as any;
 
   const layers = useMemo(() => {
     console.log('📚 Creating data layers');
@@ -413,21 +402,12 @@ function App() {
             panoId={clickedTree?.pano_id || null}
             treeLat={clickedTree?.tree_lat}
             treeLng={clickedTree?.tree_lng}
+            clickedImagePath={clickedTree?.image_path}
           />
         </div>
       </div>
 
-      {/* Tree Popup - At main container level to avoid overflow issues */}
-      {clickedTree && popupPosition && (
-        <TreePopup 
-          csvIndex={clickedTree.csv_index}
-          panoId={clickedTree.pano_id}
-          treeLat={clickedTree.tree_lat}
-          treeLng={clickedTree.tree_lng}
-          onClose={handleCloseModal}
-          position={popupPosition}
-        />
-      )}
+      {/* Tree popup removed */}
     </div>
   );
 }

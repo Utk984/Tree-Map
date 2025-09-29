@@ -6,12 +6,14 @@ interface ThreePanoramaViewerProps {
   panoId: string | null;
   treeLat?: number;
   treeLng?: number;
+  clickedImagePath?: string;
 }
 
 export const ThreePanoramaViewer: React.FC<ThreePanoramaViewerProps> = ({ 
   panoId, 
   treeLat, 
-  treeLng 
+  treeLng,
+  clickedImagePath
 }) => {
   const [panoramaImage, setPanoramaImage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -45,8 +47,11 @@ export const ThreePanoramaViewer: React.FC<ThreePanoramaViewerProps> = ({
         setLoading(true);
         setError(null);
         
-        // Fetch the panorama image from the API
-        const response = await fetch(`${getApiUrl()}/api/panorama/${panoId}`);
+        // Fetch the panorama image with masks already applied
+        const url = clickedImagePath 
+          ? `${getApiUrl()}/api/panorama/${panoId}?image_path=${encodeURIComponent(clickedImagePath)}`
+          : `${getApiUrl()}/api/panorama/${panoId}`;
+        const response = await fetch(url);
         
         if (!response.ok) {
           throw new Error(`Failed to fetch panorama: ${response.statusText}`);
@@ -65,7 +70,7 @@ export const ThreePanoramaViewer: React.FC<ThreePanoramaViewerProps> = ({
     };
 
     fetchPanorama();
-  }, [panoId]);
+  }, [panoId, clickedImagePath]);
 
   // Initialize Three.js scene when panorama loads
   useEffect(() => {
@@ -77,7 +82,12 @@ export const ThreePanoramaViewer: React.FC<ThreePanoramaViewerProps> = ({
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, mount.clientWidth / mount.clientHeight, 1, 1100);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    
+
+    // Improve clarity and correct color space
+    renderer.setPixelRatio(window.devicePixelRatio || 1);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.NoToneMapping;
+    renderer.toneMappingExposure = 1.0;
     renderer.setSize(mount.clientWidth, mount.clientHeight);
     mount.appendChild(renderer.domElement);
 
@@ -88,12 +98,15 @@ export const ThreePanoramaViewer: React.FC<ThreePanoramaViewerProps> = ({
 
     // Load texture with high quality settings
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load(panoramaImage);
-    
-    // Set texture filtering for better quality
-    texture.minFilter = THREE.LinearFilter;
-    texture.magFilter = THREE.LinearFilter;
-    texture.generateMipmaps = false;
+    const texture = textureLoader.load(panoramaImage, () => {
+      // Apply high quality sampling once the texture is loaded
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.generateMipmaps = true;
+      texture.minFilter = THREE.LinearMipmapLinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      texture.needsUpdate = true;
+    });
     
     const material = new THREE.MeshBasicMaterial({ map: texture });
     
@@ -200,6 +213,17 @@ export const ThreePanoramaViewer: React.FC<ThreePanoramaViewerProps> = ({
         geometry.dispose();
         material.dispose();
         texture.dispose();
+        
+        // Clean up any additional meshes (if any)
+        scene.children.forEach(child => {
+          if (child instanceof THREE.Mesh && child !== sphere) {
+            child.geometry.dispose();
+            if (child.material instanceof THREE.Material) {
+              child.material.dispose();
+            }
+          }
+        });
+        
         renderer.dispose();
       }
     };
@@ -312,7 +336,7 @@ export const ThreePanoramaViewer: React.FC<ThreePanoramaViewerProps> = ({
               <div><strong>Tree Location:</strong> {treeLat.toFixed(6)}, {treeLng.toFixed(6)}</div>
             )}
             <div style={{ fontSize: '10px', marginTop: '4px', opacity: 0.8 }}>
-              🖱️ Drag to look around • 🔍 Scroll to zoom
+              🖱️ Drag to look around • 🔍 Scroll to zoom • 🎭 Red overlays show detected trees
             </div>
           </div>
 

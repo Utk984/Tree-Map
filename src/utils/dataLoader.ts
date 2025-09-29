@@ -1,4 +1,4 @@
-import { TreeData, StreetViewData } from '../types';
+import { TreeData, StreetViewData, PanoramaMaskData } from '../types';
 import { getApiUrl } from '../config';
 
 // Load tree data from API (server-side preprocessing for performance)
@@ -48,5 +48,34 @@ export const loadStreetViewData = async (): Promise<StreetViewData[]> => {
   } catch (error) {
     console.error('Error loading street view data:', error);
     throw new Error(`Failed to load street view data: ${error instanceof Error ? error.message : 'Unknown error'}`);
+  }
+};
+
+// Load mask data for a specific panorama
+export const loadPanoramaMaskData = async (panoId: string): Promise<PanoramaMaskData | null> => {
+  try {
+    console.log('🎭 Loading mask data for panorama:', panoId);
+    const startTime = Date.now();
+    
+    const apiUrl = getApiUrl();
+    const response = await fetch(`${apiUrl}/api/mask-data/${panoId}`);
+    
+    if (!response.ok) {
+      if (response.status === 404) {
+        console.log('⚠️ No mask data found for panorama:', panoId);
+        return null;
+      }
+      throw new Error(`Failed to fetch mask data: ${response.statusText}`);
+    }
+    
+    const maskData: PanoramaMaskData = await response.json();
+    const loadTime = Date.now() - startTime;
+    
+    console.log(`✅ Loaded mask data for ${panoId} in ${loadTime}ms`);
+    return maskData;
+    
+  } catch (error) {
+    console.error('Error loading mask data:', error);
+    return null; // Return null instead of throwing to allow panorama to load without masks
   }
 };
