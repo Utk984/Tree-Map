@@ -1,102 +1,154 @@
 # Tree Map - React + deck.gl Implementation
 
-This project has been converted from Python + pydeck to **React + deck.gl** for better performance and modern web development practices.
+This project combines **React + deck.gl** frontend with a **Python Flask API** backend for interactive tree mapping and street view visualization.
 
 ## 🚀 Features
 
 - **Interactive map:** deck.gl-powered visualization with satellite imagery
 - **Tree markers:** Forest green markers showing detected tree locations
-- **Street view markers:** Blue markers showing street view panorama locations  
-- **Connection lines:** Orange lines connecting trees to their corresponding street views
+- **Street view markers:** Blue markers showing street view panorama locations
+- **3D panorama viewer:** Three.js-powered street view panorama display
 - **Click interactions:** Click on any tree marker to view the street-level perspective
 - **Layer controls:** Toggle visibility of different map layers
-- **Real-time data loading:** Loads tree and street view data from CSV files
-- **Responsive design:** Works on desktop and mobile devices
 
 ## 📁 Project Structure
 
 ```
 src/
-├── App.tsx              # Main application component with deck.gl map
-├── main.tsx             # React entry point
-├── types.ts             # TypeScript type definitions
+├── App.tsx                    # Main application component with deck.gl map
+├── main.tsx                   # React entry point
+├── types.ts                   # TypeScript type definitions
+├── config.ts                  # Application configuration
 ├── utils/
-│   └── dataLoader.ts    # CSV data loading and processing utilities
+│   └── dataLoader.ts          # CSV data loading and processing utilities
 └── components/
-    ├── TreeModal.tsx    # Modal for displaying tree street views
-    └── LayerControls.tsx # Map layer visibility controls
+    ├── ControlPanel.tsx       # Main control panel with layer and map controls
+    ├── LayerControls.tsx      # Map layer visibility controls
+    ├── BaseMapSwitcher.tsx    # Base map type switching component
+    └── ThreePanoramaViewer.tsx # Three.js-powered panorama viewer
 
 public/
-├── south_delhi_trees_cleaned.csv    # Tree detection data
-└── south_delhi_panoramas.csv        # Street view panorama data
+├── south_delhi_trees.csv     # Tree detection data
+├── south_delhi_panoramas.csv # Street view panorama data
+└── tree.svg                  # Tree icon for markers
+
+Python Backend:
+├── api_server.py             # Flask API server
+├── mask_processor.py         # Image processing utilities
+├── panorama_fetcher.py       # Street view panorama fetching
+├── utils.py                  # General utilities
+├── requirements.txt          # Python dependencies
+└── start.sh                  # Automated startup script
 ```
 
 ## 🛠️ Installation & Setup
 
-### 1. Install Dependencies
+### 🚀 Quick Start (Recommended)
+
+Use the automated startup script that handles everything:
+
+```bash
+./start.sh
+```
+
+This script will:
+
+- ✅ Create Python virtual environment (`.venv`) if it doesn't exist
+- ✅ Activate the virtual environment
+- ✅ Install/verify Python dependencies from `requirements.txt`
+- ✅ Install npm dependencies if needed
+- ✅ Start the Python Flask API server on port 5001
+- ✅ Start the React development server on port 3000
+- ✅ Handle graceful shutdown with Ctrl+C
+
+### Manual Setup (Alternative)
+
+If you prefer manual setup or need to troubleshoot:
+
+#### 1. Install Node.js Dependencies
 
 ```bash
 npm install --legacy-peer-deps
 ```
 
-> **Note:** The `--legacy-peer-deps` flag is used to resolve dependency conflicts between deck.gl and luma.gl packages.
+> **Note:** The `--legacy-peer-deps` flag resolves dependency conflicts between deck.gl and luma.gl packages.
 
-### 2. Start Development Server
+#### 2. Setup Python Environment
+
+```bash
+# Create virtual environment
+python3 -m venv .venv
+
+# Activate virtual environment
+source .venv/bin/activate
+
+# Install Python dependencies
+pip install -r requirements.txt
+```
+
+#### 3. Start Servers
+
+**Terminal 1 - Python API Server:**
+
+```bash
+source .venv/bin/activate
+python api_server.py
+```
+
+**Terminal 2 - React Development Server:**
 
 ```bash
 npm run dev
 ```
 
-This will start the Vite development server on `http://localhost:3000`
-
-### 3. Start Python API Server
-
-In a separate terminal, start the Flask API server:
-
-```bash
-python api_server.py
-```
-
-This will start the API server on `http://localhost:5001` for serving tree view images.
-
 ## 🎯 Usage
 
-1. **Explore the Map:** 
+### Accessing the Application
+
+After running `./start.sh`, the application will be available at:
+
+- **Frontend**: http://localhost:3000
+- **API**: http://localhost:5001
+
+### Using the Interface
+
+1. **Map Navigation:**
+
    - Pan and zoom to navigate the Delhi area
    - Use mouse wheel to zoom, click and drag to pan
+   - Switch between satellite and street map views using the base map switcher
+2. **Control Panel:**
 
-2. **Layer Controls:**
    - Use the control panel on the top-right to toggle layer visibility
    - View counts for trees, street views, and connections
-
+   - Switch between different base map types
 3. **Tree Interaction:**
-   - Click on any green tree marker to view its street-level perspective
-   - The modal will show the centered view of the tree from the street view panorama
-   - Includes metadata like coordinates, confidence scores, and panorama ID
 
+   - Click on any green tree marker to view its street-level perspective
+   - The Three.js viewer will display the centered view of the tree from the street view panorama
+   - Includes metadata like coordinates, confidence scores, and panorama ID
 4. **Visual Elements:**
+
    - 🌳 **Green markers**: Detected trees
    - 🔵 **Blue markers**: Street view locations
-   - 🧡 **Orange lines**: Connections between trees and street views
 
-## 📊 Data Processing
+### Stopping the Application
+
+Press **Ctrl+C** in the terminal where `./start.sh` is running to gracefully stop both servers.
+
+## 📊 Data
 
 The application processes two CSV files:
 
-- **south_delhi_trees_cleaned.csv**: Contains tree detection data with coordinates, confidence scores, and panorama references
+- **south_delhi_trees.csv**: Contains tree detection data with coordinates, confidence scores, and panorama references
 - **south_delhi_panoramas.csv**: Contains street view panorama locations and metadata
-
-Key features:
-- Filters trees with distance < 12 meters from panoramas
-- Removes duplicate trees within 3 meters using spatial clustering
-- Generates connection lines between trees and their source panoramas
 
 ## 🛡️ API Integration
 
 The React frontend communicates with the Python Flask API for:
 
 - **Tree view generation**: `/api/tree-view/{csv_index}`
-- **Tree information**: `/api/tree-info/{csv_index}` 
+- **Tree information**: `/api/tree-info/{csv_index}`
 - **Health checks**: `/health`
 
 The API serves base64-encoded images of tree-centered views generated from street view panoramas.
@@ -117,42 +169,57 @@ npm run preview
 
 ## 🔧 Technical Stack
 
+### Frontend
+
 - **React 18** - Modern React with hooks and concurrent features
 - **TypeScript** - Type-safe development
 - **deck.gl** - High-performance WebGL-powered data visualization
+- **Three.js** - 3D panorama viewer for street view visualization
 - **Vite** - Fast build tool and development server
 - **MapLibre GL** - Open-source mapping library
 - **Papa Parse** - CSV parsing library
 - **Axios** - HTTP client for API requests
 
-## 🌐 Deployment Options
+### Backend
 
-### Static Hosting
-The React build can be deployed to any static hosting service:
-- Vercel
-- Netlify  
-- GitHub Pages
-- AWS S3 + CloudFront
-
-### With API Server
-For full functionality including tree view generation:
-1. Deploy the React build to static hosting
-2. Deploy the Python Flask API to a cloud service (Heroku, Railway, etc.)
-3. Update API URLs in the React app configuration
+- **Python 3.13** - Backend runtime
+- **Flask** - Web framework for API server
+- **Flask-CORS** - Cross-origin resource sharing
+- **OpenCV** - Computer vision and image processing
+- **Pandas** - Data manipulation and analysis
+- **NumPy** - Numerical computing
+- **aiohttp** - Async HTTP client/server
+- **streetlevel** - Street-level imagery processing
 
 ## 🐛 Troubleshooting
 
+### Port Conflicts
+
+- **Port 5000**: May be used by macOS ControlCenter (system process). Use port 5001 for the API instead.
+- **Port 5001**: If occupied, kill existing processes with `lsof -ti:5001 | xargs kill -9`
+
 ### "Unable to connect to server" errors
+
 - Make sure the Flask API server is running on port 5001
 - Check that CORS is properly configured in `api_server.py`
+- Verify the virtual environment is activated
 
 ### CSV loading errors
+
 - Ensure CSV files are in the `public/` directory
-- Check that file names match exactly: `south_delhi_trees_cleaned.csv` and `south_delhi_panoramas.csv`
+- Check that file names match exactly: `south_delhi_trees.csv` and `south_delhi_panoramas.csv`
 
 ### Dependency installation issues
-- Use `npm install --legacy-peer-deps` to resolve deck.gl peer dependency conflicts
+
+- **Node.js**: Use `npm install --legacy-peer-deps` to resolve deck.gl peer dependency conflicts
+- **Python**: Ensure you're using Python 3.13+ and have activated the virtual environment
 - Clear npm cache with `npm cache clean --force` if needed
+
+### Virtual Environment Issues
+
+- If `.venv` is corrupted, delete it and run `./start.sh` again
+- Make sure `python3` is available in your PATH
+- On macOS, you may need to install Python via Homebrew: `brew install python`
 
 ## 📈 Performance
 
@@ -162,14 +229,6 @@ The React + deck.gl implementation offers significant performance improvements o
 - **Better interactivity**: Smooth pan/zoom operations
 - **Reduced memory usage**: More efficient data handling in the browser
 - **Hot reloading**: Instant updates during development
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Make changes and test thoroughly
-4. Commit with descriptive messages
-5. Push to your fork and submit a pull request
 
 ## 📝 License
 
